@@ -26,6 +26,48 @@ Disciplina do curso de Engenharia de Software da PUC Minas
 ##### Calendário Acadêmico
 - 📅 [Calendário Acadêmico 2026 - PUC Minas](https://github.com/user-attachments/files/24117743/calendario-academico-2026.pdf)
 
+##### 📚 Referências gerais
+
+###### 📖 Bibliografia Básica
+
+- 📕 [Spring Boot in Action – Craig Walls](https://www.amazon.com.br/Spring-Action-Sixth-Craig-Walls/dp/1617297577)  
+  Apresenta os fundamentos do Spring Boot para desenvolvimento de aplicações Java modernas, abordando configuração automática, criação de APIs REST, persistência de dados e implantação de aplicações.
+
+- 📘 [MongoDB in Action (3rd Edition) – Kyle Banker](https://www.amazon.com.br/MongoDB-Action-Third-Building-Platform/dp/1633436071)  
+  Explora os conceitos fundamentais do MongoDB, incluindo modelagem de documentos, consultas, agregações, índices, replicação, escalabilidade e integração com aplicações modernas.
+
+- 📗 [Learning React – Alex MacCaw](https://www.amazon.com.br/Learning-React-Alex-Banks/dp/1491954620)  
+  Introduz o desenvolvimento de interfaces modernas utilizando React, abordando componentes, gerenciamento de estado, JSX, hooks e boas práticas para aplicações web.
+
+- 📙 [Architectural Styles and the Design of Network-based Software Architectures – Roy Thomas Fielding](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)  
+  Tese que introduz o estilo arquitetural REST, estabelecendo os princípios fundamentais para o desenvolvimento de APIs Web escaláveis e distribuídas.
+
+###### ➕ Bibliografia Complementar
+
+- 📙 [Node.js in Action (2nd Edition) – Mike Cantelon et al.](https://www.amazon.com.br/Node-js-Action-Second-Mike-Cantelon/dp/1617292575)  
+  Aborda o desenvolvimento de aplicações back-end com Node.js, explorando programação assíncrona, Express, integração com bancos de dados e construção de APIs.
+
+- 📕 [Getting MEAN with Mongo, Express, Angular, and Node (2nd Edition) – Simon Holmes](https://www.amazon.com.br/Getting-Mongo-Express-Angular-Second/dp/1617294756)  
+  Apresenta o desenvolvimento de aplicações full stack utilizando MongoDB, Express, Angular e Node.js, enfatizando integração entre front-end, back-end e banco de dados.
+
+- 📘 [The Road to React – Daniel Hahne, Philipp Kersten](https://www.roadtoreact.com/)  
+  Guia prático para o aprendizado de React, abordando desde os conceitos fundamentais até técnicas modernas para construção de aplicações baseadas em componentes.
+
+- 📗 [Implementando o Domain-Driven Design – Vaughn Vernon](https://www.amazon.com.br/Implementando-Domain-Driven-design-Vernon/dp/8576089521)  
+  Explora padrões e práticas do Domain-Driven Design (DDD), aplicando conceitos de modelagem de domínio ao desenvolvimento de sistemas complexos.
+
+- 📙 [ACM Transactions on the Web](https://dl.acm.org/journal/tweb)  
+  Periódico científico da Association for Computing Machinery (ACM) que publica pesquisas sobre tecnologias web, aplicações distribuídas, engenharia de software e sistemas baseados na Web.
+
+- 📕 [MongoDB Manual](https://www.mongodb.com/docs/)  
+  Documentação oficial do MongoDB contendo guias sobre modelagem de dados, consultas, agregações, índices, replicação e administração do banco de dados.
+
+- 📘 [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/documentation.html)  
+  Documentação oficial do Spring Boot com referência completa sobre configuração, desenvolvimento de APIs REST, persistência, segurança e implantação de aplicações.
+
+- 📗 [Mongoose Documentation](https://mongoosejs.com/docs/)  
+  Documentação oficial do Mongoose, apresentando recursos de modelagem de dados, validação, consultas, middleware e integração entre Node.js e MongoDB.
+
 -----
 
 <div align="center">
