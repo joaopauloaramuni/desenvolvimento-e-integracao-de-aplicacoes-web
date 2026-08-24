@@ -40,6 +40,14 @@ O aluno poderá escolher uma das seguintes APIs de clima:
 
 > 💡 **Atenção:** dependendo da API escolhida, poderá ser necessário criar uma conta e obter uma **API Key**. Quando exigida, a chave deverá ser configurada no projeto, preferencialmente por meio do arquivo `application.properties` ou de variáveis de ambiente, evitando deixar a chave diretamente exposta no código-fonte.
 
+## 🌦️ Projeto de Exemplo
+
+Para auxiliar na realização da atividade, consulte o projeto de exemplo desenvolvido com **Spring Boot**, que utiliza a **API do Climatempo** para obter informações meteorológicas e disponibiliza os dados por meio de uma API REST.
+
+👉 [**Clima_RestAPI — GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/Clima_RestAPI)
+
+> 💡 Utilize o projeto apenas como **referência** para compreender a integração entre uma aplicação Spring Boot e uma API externa de clima.
+
 ## ⚙️ Requisitos técnicos
 
 A aplicação deverá:
