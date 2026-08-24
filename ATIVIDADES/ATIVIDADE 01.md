@@ -1,53 +1,124 @@
-# Atividade: API REST de Clima com Spring Boot
+# 🌦️ Atividade 01 — API REST de Clima com Spring Boot
 
-## Objetivo
+## 📊 Valor: 2,5 pts
 
-Desenvolver uma **API REST** utilizando **Spring Boot** que consulte e retorne informações climáticas atuais da cidade de **Belo Horizonte - MG**.
+## 🎯 Objetivo
 
-## Descrição
+Desenvolva uma **API REST utilizando Spring Boot** capaz de consultar e disponibilizar informações meteorológicas da cidade de **Belo Horizonte - MG**.
 
-A aplicação deverá consumir uma API pública de meteorologia (ver sugestões abaixo) e expor um ou mais endpoints REST que retornem, no mínimo, as seguintes informações:
+A aplicação deverá consumir uma **API externa de dados meteorológicos**, processar as informações recebidas e disponibilizá-las por meio de um endpoint REST desenvolvido em Spring Boot.
 
-- Temperatura atual (°C)
-- Sensação térmica
-- Umidade do ar (%)
-- Velocidade do vento (km/h ou m/s)
-- Condição do tempo (ex: ensolarado, nublado, chuvoso)
+## 🌡️ Informações do clima
 
-## Requisitos técnicos
+A API deverá ser capaz de obter, sempre que disponibilizadas pelo serviço escolhido, informações como:
 
-1. Utilizar **Java** com **Spring Boot**.
-2. Criar um endpoint REST, por exemplo:
-   ```
-   GET /clima/belo-horizonte
-   ```
-3. O endpoint deve retornar os dados em formato **JSON**.
-4. Utilizar `RestTemplate` ou `WebClient` para consumir a API externa de clima.
-5. Tratar possíveis erros de comunicação com a API externa (ex: timeout, resposta inválida, chave de API inválida).
-6. Organizar o projeto em camadas (Controller, Service e, se necessário, DTOs/Models).
+- 🌡️ Temperatura atual
+- 💧 Umidade do ar
+- 💨 Velocidade do vento
+- 🧭 Direção do vento
+- 🌧️ Condição climática
+- 🌡️ Temperatura máxima e mínima
+- ☁️ Descrição das condições do tempo
+- 📍 Localização da cidade
+- 🕐 Data e horário da consulta
 
-## Sugestões de APIs gratuitas de clima
+## 🌐 APIs gratuitas sugeridas
 
-O aluno pode escolher uma das opções abaixo para obter os dados meteorológicos:
+O aluno poderá escolher uma das seguintes APIs de clima:
 
-- **OpenWeatherMap** — https://openweathermap.org/api
-- **WeatherAPI** — https://www.weatherapi.com/
-- **Open-Meteo** — https://open-meteo.com/ (não exige chave de API)
-- **Visual Crossing Weather** — https://www.visualcrossing.com/weather-api
+1. 🌤️ **Open-Meteo** — API gratuita e sem necessidade de API Key para diversos usos  
+   [Open-Meteo](https://open-meteo.com/?utm_source=chatgpt.com)
 
-> ⚠️ **Atenção:** Algumas dessas APIs (como OpenWeatherMap, WeatherAPI e Visual Crossing) exigem o cadastro de uma conta gratuita para gerar uma **API Key**, que deverá ser enviada nas requisições feitas pela aplicação Spring Boot. Caso o aluno não queira lidar com autenticação por chave, a **Open-Meteo** é uma alternativa gratuita que não exige API Key.
+2. 🌎 **WeatherAPI** — possui plano gratuito e disponibiliza informações meteorológicas por cidade  
+   [WeatherAPI](https://www.weatherapi.com/?utm_source=chatgpt.com)
 
-## Entrega
+3. 🌦️ **OpenWeather** — oferece acesso gratuito com limitações e disponibiliza diversos dados meteorológicos  
+   [OpenWeather](https://openweathermap.org/?utm_source=chatgpt.com)
 
-- Código-fonte do projeto Spring Boot.
-- Arquivo `README.md` explicando como executar a aplicação e, se aplicável, onde inserir a API Key.
-- Print ou exemplo de retorno do endpoint em formato JSON.
+4. ☁️ **Tomorrow.io** — oferece um plano gratuito para acesso aos dados meteorológicos  
+   [Tomorrow.io](https://www.tomorrow.io/?utm_source=chatgpt.com)
 
-## Critérios de avaliação
+> 💡 **Atenção:** dependendo da API escolhida, poderá ser necessário criar uma conta e obter uma **API Key**. Quando exigida, a chave deverá ser configurada no projeto, preferencialmente por meio do arquivo `application.properties` ou de variáveis de ambiente, evitando deixar a chave diretamente exposta no código-fonte.
 
-| Critério | Peso |
-|---|---|
-| Funcionamento correto do endpoint | 40% |
-| Organização do código (camadas) | 20% |
-| Tratamento de erros | 20% |
-| Clareza do README e documentação | 20% |
+## ⚙️ Requisitos técnicos
+
+A aplicação deverá:
+
+- ☕ Utilizar **Java** e **Spring Boot**.
+- 🌐 Implementar uma **API REST**.
+- 🔗 Consumir uma API externa de previsão do tempo.
+- 📍 Consultar os dados referentes a **Belo Horizonte - MG**.
+- 📦 Processar a resposta recebida da API externa.
+- 📤 Disponibilizar os dados por meio de um endpoint próprio.
+- 🔑 Configurar a **API Key**, quando necessária, de forma adequada.
+- 🧩 Organizar o projeto seguindo uma estrutura adequada de aplicação Spring Boot.
+- ⚠️ Implementar tratamento básico de erros para situações como falha na comunicação com a API externa ou dados indisponíveis.
+
+## 🚀 Endpoint esperado
+
+A aplicação deverá disponibilizar pelo menos um endpoint responsável por retornar as informações climáticas de Belo Horizonte.
+
+Por exemplo:
+
+```text
+GET /clima  
+GET /clima/belo-horizonte
+```
+
+A resposta deverá ser apresentada em **JSON**, contendo as principais informações meteorológicas obtidas pela API externa.
+
+## 📦 Organização sugerida
+
+O projeto poderá ser organizado utilizando componentes como:
+
+```text
+src/
+└── main/
+    └── java/
+        └── .../
+            ├── controller/
+            ├── service/
+            └── ...
+```
+
+A separação de responsabilidades entre **Controller**, **Service** e classes responsáveis pelos dados deverá ser considerada durante o desenvolvimento.
+
+## 🔐 Configuração da API Key
+
+Caso o serviço escolhido exija uma API Key, ela deverá ser configurada de maneira adequada no projeto.
+
+Uma possibilidade é utilizar o arquivo:
+
+```text
+application.properties
+```
+
+e definir a chave como uma propriedade da aplicação.
+
+> ⚠️ **Importante:** não publique sua API Key em repositórios públicos do GitHub. Utilize boas práticas para proteger credenciais e informações sensíveis.
+
+## 📋 Entrega
+
+O projeto deverá ser disponibilizado em um repositório do **GitHub** contendo:
+
+- 💻 Código-fonte completo da aplicação.
+- 📄 `README.md` com instruções para execução.
+- 🔑 Orientações para configuração da API Key, caso necessária.
+- 🌐 Documentação dos endpoints disponíveis.
+- 📦 Dependências utilizadas no projeto.
+- ▶️ Instruções para executar a aplicação localmente.
+
+## ⭐ Desafio extra
+
+Como atividade adicional, implemente funcionalidades como:
+
+- 🔎 Permitir consultar o clima de outras cidades.
+- 📅 Consultar previsão para os próximos dias.
+- 📊 Retornar informações meteorológicas organizadas em um objeto próprio da aplicação.
+- ❌ Implementar tratamento mais completo dos erros da API externa.
+
+---
+
+### 🎓 Resultado esperado
+
+Ao final da atividade, o aluno deverá ter desenvolvido uma **API REST com Spring Boot integrada a um serviço externo de clima**, praticando conceitos de **APIs REST, requisições HTTP, consumo de APIs externas, JSON, organização de projetos Spring Boot e configuração de credenciais**.
