@@ -1,6 +1,12 @@
 # 🌦️ Atividade 01 — API REST de Clima com Spring Boot
 
-## 📊 Valor: 2,5 pts
+## 📊 Valor: 2,5 pts (Em dupla)
+
+👥 A atividade deverá ser realizada **em dupla**, utilizando a metodologia de **Pair Programming**.
+
+💻 Os dois integrantes deverão participar ativamente do desenvolvimento da solução.
+
+📤 **Ambos os integrantes da dupla devem realizar a entrega no Canvas do link do repositório no GitHub.**
 
 ## 🎯 Objetivo
 
