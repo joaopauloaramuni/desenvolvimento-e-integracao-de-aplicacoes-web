@@ -30,7 +30,7 @@ A API deverá ser capaz de obter, sempre que disponibilizadas pelo serviço esco
 
 ## 🌐 APIs gratuitas sugeridas
 
-O aluno poderá escolher uma das seguintes APIs de clima:
+A dupla poderá escolher uma das seguintes APIs de clima:
 
 1. 🌤️ **Open-Meteo** — API gratuita e sem necessidade de API Key para diversos usos  
    [Open-Meteo](https://open-meteo.com/?utm_source=chatgpt.com)
@@ -135,4 +135,4 @@ Como atividade adicional, implemente funcionalidades como:
 
 ### 🎓 Resultado esperado
 
-Ao final da atividade, o aluno deverá ter desenvolvido uma **API REST com Spring Boot integrada a um serviço externo de clima**, praticando conceitos de **APIs REST, requisições HTTP, consumo de APIs externas, JSON, organização de projetos Spring Boot e configuração de credenciais**.
+Ao final da atividade, a dupla deverá ter desenvolvido uma **API REST com Spring Boot integrada a um serviço externo de clima**, praticando conceitos de **APIs REST, requisições HTTP, consumo de APIs externas, JSON, organização de projetos Spring Boot e configuração de credenciais**.
