@@ -22,7 +22,6 @@ A API deverá ser capaz de obter, sempre que disponibilizadas pelo serviço esco
 - 💧 Umidade do ar
 - 💨 Velocidade do vento
 - 🧭 Direção do vento
-- 🌧️ Condição climática
 - 🌡️ Temperatura máxima e mínima
 - ☁️ Descrição das condições do tempo
 - 📍 Localização da cidade
