@@ -1,4 +1,4 @@
-# 🌦️ Atividade 01 — API REST de Clima com Spring Boot
+# 🌦️ Atividade 01 - API REST de Clima com Spring Boot
 
 ## 📊 Valor: 2,5 pts (Em dupla)
 
