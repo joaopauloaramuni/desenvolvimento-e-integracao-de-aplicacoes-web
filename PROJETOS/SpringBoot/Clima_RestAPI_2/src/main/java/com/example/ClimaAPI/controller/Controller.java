@@ -9,7 +9,11 @@ import com.example.ClimaAPI.service.ClimaService;
 @RestController
 public class Controller {
 
-    ClimaService service = new ClimaService();
+    private final ClimaService service;
+
+    public Controller(ClimaService service) {
+        this.service = service;
+    }
 
     // http://localhost:8080/climaBH
     @GetMapping("/climaBH")
