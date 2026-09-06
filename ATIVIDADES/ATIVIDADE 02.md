@@ -317,14 +317,6 @@ A implementação deverá permitir que o usuário:
 
 Ao final da atividade, a dupla deverá ter desenvolvido uma **aplicação web completa utilizando Spring Boot e Thymeleaf**, contendo um sistema funcional de **login e cadastro de usuários**, com interface gráfica personalizada.
 
-A atividade deverá demonstrar conhecimentos de **Spring Boot, Thymeleaf, autenticação, formulários HTML, persistência de dados, segurança de senhas, Controllers, Services, integração entre frontend e backend e organização de aplicações web**.
+A atividade deverá demonstrar conhecimentos de **Spring Boot, Thymeleaf, autenticação, formulários HTML, segurança de senhas, Controllers, integração entre frontend e backend e organização de aplicações web**.
 
 Como funcionalidade adicional, a dupla poderá implementar um sistema de **recuperação de senha por email**, utilizando um serviço externo de envio de mensagens.
-
----
-
-### 🚀 Desafio
-
-> 🎨 **Crie uma experiência de login que você realmente usaria em uma aplicação profissional.**
->
-> Não se limite ao básico: explore **design, animações, vídeos, responsividade e criatividade**, mantendo uma boa organização e qualidade no código.
