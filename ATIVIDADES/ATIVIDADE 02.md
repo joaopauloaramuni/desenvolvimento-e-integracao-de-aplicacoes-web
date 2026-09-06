@@ -22,7 +22,6 @@ A atividade tem como objetivo praticar conceitos de:
 * 👤 Cadastro de usuários
 * 🌐 Endpoints HTTP
 * 🧩 Controllers
-* 🗄️ Persistência de dados
 * 🔑 Criptografia/segurança de senhas
 * 📧 Integração com APIs ou serviços externos de email
 
