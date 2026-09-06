@@ -285,34 +285,6 @@ O projeto deverá ser disponibilizado em um repositório do **GitHub** contendo:
 
 ---
 
-# ⭐ Ponto Extra
-
-A dupla poderá obter **ponto extra** implementando:
-
-### 📧 Recuperação de senha por email
-
-Endpoint:
-
-```text
-/recoverpassword
-```
-
-Utilizando uma API ou serviço de envio de email.
-
-Projeto de referência:
-
-[**SendEmail — GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/SendEmail)
-
-A implementação deverá permitir que o usuário:
-
-1. 🔑 Acesse a tela de recuperação.
-2. 📧 Informe seu email.
-3. 🔎 Tenha seu usuário localizado.
-4. ✉️ Receba um email com as instruções de recuperação.
-5. 🔐 Realize o processo de redefinição da senha.
-
----
-
 # 🏆 Resultado esperado
 
 Ao final da atividade, a dupla deverá ter desenvolvido uma **aplicação web completa utilizando Spring Boot e Thymeleaf**, contendo um sistema funcional de **login e cadastro de usuários**, com interface gráfica personalizada.
