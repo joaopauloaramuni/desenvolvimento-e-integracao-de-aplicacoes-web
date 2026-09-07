@@ -54,7 +54,7 @@ O arquivo contém dados incluindo:
 * 🏅 Quantidade de insígnias.
 * 🔗 Relações entre treinadores e Pokémon.
 
-Os dados deverão ser utilizados como fonte para a aplicação, podendo ser importados pelo projeto ou copiados para uma estrutura equivalente dentro de `src`.
+Os dados deverão ser utilizados como fonte para a aplicação, podendo ser importados pelo projeto ou copiados para uma estrutura equivalente dentro de `src\data`.
 
 > 💡 O arquivo auxiliar contém os dados necessários para a Pokédex e não exige a criação de um banco de dados para a atividade.
 
