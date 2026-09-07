@@ -14,6 +14,8 @@
  <img width="640" height="360" alt="pokedex" src="https://github.com/user-attachments/assets/45d31593-b935-4edd-8f47-92b4a685b096" />
 </div>
 
+---
+
 ## 🎯 Objetivo
 
 Desenvolva uma aplicação web utilizando **React + Vite**, criando uma **Pokédex interativa** para exibição, consulta e exploração de Pokémon.
