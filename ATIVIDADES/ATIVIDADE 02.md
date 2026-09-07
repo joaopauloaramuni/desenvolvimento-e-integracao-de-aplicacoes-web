@@ -33,11 +33,11 @@ Para o desenvolvimento da atividade, utilize como base de consulta os seguintes 
 
 ### 🔐 SecureLoginPUC
 
-[**SecureLoginPUC — GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/SecureLoginPUC)
+[**SecureLoginPUC - GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/SecureLoginPUC)
 
 ### 🔐 SecureLoginPUC_2
 
-[**SecureLoginPUC_2 — GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/SecureLoginPUC_2)
+[**SecureLoginPUC_2 - GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/SecureLoginPUC_2)
 
 > 💡 Os projetos deverão ser utilizados **como referência para estudo e compreensão da implementação**. A solução entregue pela dupla deverá possuir identidade visual e implementação próprias.
 
@@ -79,7 +79,7 @@ A dupla deverá utilizar a **criatividade para desenvolver a interface da tela d
 
 Se desejar, utilize as imagens e logos disponíveis no `README.md` do repositório da disciplina:
 
-[**Repositório da disciplina — GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web)
+[**Repositório da disciplina - GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web)
 
 > 💡 **Dica:** uma tela de login com vídeo de fundo, animações ou elementos visuais interativos pode deixar a aplicação mais interessante.
 
@@ -180,7 +180,7 @@ src/
 
 ---
 
-# 📧 Ponto Extra — Recuperação de senha
+# 📧 Ponto Extra - Recuperação de senha
 
 Como **ponto extra**, implemente uma funcionalidade de recuperação de senha através do envio de email.
 
@@ -196,7 +196,7 @@ A tela deverá permitir que o usuário informe seu email para solicitar a recupe
 
 Utilize como referência o projeto de envio de emails disponibilizado na disciplina:
 
-[**SendEmail — Projeto de exemplo**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/SendEmail)
+[**SendEmail - Projeto de exemplo**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/SendEmail)
 
 > ⭐ **Ponto extra:** a implementação da recuperação de senha com envio de email será considerada como funcionalidade adicional à atividade principal.
 
