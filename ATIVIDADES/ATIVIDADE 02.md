@@ -180,9 +180,9 @@ src/
 
 ---
 
-# 📧 Ponto Extra - Recuperação de senha
+# 📧 Desafios opcionais - Recuperação de senha
 
-Como **ponto extra**, implemente uma funcionalidade de recuperação de senha através do envio de email.
+Como **desafio**, implemente uma funcionalidade de recuperação de senha através do envio de email.
 
 A funcionalidade deverá estar disponível no endpoint:
 
@@ -198,7 +198,7 @@ Utilize como referência o projeto de envio de emails disponibilizado na discipl
 
 [**SendEmail - Projeto de exemplo**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/SendEmail)
 
-> ⭐ **Ponto extra:** a implementação da recuperação de senha com envio de email será considerada como funcionalidade adicional à atividade principal.
+> ⭐ **Obs:** a implementação da recuperação de senha com envio de email será considerada como funcionalidade adicional à atividade principal.
 
 ---
 
