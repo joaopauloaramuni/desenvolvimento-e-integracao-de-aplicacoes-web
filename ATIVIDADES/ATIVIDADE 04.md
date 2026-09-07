@@ -10,6 +10,12 @@
 
 ---
 
+<div align="center">
+     <img width="1200" height="675" alt="mongodb" src="https://github.com/user-attachments/assets/dc45c5f5-245b-4753-9b48-50ee93ac68f1" />
+</div>
+
+---
+
 ## 🎯 Objetivo
 
 Dar continuidade à **Atividade 03 - Pokédex com React + Vite**, substituindo o arquivo `pokedex-data.json` por uma **API REST desenvolvida com Spring Boot**, utilizando **MongoDB** como banco de dados.
