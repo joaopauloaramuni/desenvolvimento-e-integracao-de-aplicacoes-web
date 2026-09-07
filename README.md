@@ -19,6 +19,7 @@ Disciplina do curso de Engenharia de Software da PUC Minas
 - [Cronograma](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/CRONOGRAMA)
 - [Atalhos](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/ATALHOS)
 - [Templates](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/TEMPLATES)
+- [Atividades](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/ATIVIDADES)
 - [Laboratórios](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/LABORATORIOS)
 - [Plano de Ensino](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PLANO%20DE%20ENSINO)
 
