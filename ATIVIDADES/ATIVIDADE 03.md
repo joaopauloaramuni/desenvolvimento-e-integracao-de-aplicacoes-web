@@ -272,6 +272,21 @@ Caso a dupla utilize uma API externa, deverá documentar a fonte utilizada no `R
 
 ---
 
+## 🖼️ Exemplos de fontes de imagens
+
+Para encontrar imagens dos Pokémon para utilizar na construção da Pokédex, a dupla pode consultar os seguintes sites:
+
+* 🐾 [**PNG Wing**](https://www.pngwing.com/pt/search?q=pokemon) — Banco de imagens PNG com diversos Pokémon.
+* 🎮 [**StickPNG**](https://www.stickpng.com/pt-br/cat/jogos/pokemon) — Imagens de Pokémon com fundo transparente.
+* 🖼️ [**CleanPNG**](https://www.cleanpng.com/free/pokemon.html) — Banco de imagens PNG de Pokémon.
+* ✨ [**PNGEgg**](https://www.pngegg.com/en/search?q=pokemon) — Outra opção para encontrar imagens PNG de Pokémon.
+
+> 💡 **Dica:** dê preferência a imagens com **fundo transparente (PNG)** para facilitar a criação dos cards e deixar a interface da Pokédex mais bonita.
+
+> ⚠️ **Atenção:** verifique as condições de uso e os direitos das imagens antes de utilizá-las em projetos publicados ou distribuídos.
+
+---
+
 # ⚛️ Requisitos de React
 
 A aplicação deverá demonstrar a utilização dos principais conceitos trabalhados em React.
