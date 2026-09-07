@@ -36,9 +36,7 @@ A atividade tem como objetivo praticar conceitos de:
 
 Para auxiliar no desenvolvimento, será disponibilizado um arquivo:
 
-```text
-pokedex-data.json
-```
+📄 [**pokedex-data.json**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/blob/main/ATIVIDADES/ATIVIDADE%2003%20-%20JSON/data/pokedex-data.json)
 
 O arquivo contém dados incluindo:
 
