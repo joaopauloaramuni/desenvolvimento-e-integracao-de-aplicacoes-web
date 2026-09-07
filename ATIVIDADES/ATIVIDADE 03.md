@@ -385,11 +385,32 @@ Uma sugestão:
 ```text
 pokedex-react/
 ├── public/
+│
 ├── src/
 │   ├── assets/
+│   │   └── images/
+│   │       ├── pokemon-001.png
+│   │       ├── pokemon-002.png
+│   │       ├── pokemon-003.png
+│   │       └── ...
+│   │
 │   ├── components/
+│   │   ├── PokemonCard.jsx
+│   │   ├── PokemonList.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── PokemonDetails.jsx
+│   │   └── ...
+│   │
+│   ├── css/
+│   │   ├── App.css
+│   │   ├── PokemonCard.css
+│   │   ├── PokemonList.css
+│   │   ├── SearchBar.css
+│   │   └── ...
+│   │
 │   ├── data/
 │   │   └── pokedex-data.json
+│   │
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
@@ -398,6 +419,8 @@ pokedex-react/
 ├── vite.config.js
 └── README.md
 ```
+
+> 💡 **Obs:** a pasta `assets/images/` pode ser utilizada para armazenar as imagens dos Pokémon, enquanto a pasta `css/` deve concentrar os arquivos de estilização dos componentes e da aplicação.
 
 > 💡 A estrutura não precisa ser exatamente essa. A dupla poderá organizar o projeto de acordo com a solução desenvolvida.
 
