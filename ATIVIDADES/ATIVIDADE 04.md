@@ -32,7 +32,7 @@ Spring Boot REST API
 
 Para esta atividade, será disponibilizado o arquivo:
 
-📄 **`Script_Pokedex.sql`**
+📄 [**Script_Pokedex.sql**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/blob/main/ATIVIDADES/ATIVIDADE%2004%20-%20SQL%20vs%20NoSQL/Script_Pokedex.sql)
 
 O script contém os dados utilizados na Pokédex, incluindo:
 
