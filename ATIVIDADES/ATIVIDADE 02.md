@@ -10,8 +10,10 @@
 
 ---
 
+## 🖼️ Exemplo de Tela de Login:
+
 <div align="center">
- <img width="640" height="360" alt="Login_PUC" src="https://github.com/user-attachments/assets/ef68f0c1-ff7e-4a99-9a5c-fcf6bb47d142" />
+ <img width="1680" height="841" alt="login_v2" src="https://github.com/user-attachments/assets/52a875e5-4c3f-4430-aa76-b39e51659cf5" />
 </div>
 
 ---
