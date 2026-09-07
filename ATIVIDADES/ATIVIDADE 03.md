@@ -1,4 +1,4 @@
-# 🔴 Atividade 03 - Pokédex com React + Vite
+# 🎮 Atividade 03 - Pokédex com React + Vite
 
 ## 📊 Valor: 2,5 pts (Em dupla)
 
