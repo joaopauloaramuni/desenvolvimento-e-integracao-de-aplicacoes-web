@@ -180,7 +180,7 @@ src/
 
 ---
 
-# 📧 Desafios opcionais - Recuperação de senha
+# 🏆 Desafios opcionais - Recuperação de senha
 
 Como **desafio**, implemente uma funcionalidade de recuperação de senha através do envio de email.
 
