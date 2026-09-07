@@ -31,16 +31,16 @@ A API deverá ser capaz de obter, sempre que disponibilizadas pelo serviço esco
 
 A dupla poderá escolher uma das seguintes APIs de clima:
 
-1. 🌤️ **Open-Meteo** — API gratuita e sem necessidade de API Key para diversos usos  
+1. 🌤️ **Open-Meteo** - API gratuita e sem necessidade de API Key para diversos usos  
    [Open-Meteo](https://open-meteo.com/?utm_source=chatgpt.com)
 
-2. 🌎 **WeatherAPI** — possui plano gratuito e disponibiliza informações meteorológicas por cidade  
+2. 🌎 **WeatherAPI** - possui plano gratuito e disponibiliza informações meteorológicas por cidade  
    [WeatherAPI](https://www.weatherapi.com/?utm_source=chatgpt.com)
 
-3. 🌦️ **OpenWeather** — oferece acesso gratuito com limitações e disponibiliza diversos dados meteorológicos  
+3. 🌦️ **OpenWeather** - oferece acesso gratuito com limitações e disponibiliza diversos dados meteorológicos  
    [OpenWeather](https://openweathermap.org/?utm_source=chatgpt.com)
 
-4. ☁️ **Tomorrow.io** — oferece um plano gratuito para acesso aos dados meteorológicos  
+4. ☁️ **Tomorrow.io** - oferece um plano gratuito para acesso aos dados meteorológicos  
    [Tomorrow.io](https://www.tomorrow.io/?utm_source=chatgpt.com)
 
 > 💡 **Atenção:** dependendo da API escolhida, poderá ser necessário criar uma conta e obter uma **API Key**. Quando exigida, a chave deverá ser configurada no projeto, preferencialmente por meio do arquivo `application.properties` ou de variáveis de ambiente, evitando deixar a chave diretamente exposta no código-fonte.
@@ -49,7 +49,7 @@ A dupla poderá escolher uma das seguintes APIs de clima:
 
 Para auxiliar na realização da atividade, consulte o projeto de exemplo desenvolvido com **Spring Boot**, que utiliza a **API do Climatempo** para obter informações meteorológicas e disponibiliza os dados por meio de uma API REST.
 
-👉 [**Clima_RestAPI — GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/Clima_RestAPI)
+👉 [**Clima_RestAPI - GitHub**](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/Clima_RestAPI)
 
 > 💡 Utilize o projeto apenas como **referência** para compreender a integração entre uma aplicação Spring Boot e uma API externa de clima.
 
