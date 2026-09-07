@@ -40,7 +40,7 @@ Para auxiliar no desenvolvimento, será disponibilizado um arquivo:
 pokedex-data.json
 ```
 
-O arquivo contém dados derivados do banco de dados utilizado na disciplina, incluindo:
+O arquivo contém dados incluindo:
 
 * 🐾 Pokémon.
 * ❤️ HP.
