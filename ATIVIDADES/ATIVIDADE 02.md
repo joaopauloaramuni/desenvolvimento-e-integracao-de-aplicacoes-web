@@ -13,7 +13,7 @@
 ## 🖼️ Exemplo de Tela de Login:
 
 <div align="center">
- <img width="1680" height="841" alt="login_v2" src="https://github.com/user-attachments/assets/52a875e5-4c3f-4430-aa76-b39e51659cf5" />
+ <img width="640" height="360" alt="login_v2" src="https://github.com/user-attachments/assets/52a875e5-4c3f-4430-aa76-b39e51659cf5" />
 </div>
 
 ---
