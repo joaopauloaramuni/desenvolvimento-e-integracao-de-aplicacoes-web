@@ -11,7 +11,7 @@
 ---
 
 <div align="center">
-     <img width="640" height="360" alt="mongodb" src="https://github.com/user-attachments/assets/dc45c5f5-245b-4753-9b48-50ee93ac68f1" />
+ <img width="640" height="360" alt="mongodb" src="https://github.com/user-attachments/assets/dc45c5f5-245b-4753-9b48-50ee93ac68f1" />
 </div>
 
 ---
