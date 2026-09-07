@@ -208,7 +208,7 @@ A aplicação deverá:
 
 ---
 
-# ⭐ Desafio opcional
+# 🏆 Desafio opcional
 
 Como funcionalidade adicional, a dupla poderá implementar:
 
