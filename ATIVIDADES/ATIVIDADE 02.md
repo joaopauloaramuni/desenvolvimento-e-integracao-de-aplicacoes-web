@@ -8,6 +8,14 @@
 
 📤 **Ambos os integrantes da dupla devem realizar a entrega no Canvas do link do repositório no GitHub.**
 
+---
+
+<div align="center">
+ <img width="640" height="360" alt="Login_PUC" src="https://github.com/user-attachments/assets/ef68f0c1-ff7e-4a99-9a5c-fcf6bb47d142" />
+</div>
+
+---
+
 ## 🎯 Objetivo
 
 Desenvolva uma aplicação web utilizando **Spring Boot + Thymeleaf**, implementando um sistema completo de **autenticação e cadastro de usuários**.
