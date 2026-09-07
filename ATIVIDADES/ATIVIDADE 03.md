@@ -287,6 +287,50 @@ Para encontrar imagens dos Pokémon para utilizar na construção da Pokédex, a
 
 ---
 
+## 🌐 Exemplo de API para imagens
+
+Outra opção é utilizar a **PokéAPI**, uma API pública que disponibiliza informações e imagens dos Pokémon.
+
+Por exemplo, para consultar o **Pikachu**:
+
+```text
+https://pokeapi.co/api/v2/pokemon/pikachu
+```
+
+A resposta da API contém, entre outras informações, URLs para imagens do Pokémon.
+
+Um exemplo simplificado:
+
+```json
+{
+  "name": "pikachu",
+  "sprites": {
+    "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+  }
+}
+```
+
+A URL presente em `sprites.front_default` pode ser utilizada diretamente em um elemento `<img>`:
+
+```jsx
+<img
+  src={pokemon.sprites.front_default}
+  alt={pokemon.name}
+/>
+```
+
+Também é possível consultar um Pokémon pelo seu **ID**:
+
+```text
+https://pokeapi.co/api/v2/pokemon/25
+```
+
+Nesse caso, `25` corresponde ao Pikachu.
+
+> 💡 **Importante:** a utilização da PokéAPI é **opcional**. A Pokédex deverá continuar funcionando com os dados fornecidos no arquivo `pokedex-data.json`, mesmo que a dupla não utilize nenhuma API externa.
+
+---
+
 # ⚛️ Requisitos de React
 
 A aplicação deverá demonstrar a utilização dos principais conceitos trabalhados em React.
