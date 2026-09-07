@@ -1,4 +1,4 @@
-# 🔴 Atividade 04 - Pokédex com Spring Boot + MongoDB
+# 💾 Atividade 04 - Pokédex com Spring Boot + MongoDB
 
 ## 📊 Valor: 2,5 pts (Em dupla)
 
