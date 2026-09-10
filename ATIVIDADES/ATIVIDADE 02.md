@@ -136,8 +136,6 @@ O sistema deverá:
 * 🔒 Armazenar senhas de forma segura.
 * 🚪 Permitir que o usuário encerre sua sessão.
 
-> ⚠️ **Importante:** senhas de usuários não devem ser armazenadas em texto puro no banco de dados. Utilize mecanismos adequados de criptografia/hash disponibilizados pelo ecossistema Spring.
-
 ---
 
 # 🌐 Endpoints obrigatórios
