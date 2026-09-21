@@ -129,6 +129,7 @@ recaptcha.secret-key=6LeEwsItAAAAAKbWz-EEfZn1BxfoanhCeMPTvB_e
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
+
 <!-- Dependência do Spring Boot Test -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
