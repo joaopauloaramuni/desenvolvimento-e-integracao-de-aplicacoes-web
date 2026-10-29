@@ -1,0 +1,77 @@
+/* =========================================================
+   BLOCO DE CÓDIGO
+   ========================================================= */
+
+.code-block {
+  overflow: hidden;
+
+  background: var(--brand-deep);
+
+  border-radius: var(--radius);
+}
+
+.code-block-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.6rem 0.75rem 0.6rem 1.1rem;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.8rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-block-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  padding: 0.35rem 0.7rem;
+
+  color: #ffffff;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 0;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.code-block-copy:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.code-block-copy:focus-visible {
+  outline: 3px solid var(--brand-soft);
+  outline-offset: 2px;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 1.1rem 1.25rem 1.25rem;
+
+  /* Códigos longos rolam dentro do bloco */
+  max-height: 32rem;
+  overflow: auto;
+
+  color: #e6f1f8;
+
+  font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-block-copy {
+    transition: none;
+  }
+}

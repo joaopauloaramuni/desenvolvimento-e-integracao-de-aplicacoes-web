@@ -1,0 +1,68 @@
+/* =========================================================
+   ESCOLHA DO COMPONENTE
+   ========================================================= */
+
+.component-picker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.component-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.6rem 1.1rem;
+
+  color: #334155;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.component-pill svg {
+  width: 18px;
+  height: 18px;
+
+  color: var(--brand);
+}
+
+.component-pill:hover {
+  border-color: var(--brand-soft);
+}
+
+.component-pill.is-active {
+  color: #ffffff;
+
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.component-pill.is-active svg {
+  color: #ffffff;
+}
+
+.component-pill:focus-visible {
+  outline: 3px solid var(--brand-soft);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .component-pill {
+    transition: none;
+  }
+}
