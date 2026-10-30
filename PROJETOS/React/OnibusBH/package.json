@@ -1,0 +1,31 @@
+{
+  "name": "onibus-bh",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "predev": "node --env-file-if-exists=.env.local scripts/dados.mjs --se-faltar",
+    "dev": "vite",
+    "prebuild": "node --env-file-if-exists=.env.local scripts/dados.mjs --se-faltar",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "dados": "node --env-file-if-exists=.env.local scripts/dados.mjs",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "dependencies": {
+    "maplibre-gl": "^6.11.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "playwright": "^1.56.0",
+    "vite": "^8.3.0",
+    "yauzl": "^3.2.0"
+  }
+}

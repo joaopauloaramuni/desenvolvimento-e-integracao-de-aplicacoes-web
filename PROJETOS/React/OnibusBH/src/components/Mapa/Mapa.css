@@ -1,0 +1,98 @@
+/* =========================================================
+   MAPA (MapLibre)
+   ========================================================= */
+
+.mapa {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+
+  background: #e8eef3;
+}
+
+.mapa .maplibregl-ctrl-attrib {
+  font-family: inherit;
+  font-size: 0.7rem;
+}
+
+/* Popup dos pontos e dos ônibus */
+
+.mapa .maplibregl-popup-content {
+  padding: 0.65rem 0.8rem;
+
+  border-radius: 10px;
+
+  box-shadow: 0 8px 24px -8px rgba(0, 51, 79, 0.35);
+}
+
+.mapa-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+.mapa-popup strong {
+  color: var(--brand-deep);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.mapa-popup span {
+  color: var(--muted);
+
+  font-size: 0.75rem;
+}
+
+/* Marcador da PUC Minas */
+
+.mapa-campus {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding: 0.3rem 0.6rem 0.3rem 0.35rem;
+
+  color: #ffffff;
+
+  background: var(--brand);
+
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+
+  box-shadow: 0 6px 16px -6px rgba(0, 51, 79, 0.6);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mapa-campus img {
+  width: 34px;
+  height: auto;
+}
+
+/* Pino embaixo do marcador */
+
+.mapa-campus::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+
+  width: 10px;
+  height: 10px;
+
+  background: var(--brand);
+
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+  transform: translateX(-50%) rotate(45deg);
+}

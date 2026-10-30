@@ -1,0 +1,278 @@
+/* =========================================================
+   PÁGINA DA LINHA
+   ========================================================= */
+
+.linha-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  margin-bottom: 1.5rem;
+  padding: 0.45rem 0.8rem 0.45rem 0.6rem;
+
+  color: var(--brand);
+
+  background: var(--surface-muted);
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.linha-voltar:hover {
+  background: #e2ecf3;
+}
+
+.linha-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.linha-cabecalho h1 {
+  color: var(--brand-deep);
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.linha-cabecalho p {
+  margin-top: 0.35rem;
+
+  color: var(--muted);
+
+  font-size: 0.88rem;
+}
+
+.linha-sentidos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-top: 1.5rem;
+}
+
+.linha-sentidos button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  padding: 0.6rem 1rem;
+
+  color: var(--brand);
+
+  background: #ffffff;
+
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.linha-sentidos button:hover {
+  border-color: var(--brand-soft);
+}
+
+.linha-sentidos button.ativo {
+  color: #ffffff;
+
+  background: var(--brand);
+
+  border-color: var(--brand);
+}
+
+.linha-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr);
+
+  height: 640px;
+  margin-top: 1.25rem;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.linha-mapa {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+
+  border-right: 1px solid var(--border);
+}
+
+.linha-mapa > :last-child {
+  flex: 1;
+}
+
+.linha-lateral {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+}
+
+.linha-abas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.linha-abas button {
+  padding: 0.85rem 0.5rem;
+
+  color: var(--muted);
+
+  background: none;
+
+  border: none;
+  border-bottom: 3px solid transparent;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.linha-abas button.ativo {
+  color: var(--brand);
+
+  border-bottom-color: var(--brand);
+}
+
+.linha button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Lista de pontos: é uma sequência de verdade (ordem do trajeto) */
+
+.linha-pontos {
+  flex: 1;
+
+  min-height: 0;
+  padding: 0.5rem 0;
+
+  overflow-y: auto;
+
+  list-style: none;
+}
+
+.linha-pontos button {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem;
+
+  width: 100%;
+
+  padding: 0.5rem 1rem;
+
+  color: inherit;
+
+  background: none;
+
+  border: none;
+
+  font-size: 0.82rem;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+/* Linha vertical ligando os pontos, como num mapa de linha */
+.linha-pontos button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(1rem + 8px);
+
+  width: 2px;
+
+  background: var(--brand-mid);
+}
+
+.linha-pontos li:first-child button::before {
+  top: 50%;
+}
+
+.linha-pontos li:last-child button::before {
+  bottom: 50%;
+}
+
+.linha-pontos-marca {
+  position: relative;
+  z-index: 1;
+
+  width: 12px;
+  height: 12px;
+  margin-left: 3px;
+
+  background: #ffffff;
+
+  border: 2.5px solid var(--brand);
+  border-radius: 50%;
+}
+
+.linha-pontos button:hover {
+  background: var(--surface-muted);
+}
+
+.linha-pontos button.ativo {
+  background: #fff6e0;
+}
+
+.linha-pontos button.ativo .linha-pontos-marca {
+  background: var(--letreiro-led);
+
+  border-color: var(--brand-deep);
+}
+
+.linha-pontos-nome {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.linha-pontos small {
+  color: var(--muted);
+
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 860px) {
+  .linha-cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .linha-grade {
+    grid-template-columns: 1fr;
+    grid-template-rows: 420px 560px;
+
+    height: auto;
+  }
+
+  .linha-mapa {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
