@@ -1,0 +1,166 @@
+/* =========================================================
+   BUSCA DE LINHAS
+   ========================================================= */
+
+.busca h2,
+.campus h2 {
+  margin-bottom: 0.9rem;
+
+  color: var(--brand-deep);
+
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.busca-campo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0 0.5rem 0 1.1rem;
+
+  background: var(--input-background);
+
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+
+  transition: border-color 0.2s ease;
+}
+
+.busca-campo:focus-within {
+  border-color: var(--brand);
+}
+
+.busca-campo > svg {
+  flex-shrink: 0;
+
+  color: var(--brand);
+
+  font-size: 1.25rem;
+}
+
+.busca-campo input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 1rem 0;
+
+  color: var(--foreground);
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  font-size: 1.05rem;
+}
+
+.busca-campo input::placeholder {
+  color: var(--placeholder);
+}
+
+/* Some o "x" nativo do input type=search: usamos o nosso */
+.busca-campo input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.busca-limpar {
+  display: inline-flex;
+
+  padding: 0.5rem;
+
+  color: var(--muted);
+
+  background: none;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 1.1rem;
+
+  cursor: pointer;
+}
+
+.busca-limpar:hover {
+  color: var(--brand);
+
+  background: var(--surface-muted);
+}
+
+.busca-dica,
+.busca-vazio,
+.busca-mais {
+  margin-top: 0.75rem;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.busca-resultados ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.5rem;
+
+  margin-top: 0.9rem;
+
+  list-style: none;
+}
+
+.busca-resultados button {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+
+  width: 100%;
+
+  padding: 0.7rem;
+
+  color: inherit;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.busca-resultados button:hover {
+  background: var(--surface-muted);
+
+  border-color: var(--brand-soft);
+}
+
+.busca-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  min-width: 0;
+}
+
+.busca-texto strong {
+  overflow: hidden;
+
+  color: var(--brand-deep);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.busca-texto small {
+  overflow: hidden;
+
+  color: var(--muted);
+
+  font-size: 0.75rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
