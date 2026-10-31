@@ -324,7 +324,7 @@ export default function Mapa({ tracado, paradas, paradaSelecionada, onibus, camp
 
   // Trocou de linha/sentido/campus → reenquadra
   useEffect(() => {
-    if (mapa.current?.loaded()) enquadrarDados(true);
+    if (mapa.current) enquadrarDados(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enquadrar]);
 
