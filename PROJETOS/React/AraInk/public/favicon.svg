@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <mask id="a">
+      <rect width="64" height="64" fill="#fff"/>
+      <path d="M32 25 L24.5 48 M32 25 L39.5 48 M27.4 40 H36.6" fill="none" stroke="#000" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <path d="M32 3 C32 3 11 27 11 40 a21 21 0 0 0 42 0 C53 27 32 3 32 3 Z" fill="#5b37a6" mask="url(#a)"/>
+  <style>@media (prefers-color-scheme: dark) { path { fill: #b49af0; } }</style>
+</svg>

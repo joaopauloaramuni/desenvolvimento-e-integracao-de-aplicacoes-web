@@ -1,0 +1,66 @@
+/* =========================================================
+   BOTÃO DE TEMA (LIGHT / DARK)
+   ========================================================= */
+
+.theme-toggle {
+  position: absolute;
+  z-index: 2;
+
+  top: 1rem;
+  right: 1rem;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  font-size: 1.1rem;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+
+  transform: rotate(-15deg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .theme-toggle {
+    top: 0.75rem;
+    right: 0.75rem;
+
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+
+  .theme-toggle:hover {
+    transform: none;
+  }
+}

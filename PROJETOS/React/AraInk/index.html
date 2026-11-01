@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="AraInk: gerador de tatuagens inéditas com IA, feito com React e Vite, com GPT Image (OpenAI) ou Google Gemini." />
+    <title>AraInk - Gerador de tatuagens com IA</title>
+
+    <!-- Aplica o tema (light/dark) ANTES do React carregar, para não piscar.
+         A chave "araink:theme" é a mesma do src/config/appConfig.js -->
+    <script>
+      (function () {
+        var tema = null;
+        try {
+          tema = localStorage.getItem("araink:theme");
+        } catch (e) {}
+        if (tema !== "light" && tema !== "dark") {
+          tema = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = tema;
+      })();
+    </script>
+
+    <!-- Fontes: Montserrat (texto) e Pirata One (letreiro gótico do AraInk) - Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

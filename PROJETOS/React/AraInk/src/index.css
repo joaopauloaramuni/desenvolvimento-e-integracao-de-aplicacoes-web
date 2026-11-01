@@ -1,0 +1,605 @@
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   VARIÁVEIS: TEMA CLARO
+   Paleta do AraInk: o roxo da tinta de stencil + papel de flash.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  --font-body: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Pirata One", "UnifrakturMaguntia", Georgia, serif;
+
+  --brand: #5b37a6;
+  --brand-deep: #2a1850;
+  --brand-soft: #b9a3ee;
+  --brand-tint: #f0eafc;
+
+  /* Título "AraInk" */
+  --title: #2a1850;
+
+  /* Botão principal */
+  --primary: #5b37a6;
+  --primary-hover: #452a82;
+  --on-primary: #ffffff;
+
+  /* Faixa do topo */
+  --hero-from: #1f1240;
+  --hero-to: #5b37a6;
+
+  --background: #efedf3;
+  --foreground: #1d1826;
+  --muted: #655f72;
+  --border: #e2dde9;
+  --border-strong: #cbc3d8;
+  --surface: #ffffff;
+  --surface-muted: #f7f5fa;
+  --input-background: #ffffff;
+  --placeholder: #9a93a8;
+
+  /* Papel onde os desenhos aparecem (claro nos dois temas, como uma folha de flash) */
+  --paper: #ffffff;
+  --paper-edge: #ebe7f1;
+  --paper-muted: #6a6478;
+  --ink: #1b1622;
+  --stencil: #7b55c9;
+
+  /* Brilhos do fundo */
+  --glow-1: rgba(91, 55, 166, 0.1);
+  --glow-2: rgba(200, 50, 43, 0.05);
+
+  --shadow-card:
+    0 2px 4px rgba(42, 24, 80, 0.06),
+    0 24px 56px -12px rgba(42, 24, 80, 0.22);
+  --focus-ring: 0 0 0 4px rgba(91, 55, 166, 0.16);
+
+  /* Mensagens */
+  --error-background: #fef2f2;
+  --error-border: #fecaca;
+  --error-text: #b42318;
+
+  --success-background: #e8f5e9;
+  --success-border: #a5d6a7;
+  --success-text: #2e7d32;
+
+  --warning-background: #fff8e6;
+  --warning-border: #f4d58d;
+  --warning-text: #7a4b00;
+}
+
+/* ==========================================================================
+   VARIÁVEIS: TEMA ESCURO
+   O <html data-theme="dark"> é aplicado pelo index.html e pelo useTheme.
+   ========================================================================== */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --brand: #b9a0f2;
+  --brand-deep: #1a1030;
+  --brand-soft: #6e55a8;
+  --brand-tint: rgba(185, 160, 242, 0.12);
+
+  --title: #ece4ff;
+
+  --primary: #a283ea;
+  --primary-hover: #b9a0f2;
+  --on-primary: #160d28;
+
+  --hero-from: #0f0820;
+  --hero-to: #3d2475;
+
+  --background: #110d18;
+  --foreground: #ece8f3;
+  --muted: #a39cb2;
+  --border: #2b2437;
+  --border-strong: #3d3450;
+  --surface: #19141f;
+  --surface-muted: #1f1928;
+  --input-background: #15111b;
+  --placeholder: #6d6680;
+
+  --paper: #f7f5fa;
+  --paper-edge: #dcd6e5;
+
+  --glow-1: rgba(122, 85, 201, 0.16);
+  --glow-2: rgba(200, 50, 43, 0.06);
+
+  --shadow-card:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 24px 56px -12px rgba(0, 0, 0, 0.65);
+  --focus-ring: 0 0 0 4px rgba(185, 160, 242, 0.22);
+
+  --error-background: rgba(239, 68, 68, 0.1);
+  --error-border: rgba(239, 68, 68, 0.35);
+  --error-text: #fca5a5;
+
+  --success-background: rgba(34, 197, 94, 0.1);
+  --success-border: rgba(34, 197, 94, 0.35);
+  --success-text: #86efac;
+
+  --warning-background: rgba(245, 158, 11, 0.1);
+  --warning-border: rgba(245, 158, 11, 0.35);
+  --warning-text: #fcd34d;
+}
+
+/* ==========================================================================
+   BODY
+   ========================================================================== */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 2rem;
+
+  font-family: var(--font-body);
+
+  color: var(--foreground);
+
+  background:
+    radial-gradient(circle at 8% 6%, var(--glow-1), transparent 32%),
+    radial-gradient(circle at 92% 94%, var(--glow-2), transparent 30%),
+    var(--background);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--brand);
+}
+
+/* Esconde visualmente, mas mantém para leitores de tela */
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   ESTÚDIO (FORMULÁRIO + BANCADA)
+   ========================================================================== */
+
+.studio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 2.5rem;
+
+  scroll-margin-top: 1.5rem;
+}
+
+.studio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.studio-stage {
+  position: sticky;
+  top: 1.5rem;
+
+  scroll-margin-top: 1rem;
+}
+
+/* ==========================================================================
+   TÍTULOS DE SEÇÃO E DE CAMPO
+   ========================================================================== */
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  margin-bottom: 1.25rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  color: var(--foreground);
+
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.section-count {
+  padding: 0.1rem 0.55rem;
+
+  color: var(--brand);
+
+  background: var(--brand-tint);
+
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.section-hint {
+  max-width: 64ch;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.field-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.field-title {
+  color: var(--foreground);
+
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.field-hint {
+  margin-top: -0.35rem;
+
+  color: var(--muted);
+
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   CHIPS (filtros, ideias prontas, ajustes)
+   ========================================================================== */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 30px;
+
+  padding: 0.3rem 0.75rem;
+
+  color: var(--muted);
+
+  background: transparent;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.chip:hover:not(:disabled) {
+  color: var(--brand);
+
+  border-color: var(--brand-soft);
+}
+
+.chip[aria-pressed="true"] {
+  color: var(--on-primary);
+
+  background: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.chip-soft {
+  color: var(--foreground);
+
+  background: var(--surface-muted);
+}
+
+.chip:disabled {
+  opacity: 0.5;
+
+  cursor: default;
+}
+
+.chip:focus-visible {
+  outline: none;
+
+  box-shadow: var(--focus-ring);
+
+  border-color: var(--brand);
+}
+
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+
+  height: 40px;
+
+  padding: 0 1rem;
+
+  color: var(--brand);
+
+  background: transparent;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.btn svg {
+  flex-shrink: 0;
+
+  font-size: 1.05em;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--surface-muted);
+
+  border-color: var(--brand);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+
+  cursor: default;
+}
+
+.btn:focus-visible,
+.btn-icon:focus-visible {
+  outline: none;
+
+  box-shadow: var(--focus-ring);
+
+  border-color: var(--brand);
+}
+
+.btn-primary {
+  color: var(--on-primary);
+
+  background: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+
+  border-color: var(--primary-hover);
+}
+
+.btn-sm {
+  height: 34px;
+
+  padding: 0 0.75rem;
+
+  font-size: 0.78rem;
+}
+
+.btn-lg {
+  height: 52px;
+
+  padding: 0 1.4rem;
+
+  border-radius: 12px;
+
+  font-size: 0.98rem;
+}
+
+.btn.is-copied,
+.btn.is-copied:hover:not(:disabled) {
+  color: var(--success-text);
+
+  background: var(--success-background);
+
+  border-color: var(--success-border);
+}
+
+/* Botão só com ícone */
+
+.btn-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  color: var(--muted);
+
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-size: 1.05rem;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-icon:hover:not(:disabled) {
+  color: var(--brand);
+
+  background: var(--surface-muted);
+
+  border-color: var(--border);
+}
+
+.btn-icon:disabled {
+  opacity: 0.45;
+
+  cursor: default;
+}
+
+.btn-icon.is-saved:disabled {
+  opacity: 1;
+}
+
+.btn-icon.danger:hover:not(:disabled) {
+  color: var(--error-text);
+
+  background: var(--error-background);
+
+  border-color: var(--error-border);
+}
+
+/* ==========================================================================
+   MENSAGENS
+   ========================================================================== */
+
+.form-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+
+  padding: 0.75rem 1rem;
+
+  border: 1px solid;
+  border-radius: 10px;
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.form-message svg {
+  flex-shrink: 0;
+
+  margin-top: 0.2rem;
+}
+
+.form-message.error {
+  color: var(--error-text);
+
+  background: var(--error-background);
+
+  border-color: var(--error-border);
+}
+
+.form-message.warning {
+  color: var(--warning-text);
+
+  background: var(--warning-background);
+
+  border-color: var(--warning-border);
+}
+
+/* ==========================================================================
+   ANIMAÇÕES
+   ========================================================================== */
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .studio {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .studio-stage {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+  .spin {
+    animation-duration: 2.5s;
+  }
+}

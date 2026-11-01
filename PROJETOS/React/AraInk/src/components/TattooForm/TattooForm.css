@@ -1,0 +1,141 @@
+/* =========================================================
+   FORMULÁRIO DO ESTÚDIO
+   ========================================================= */
+
+.tattoo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+}
+
+/* Ideia */
+
+.idea-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.idea-input {
+  width: 100%;
+  min-height: 92px;
+
+  padding: 0.85rem 1rem;
+
+  color: var(--foreground);
+
+  background: var(--input-background);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  font-size: 0.98rem;
+  line-height: 1.5;
+
+  resize: vertical;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.idea-input::placeholder {
+  color: var(--placeholder);
+}
+
+.idea-input:focus {
+  outline: none;
+
+  border-color: var(--brand);
+
+  box-shadow: var(--focus-ring);
+}
+
+.idea-tip {
+  margin-top: 0;
+}
+
+.idea-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.field-counter {
+  color: var(--muted);
+
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pares lado a lado (traço + acabamento, detalhe + variações) */
+
+.form-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.form-pair-end {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+/* Variações (- 2 +) */
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  height: 46px;
+
+  padding: 0 0.35rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.stepper output {
+  min-width: 2ch;
+
+  color: var(--foreground);
+
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+
+  text-align: center;
+}
+
+/* Gerar */
+
+.form-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.form-actions .btn-primary {
+  flex: 1;
+}
+
+.form-footnote {
+  margin-top: -1.2rem;
+
+  color: var(--muted);
+
+  font-size: 0.78rem;
+}
+
+.form-message code {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .form-pair,
+  .form-pair-end {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

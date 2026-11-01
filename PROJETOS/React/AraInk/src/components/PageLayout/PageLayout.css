@@ -1,0 +1,276 @@
+/* =========================================================
+   CONTAINER PRINCIPAL
+   ========================================================= */
+
+.page-container {
+  position: relative;
+
+  width: min(1180px, 94vw);
+
+  /* clip (e não hidden): corta os cantos sem quebrar o position: sticky da bancada */
+  overflow: clip;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  box-shadow: var(--shadow-card);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* =========================================================
+   FAIXA ROXA (LOGO PUC + LOGO ARAINK)
+   A cor vem da tinta de transferência do stencil.
+   ========================================================= */
+
+.page-hero {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+
+  width: 100%;
+  height: 220px;
+
+  padding: 2rem;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background: linear-gradient(145deg, var(--hero-from), var(--hero-to));
+}
+
+/* Estrelinhas de flash espalhadas pela faixa */
+
+.page-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.4' stroke-linejoin='round'%3E%3Cpath d='M24 14 Q24 24 34 24 Q24 24 24 34 Q24 24 14 24 Q24 24 24 14Z'/%3E%3Cpath d='M86 70 Q86 76 92 76 Q86 76 86 82 Q86 76 80 76 Q86 76 86 70Z'/%3E%3C/g%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='70' cy='26' r='1.6'/%3E%3Ccircle cx='38' cy='92' r='1.6'/%3E%3Ccircle cx='104' cy='108' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 120px 120px;
+
+  opacity: 0.14;
+}
+
+/* Contorno tracejado, como o decalque do stencil na pele */
+
+.page-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  right: -120px;
+  bottom: -230px;
+
+  border: 2px dashed rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+}
+
+.page-hero-puc {
+  position: relative;
+  z-index: 1;
+
+  width: 170px;
+  max-width: 40%;
+  height: auto;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.page-hero-puc:hover {
+  transform: scale(1.03);
+}
+
+.page-hero-divider {
+  position: relative;
+  z-index: 1;
+
+  width: 1px;
+  height: 110px;
+
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.page-hero-brand {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.page-hero-icon {
+  width: 88px;
+  height: 88px;
+
+  transition: transform 0.3s ease;
+}
+
+.page-hero-brand:hover .page-hero-icon {
+  transform: scale(1.06) rotate(-6deg);
+}
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.page-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2.75rem 4rem 0;
+
+  text-align: center;
+}
+
+.page-label {
+  margin-bottom: 0.25rem;
+
+  color: var(--brand);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.page-title {
+  color: var(--title);
+
+  font-family: var(--font-display);
+  font-size: clamp(3.75rem, 9vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.page-description {
+  max-width: 620px;
+
+  margin-top: 1rem;
+
+  color: var(--muted);
+
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+/* Linha pontilhada de stencil */
+
+.page-divider {
+  width: 140px;
+  height: 0;
+
+  margin-top: 1.5rem;
+
+  border-top: 3px dotted var(--brand);
+}
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+
+  padding: 2.5rem 3rem 3rem;
+}
+
+.page-footer {
+  padding: 1.25rem;
+
+  color: var(--muted);
+
+  font-size: 0.8rem;
+
+  text-align: center;
+
+  border-top: 1px solid var(--border);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .page-container {
+    width: 100%;
+
+    border-radius: 16px;
+  }
+
+  .page-hero {
+    height: 180px;
+    gap: 1.5rem;
+  }
+
+  .page-hero-puc {
+    width: 120px;
+  }
+
+  .page-hero-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .page-hero-brand {
+    font-size: 1.5rem;
+  }
+
+  .page-hero-divider {
+    height: 80px;
+  }
+
+  .page-intro {
+    padding: 2.25rem 1.5rem 0;
+  }
+
+  .page-content {
+    gap: 3rem;
+
+    padding: 2rem 1.1rem 2.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-hero {
+    height: 150px;
+  }
+
+  .page-hero-brand {
+    font-size: 1.25rem;
+  }
+}
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-puc,
+  .page-hero-icon {
+    transition: none;
+  }
+}

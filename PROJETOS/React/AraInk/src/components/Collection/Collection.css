@@ -1,0 +1,121 @@
+/* =========================================================
+   SUA COLEÇÃO
+   ========================================================= */
+
+.collection-empty {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+
+  padding: 1.1rem 1.25rem;
+
+  color: var(--muted);
+
+  border: 1px dashed var(--border-strong);
+  border-radius: 12px;
+
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.collection-empty svg {
+  flex-shrink: 0;
+
+  color: var(--brand);
+
+  font-size: 1.3rem;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+
+  list-style: none;
+}
+
+.collection-item {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.collection-paper {
+  aspect-ratio: 1;
+
+  padding: 6%;
+
+  background: var(--paper);
+}
+
+.collection-paper img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.collection-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "ideia acoes"
+    "meta acoes";
+  align-items: center;
+  column-gap: 0.25rem;
+
+  padding: 0.55rem 0.4rem 0.55rem 0.75rem;
+
+  border-top: 1px solid var(--border);
+}
+
+.collection-idea {
+  grid-area: ideia;
+
+  overflow: hidden;
+
+  color: var(--foreground);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collection-meta {
+  grid-area: meta;
+
+  color: var(--muted);
+
+  font-size: 0.72rem;
+}
+
+.collection-actions {
+  grid-area: acoes;
+
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .collection-body {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "ideia"
+      "meta"
+      "acoes";
+  }
+}
