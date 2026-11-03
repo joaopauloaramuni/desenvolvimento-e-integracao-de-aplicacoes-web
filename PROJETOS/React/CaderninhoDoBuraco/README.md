@@ -1,5 +1,13 @@
 # Projeto CaderninhoDoBuraco (React + Vite + Supabase) 🃏
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://caderninhodoburaco.vercel.app/)
+
+👉 **[caderninhodoburaco.vercel.app](https://caderninhodoburaco.vercel.app/)**
+
+Abra no navegador do celular ou do computador e comece a marcar as partidas, sem instalar nada.
+
 ## 📖 Descrição
 
 O **Caderninho do Buraco** é o placar das nossas partidas de **buraco**, o jogo de baralho. Ele substitui o caderninho de papel que fica em cima da mesa: cadastre os jogadores, crie a partida do dia e lance cada rodada. Em vez de somar as cartas na mão, digite os jogos que cada um baixou (`Ás, 2, 3`, `8, coringa joker, 10`...) e a conta sai sozinha: pontos das cartas, canastras limpas e sujas, **canastra real de Ás a Ás**, batida e o desconto das cartas que sobraram na mão.
