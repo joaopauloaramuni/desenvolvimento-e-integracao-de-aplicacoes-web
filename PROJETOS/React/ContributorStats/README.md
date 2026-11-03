@@ -1,5 +1,13 @@
 # Projeto ContributorStats (React + Vite) 🏆 
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://contributorstats.vercel.app/)
+
+👉 **[contributorstats.vercel.app](https://contributorstats.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Versão em **React** e **Vite** do [Projeto GitHubAPI ContributorStats 2](https://github.com/joaopauloaramuni/python/tree/main/PROJETOS/Projeto%20GitHubAPI%20ContributorStats_2) (Python). Analisa um repositório do GitHub (público ou **privado**) e gera um **ranking dos colaboradores** com base em métricas reais de código: **commits**, **linhas inseridas**, **linhas deletadas** e **impacto líquido** (inseridas − deletadas).
