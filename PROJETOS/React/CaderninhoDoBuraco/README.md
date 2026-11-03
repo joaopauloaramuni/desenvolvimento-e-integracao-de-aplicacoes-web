@@ -539,4 +539,4 @@ As ilustrações das cartas e da mesa vêm de bancos de imagens vetoriais (Freep
 - [Buraco (jogo de cartas) na Wikipédia](https://pt.wikipedia.org/wiki/Buraco_(jogo_de_cartas))
 
 ## 📄 Licença
-Este projeto está licenciado sob a MIT License.
+Este projeto está licenciado sob a MIT License. 
