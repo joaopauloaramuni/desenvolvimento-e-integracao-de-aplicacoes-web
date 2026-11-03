@@ -1,5 +1,13 @@
 # Projeto Ônibus BH (React + Vite) 🚌
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://arabusbh.vercel.app/)
+
+👉 **[arabusbh.vercel.app](https://arabusbh.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Consulta de **linhas de ônibus de Belo Horizonte** feita com **React**, **Vite** e [**MapLibre GL JS**](https://maplibre.org/maplibre-gl-js/docs/). Busca a linha pelo número ou pelo nome, **desenha o trajeto no mapa**, mostra o **quadro de horários da BHTrans** (dias úteis, sábado e domingo/feriado) e a **posição dos ônibus em tempo real**. Na página inicial, lista as **linhas que passam perto dos campi Coração Eucarístico e Lourdes da PUC Minas**, com o ponto mais próximo, a distância a pé e os próximos horários previstos nele.
