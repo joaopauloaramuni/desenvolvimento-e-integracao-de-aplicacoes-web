@@ -6,7 +6,7 @@
 
 👉 **[caderninhodoburaco.vercel.app](https://caderninhodoburaco.vercel.app/)**
 
-Abra no navegador do celular ou do computador e comece a marcar as partidas, sem instalar nada.
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
 
 ## 📖 Descrição
 
