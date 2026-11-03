@@ -1,0 +1,186 @@
+.jogadores {
+  display: grid;
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.jogadores__novo {
+  display: grid;
+  gap: 1rem;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.jogadores__novo h2 {
+  font-size: 1.5rem;
+}
+
+fieldset.campo {
+  border: 0;
+  min-width: 0;
+}
+
+fieldset.campo legend {
+  margin-bottom: 0.4rem;
+}
+
+.escolha-figura {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem;
+}
+
+.escolha-figura__opcao {
+  position: relative;
+  cursor: pointer;
+}
+
+.escolha-figura__opcao input,
+.escolha-cor__opcao input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.escolha-figura__opcao img {
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: var(--sombra-carta);
+  transition: transform 0.12s ease;
+}
+
+.escolha-figura__opcao input:checked + img {
+  outline: 3px solid var(--latao);
+  outline-offset: 2px;
+  transform: translateY(-3px);
+}
+
+.escolha-figura__opcao input:focus-visible + img {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.escolha-cor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.escolha-cor__opcao {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--cor);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.escolha-cor__opcao:has(input:checked) {
+  box-shadow: 0 0 0 3px var(--feltro-escuro), 0 0 0 5px var(--cor);
+}
+
+.folha .escolha-cor__opcao:has(input:checked) {
+  box-shadow: 0 0 0 3px var(--papel), 0 0 0 5px var(--tinta);
+}
+
+.escolha-cor__opcao:has(input:focus-visible) {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.jogadores__folha {
+  list-style: none;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.jogador {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed rgba(34, 37, 45, 0.18);
+}
+
+.jogador:last-child {
+  border-bottom: 0;
+}
+
+.jogador__dados {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+}
+
+.jogador__nome {
+  font-size: 2rem;
+  overflow-wrap: anywhere;
+}
+
+.jogador__dados small {
+  color: var(--tinta-suave);
+}
+
+.jogador__erro {
+  color: #9d1c21 !important;
+  font-weight: 600;
+}
+
+.jogador__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.jogador--inativo .avatar {
+  filter: grayscale(0.9);
+  opacity: 0.6;
+}
+
+.jogador--editando {
+  display: block;
+}
+
+.jogador__form {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+
+.jogador__form .escolha-figura {
+  grid-template-columns: repeat(10, minmax(0, 3rem));
+}
+
+.carregando {
+  color: var(--texto-suave);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+@media (max-width: 860px) {
+  .jogadores {
+    grid-template-columns: 1fr;
+  }
+
+  .jogadores__novo {
+    position: static;
+  }
+
+  .jogador {
+    flex-wrap: wrap;
+  }
+
+  .jogador__acoes {
+    width: 100%;
+    padding-left: 4.4rem;
+  }
+
+  .jogador__form .escolha-figura {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

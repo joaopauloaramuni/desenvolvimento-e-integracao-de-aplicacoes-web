@@ -1,0 +1,123 @@
+/* Carta de baralho em CSS. O tamanho define tudo (fonte em "em" a partir da largura). */
+
+.carta {
+  --largura: 4rem;
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: var(--largura);
+  aspect-ratio: 5 / 7.2;
+  font-size: calc(var(--largura) * 0.3);
+  border-radius: var(--raio-carta);
+  background:
+    linear-gradient(160deg, #fffdf7 0%, var(--marfim) 55%, var(--marfim-sombra) 100%);
+  color: var(--naipe-preto);
+  box-shadow: var(--sombra-carta), inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  user-select: none;
+}
+
+.carta--mini {
+  --largura: 1.9rem;
+}
+
+.carta--pequena {
+  --largura: 2.75rem;
+}
+
+.carta--media {
+  --largura: 4rem;
+}
+
+.carta--grande {
+  --largura: 6rem;
+}
+
+.carta--vermelha {
+  color: var(--naipe-vermelho);
+}
+
+.carta__canto {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.95;
+}
+
+.carta__canto--topo {
+  top: 0.25em;
+  left: 0.22em;
+}
+
+.carta__canto--base {
+  bottom: 0.25em;
+  right: 0.22em;
+  transform: rotate(180deg);
+}
+
+.carta__canto b {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 0.92em;
+  letter-spacing: -0.06em;
+}
+
+.carta__canto i {
+  font-style: normal;
+  font-size: 0.82em;
+  font-family: "Segoe UI Symbol", "Apple Symbols", "DejaVu Sans", sans-serif;
+}
+
+.carta__centro {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 2.3em;
+  font-family: "Segoe UI Symbol", "Apple Symbols", "DejaVu Sans", sans-serif;
+  line-height: 1;
+}
+
+.carta__centro--letra {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.75em;
+}
+
+/* Na mini, os cantos de baixo não cabem: fica só o canto de cima e o centro */
+.carta--mini .carta__canto--base,
+.carta--pequena .carta__canto--base {
+  display: none;
+}
+
+.carta--mini .carta__centro,
+.carta--pequena .carta__centro {
+  font-size: 1.6em;
+  padding-top: 0.6em;
+}
+
+.carta--mini .carta__centro--letra,
+.carta--pequena .carta__centro--letra {
+  font-size: 1.45em;
+}
+
+.carta--joker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 2 fazendo papel de curinga: estrela de latão no canto */
+.carta__estrela {
+  position: absolute;
+  top: 0.15em;
+  right: 0.2em;
+  font-size: 0.75em;
+  color: var(--latao-escuro);
+  line-height: 1;
+}
+
+.carta--curinga {
+  box-shadow: var(--sombra-carta), inset 0 0 0 2px var(--latao);
+}

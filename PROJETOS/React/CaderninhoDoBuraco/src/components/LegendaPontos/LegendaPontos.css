@@ -1,0 +1,125 @@
+.legenda {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 2rem 3rem;
+}
+
+.legenda h3 {
+  font-family: var(--fonte-mao);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--tinta-azul);
+  margin-bottom: 0.4rem;
+  line-height: 1;
+}
+
+.legenda__tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.legenda__tabela th,
+.legenda__tabela td {
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed rgba(34, 37, 45, 0.18);
+  vertical-align: middle;
+}
+
+.legenda__tabela th {
+  text-align: left;
+  font-weight: 600;
+}
+
+.legenda__tabela th > * {
+  vertical-align: middle;
+}
+
+.legenda__cartas {
+  display: inline-flex;
+  gap: 0.25rem;
+  width: 6.25rem;
+  margin-right: 0.6rem;
+}
+
+.legenda__tabela td {
+  text-align: right;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.legenda__jogadas {
+  list-style: none;
+}
+
+.legenda__jogadas li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed rgba(34, 37, 45, 0.18);
+}
+
+.legenda__jogadas li > span {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.legenda__jogadas small {
+  color: var(--tinta-suave);
+  font-size: 0.88rem;
+  max-width: 44ch;
+}
+
+.legenda__jogadas b {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.legenda__jogada--real b,
+.legenda__jogada--real strong {
+  color: var(--naipe-vermelho);
+}
+
+.legenda__jogada--real b {
+  font-size: 2rem;
+}
+
+.legenda__jogada--negativa b {
+  color: var(--tinta-suave);
+  font-size: 1.3rem;
+}
+
+/* Versão compacta (no lançamento da rodada) */
+.legenda--compacta {
+  gap: 1rem 2rem;
+  font-size: 0.92rem;
+}
+
+.legenda--compacta h3 {
+  font-size: 1.5rem;
+}
+
+.legenda--compacta .legenda__cartas {
+  width: 4.25rem;
+}
+
+.legenda--compacta .legenda__tabela td,
+.legenda--compacta .legenda__jogadas b {
+  font-size: 1.2rem;
+}
+
+.legenda--compacta .legenda__jogadas li {
+  padding: 0.35rem 0;
+}
+
+@media (max-width: 760px) {
+  .legenda {
+    grid-template-columns: 1fr;
+  }
+}

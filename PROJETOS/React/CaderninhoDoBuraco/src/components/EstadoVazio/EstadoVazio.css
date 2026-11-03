@@ -1,0 +1,43 @@
+.vazio {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.vazio__imagem {
+  width: 9.5rem;
+  flex: none;
+  rotate: -7deg;
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.5));
+}
+
+.vazio__texto p {
+  color: var(--texto-suave);
+  margin-top: 0.5rem;
+  max-width: 46ch;
+}
+
+.vazio__acao {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+@media (max-width: 560px) {
+  .vazio {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vazio__texto p {
+    margin-inline: auto;
+  }
+
+  .vazio__acao {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,432 @@
+/* ==========================================================================
+   CADERNINHO DO BURACO
+   A mesa de feltro verde, as cartas e o caderninho onde se anota o placar.
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Feltro (as cores saíram da foto da mesa, src/assets/images/mesa-buraco.webp) */
+  --feltro-claro: #4a7636;
+  --feltro: #2d5a29;
+  --feltro-escuro: #1b421c;
+  --feltro-fundo: #112d14;
+  --feltro-painel: rgba(8, 30, 11, 0.42);
+  --feltro-borda: rgba(243, 234, 211, 0.14);
+
+  /* Cartas */
+  --marfim: #fbf7ec;
+  --marfim-sombra: #e6dcc4;
+  --naipe-vermelho: #c42a2f;
+  --naipe-preto: #1f2229;
+
+  /* Caderninho */
+  --papel: #f7f0dc;
+  --papel-linha: rgba(70, 112, 160, 0.2);
+  --papel-margem: rgba(208, 87, 79, 0.55);
+  --tinta: #22252d;
+  --tinta-suave: #5d6170;
+  --tinta-azul: #23468a;
+
+  /* Destaques */
+  --latao: #e2b544;
+  --latao-escuro: #a97d14;
+  --texto: #f3ead3;
+  --texto-suave: rgba(243, 234, 211, 0.72);
+
+  /* Mensagens */
+  --erro: #ffb4ab;
+  --erro-fundo: rgba(196, 42, 47, 0.22);
+  --sucesso: #b9e7a6;
+  --aviso: #ffd98a;
+
+  --fonte-letreiro: "Cinzel Decorative", "Cinzel Variable", "Cinzel", "Trajan Pro", Georgia, serif;
+  --fonte-titulo: "Cinzel Variable", "Cinzel", "Trajan Pro", Georgia, serif;
+  --fonte-texto: "Figtree Variable", "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fonte-mao: "Caveat Variable", "Caveat", "Segoe Print", "Bradley Hand", cursive;
+
+  --raio: 10px;
+  --raio-carta: 0.42em;
+  --sombra-papel: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 18px 36px -18px rgba(0, 0, 0, 0.7),
+    0 2px 6px rgba(0, 0, 0, 0.25);
+  --sombra-carta: 0 1px 1px rgba(0, 0, 0, 0.18), 0 6px 14px -6px rgba(0, 0, 0, 0.55);
+
+  --largura-max: 1180px;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--texto);
+  background-color: var(--feltro-escuro);
+  /* Feltro: luz do lustre no meio + fibras (ruído SVG bem suave) */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.35'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 80% 60% at 50% 0%, var(--feltro) 0%, var(--feltro-escuro) 60%, var(--feltro-fundo) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--latao);
+}
+
+:focus-visible {
+  outline: 3px solid var(--latao);
+  outline-offset: 2px;
+}
+
+/* Cinzel não tem itálico: nada de itálico falso nos títulos */
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  font-synthesis: none;
+}
+
+h1 {
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   PÁGINA
+   ========================================================================== */
+
+.conteudo {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.conteudo--estreito {
+  max-width: 50rem;
+}
+
+.cabecalho-pagina {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.cabecalho-pagina p {
+  max-width: 60ch;
+  color: var(--texto-suave);
+  margin-top: 0.5rem;
+}
+
+.cabecalho-pagina__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* ==========================================================================
+   FOLHA DO CADERNINHO (papel pautado com margem vermelha)
+   ========================================================================== */
+
+.folha {
+  --pauta: 2rem;
+  position: relative;
+  color: var(--tinta);
+  background-color: var(--papel);
+  background-image:
+    linear-gradient(90deg, transparent 2.6rem, var(--papel-margem) 2.6rem, var(--papel-margem) calc(2.6rem + 1.5px), transparent calc(2.6rem + 1.5px)),
+    repeating-linear-gradient(180deg, transparent 0, transparent calc(var(--pauta) - 1px), var(--papel-linha) calc(var(--pauta) - 1px), var(--papel-linha) var(--pauta));
+  background-position: 0 0, 0 0.9rem;
+  border-radius: 6px;
+  box-shadow: var(--sombra-papel);
+  padding: 1.25rem 1.25rem 1.5rem 3.4rem;
+}
+
+.folha h2,
+.folha h3 {
+  color: var(--tinta);
+}
+
+.folha .manuscrito {
+  color: var(--tinta-azul);
+}
+
+.folha a {
+  color: var(--tinta-azul);
+}
+
+/* Título escrito à mão, na pauta */
+.manuscrito {
+  font-family: var(--fonte-mao);
+  font-weight: 700;
+  color: var(--tinta-azul);
+  line-height: 1;
+}
+
+/* Painel escuro de feltro (gráficos, formulários sobre a mesa) */
+.painel {
+  background: var(--feltro-painel);
+  border: 1px solid var(--feltro-borda);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 -20px 40px -30px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: var(--raio);
+  font-weight: 650;
+  font-size: 0.98rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--latao);
+  color: #221a05;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 6px 16px -8px rgba(0, 0, 0, 0.7);
+  transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.botao:hover {
+  background: #edc65d;
+}
+
+.botao:active {
+  transform: translateY(1px);
+}
+
+.botao:disabled,
+.botao[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.botao svg {
+  flex: none;
+  font-size: 1.1em;
+}
+
+.botao--fantasma {
+  background: transparent;
+  color: var(--texto);
+  border-color: rgba(243, 234, 211, 0.4);
+  box-shadow: none;
+}
+
+.botao--fantasma:hover {
+  background: rgba(243, 234, 211, 0.1);
+}
+
+/* Sobre o papel */
+.botao--tinta {
+  background: transparent;
+  color: var(--tinta);
+  border-color: rgba(34, 37, 45, 0.35);
+  box-shadow: none;
+}
+
+.botao--tinta:hover {
+  background: rgba(34, 37, 45, 0.07);
+}
+
+.botao--perigo {
+  background: transparent;
+  color: var(--naipe-vermelho);
+  border-color: rgba(196, 42, 47, 0.45);
+  box-shadow: none;
+}
+
+.botao--perigo:hover {
+  background: rgba(196, 42, 47, 0.08);
+}
+
+.painel .botao--perigo,
+.cabecalho-pagina .botao--perigo {
+  color: var(--erro);
+  border-color: rgba(255, 180, 171, 0.45);
+}
+
+.botao--pequeno {
+  min-height: 2.25rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.botao--icone {
+  min-height: 2.25rem;
+  width: 2.25rem;
+  padding: 0;
+}
+
+/* ==========================================================================
+   FORMULÁRIOS
+   ========================================================================== */
+
+.campo {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+}
+
+.campo > span,
+.campo legend {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.campo small {
+  color: var(--tinta-suave);
+  font-size: 0.82rem;
+}
+
+.painel .campo small {
+  color: var(--texto-suave);
+}
+
+.entrada {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(34, 37, 45, 0.28);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--tinta);
+}
+
+.entrada:focus {
+  border-color: var(--tinta-azul);
+  outline: 3px solid rgba(35, 70, 138, 0.25);
+  outline-offset: 0;
+}
+
+.painel .entrada {
+  background: rgba(0, 0, 0, 0.28);
+  border-color: rgba(243, 234, 211, 0.25);
+  color: var(--texto);
+}
+
+.painel .entrada:focus {
+  border-color: var(--latao);
+  outline-color: rgba(226, 181, 68, 0.3);
+}
+
+.painel select.entrada option {
+  color: var(--tinta);
+}
+
+textarea.entrada {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   SELO (badges: bateu, ganhou, canastra limpa...)
+   ========================================================================== */
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 650;
+  line-height: 1.6;
+  white-space: nowrap;
+  border: 1px solid currentColor;
+}
+
+.selo--venceu {
+  background: var(--latao);
+  border-color: var(--latao-escuro);
+  color: #2a1f04;
+}
+
+.selo--bateu {
+  color: var(--tinta-azul);
+}
+
+.selo--limpa {
+  color: #1d6b39;
+}
+
+.selo--suja {
+  color: #8a5a12;
+}
+
+.selo--real {
+  background: var(--naipe-vermelho);
+  border-color: var(--naipe-vermelho);
+  color: #fff;
+}
+
+.selo--jogo {
+  color: var(--tinta-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,123 @@
+.mao {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.mao__texto {
+  font-family: var(--fonte-mao);
+  font-size: 1.45rem;
+  line-height: 1.35;
+  min-height: 7.5rem;
+  color: var(--tinta-azul);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.mao__texto::placeholder {
+  color: rgba(35, 70, 138, 0.35);
+}
+
+.mao__teclado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+/* As teclas são carinhas de carta */
+.mao__tecla {
+  min-width: 2.35rem;
+  height: 2.6rem;
+  padding: 0 0.45rem;
+  border-radius: 6px;
+  border: 1px solid rgba(34, 37, 45, 0.2);
+  background: var(--marfim);
+  color: var(--naipe-preto);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 0 rgba(34, 37, 45, 0.18);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.mao__tecla:hover {
+  border-color: var(--tinta-azul);
+}
+
+.mao__tecla:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 rgba(34, 37, 45, 0.18);
+}
+
+.mao__tecla--joker {
+  font-family: var(--fonte-texto);
+  font-size: 0.85rem;
+  color: var(--naipe-vermelho);
+}
+
+.mao__tecla--curinga {
+  font-family: var(--fonte-texto);
+  font-size: 0.85rem;
+  box-shadow: inset 0 0 0 2px var(--latao), 0 2px 0 rgba(34, 37, 45, 0.18);
+}
+
+.mao__tecla--acao {
+  font-family: var(--fonte-texto);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: transparent;
+  box-shadow: none;
+}
+
+.mao__erros {
+  list-style: none;
+  color: #9d1c21;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.mao__previa {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.mao__jogo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed rgba(34, 37, 45, 0.15);
+}
+
+.mao__cartas {
+  display: flex;
+}
+
+/* Cartas encostadas, como na mesa (mostra só o índice de cada uma) */
+.mao__cartas .carta + .carta {
+  margin-left: -0.62rem;
+}
+
+.mao__resumo {
+  margin-left: auto;
+}
+
+.mao__resumo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: none;
+}
+
+.mao__resumo b {
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  min-width: 2.5ch;
+  text-align: right;
+}

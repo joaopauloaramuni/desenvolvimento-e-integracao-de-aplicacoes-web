@@ -1,0 +1,75 @@
+.ranking-rolagem {
+  overflow-x: auto;
+  margin-right: -0.5rem;
+}
+
+.ranking {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.ranking th,
+.ranking td {
+  padding: 0.55rem 0.6rem;
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: 1px dashed rgba(34, 37, 45, 0.18);
+}
+
+.ranking thead th {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--tinta-suave);
+  border-bottom: 2px solid rgba(34, 37, 45, 0.6);
+}
+
+.ranking thead th:nth-child(2),
+.ranking tbody th {
+  text-align: left;
+}
+
+.ranking tbody th {
+  font-weight: 600;
+}
+
+.ranking__posicao {
+  width: 2.5rem;
+  font-family: var(--fonte-mao);
+  font-size: 1.35rem;
+  color: var(--tinta-suave);
+}
+
+.ranking__vitorias b {
+  font-family: var(--fonte-mao);
+  font-size: 1.85rem;
+  color: var(--tinta-azul);
+  line-height: 1;
+}
+
+.ranking__vitorias span {
+  font-size: 0.85rem;
+  color: var(--tinta-suave);
+}
+
+.ranking__numero {
+  font-weight: 700;
+}
+
+.ranking__primeiro .ranking__posicao {
+  color: var(--latao-escuro);
+  font-weight: 700;
+}
+
+.ranking__primeiro .ranking__vitorias b {
+  color: var(--naipe-vermelho);
+}
+
+.ranking__real {
+  color: var(--naipe-vermelho);
+  font-weight: 800;
+}
+
+.ranking abbr {
+  text-decoration: none;
+}

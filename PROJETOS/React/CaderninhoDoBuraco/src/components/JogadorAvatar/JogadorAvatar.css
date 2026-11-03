@@ -1,0 +1,42 @@
+.avatar {
+  --tam: 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.avatar--pequena {
+  --tam: 1.75rem;
+}
+
+.avatar--grande {
+  --tam: 3.4rem;
+}
+
+/* A figura vira um "selo" redondo, recortado no rosto, com a cor do jogador */
+.avatar__carta {
+  flex: none;
+  width: var(--tam);
+  height: var(--tam);
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--marfim);
+  box-shadow: 0 0 0 2.5px var(--cor-jogador, var(--latao)), 0 3px 8px -2px rgba(0, 0, 0, 0.5);
+}
+
+.avatar__carta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+  transform: scale(1.9);
+  transform-origin: 50% 22%;
+}
+
+.avatar__nome {
+  font-weight: 650;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

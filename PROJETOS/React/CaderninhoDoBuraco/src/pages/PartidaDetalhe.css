@@ -1,0 +1,53 @@
+.partida__titulo::first-letter {
+  text-transform: uppercase;
+}
+
+.placar-dia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.placar-dia__jogador {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.placar-dia__jogador > div {
+  display: grid;
+  line-height: 1.2;
+}
+
+.placar-dia__nome {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.placar-dia__numeros {
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+.placar-dia__numeros b {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  color: var(--texto);
+}
+
+.placar-dia__numeros span {
+  display: block;
+}
+
+.placar-dia__jogador--lider .placar-dia__numeros b {
+  color: var(--latao);
+}
+
+.partida__rodadas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}

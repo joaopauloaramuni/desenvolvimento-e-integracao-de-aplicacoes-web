@@ -1,0 +1,68 @@
+.filtro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.filtro__tipos {
+  display: inline-flex;
+  padding: 0.25rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--feltro-borda);
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.filtro__tipo {
+  border: 0;
+  background: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--texto-suave);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filtro__tipo:hover {
+  color: var(--texto);
+}
+
+.filtro__tipo[aria-pressed="true"] {
+  background: var(--marfim);
+  color: var(--tinta);
+  box-shadow: var(--sombra-carta);
+}
+
+.filtro__campos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filtro__campo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.filtro .entrada {
+  width: auto;
+  min-height: 2.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(243, 234, 211, 0.25);
+  color: var(--texto);
+}
+
+.filtro select.entrada option {
+  color: var(--tinta);
+}
+
+.filtro input[type="date"] {
+  color-scheme: dark;
+}

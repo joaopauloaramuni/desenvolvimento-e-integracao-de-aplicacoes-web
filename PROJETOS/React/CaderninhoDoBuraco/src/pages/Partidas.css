@@ -1,0 +1,101 @@
+.partidas-mes {
+  margin-bottom: 2rem;
+}
+
+.partidas-mes h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.partidas-mes h2::first-letter {
+  text-transform: uppercase;
+}
+
+.partidas-lista {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* Cada partida é uma tira de papel com o dia escrito na margem */
+.partida-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 0.9rem 1.25rem 0.9rem 0.9rem;
+  border-radius: 6px;
+  background: var(--papel);
+  color: var(--tinta);
+  text-decoration: none;
+  box-shadow: var(--sombra-papel);
+  transition: transform 0.12s ease;
+}
+
+.partida-item:hover {
+  transform: translateY(-2px);
+}
+
+.partida-item__dia {
+  flex: none;
+  width: 3.75rem;
+  display: grid;
+  justify-items: center;
+  padding-right: 1rem;
+  border-right: 1.5px solid var(--papel-margem);
+  line-height: 1;
+}
+
+.partida-item__dia b {
+  font-family: var(--fonte-titulo);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.partida-item__dia span {
+  font-size: 0.8rem;
+  color: var(--tinta-suave);
+  margin-top: 0.2rem;
+}
+
+.partida-item__corpo {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.partida-item__titulo {
+  font-family: var(--fonte-mao);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--tinta-azul);
+  line-height: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+}
+
+.partida-item__local {
+  font-family: var(--fonte-texto);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--tinta-suave);
+}
+
+.partida-item__placar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+}
+
+.partida-item__jogador {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.partida-item__jogador > span:last-child {
+  color: var(--tinta-suave);
+}

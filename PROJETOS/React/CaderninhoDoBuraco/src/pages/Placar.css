@@ -1,0 +1,34 @@
+.placar {
+  margin-top: 1.5rem;
+}
+
+.placar__topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.placar__topo h2 {
+  font-size: 2.2rem;
+}
+
+.placar__topo p {
+  color: var(--tinta-suave);
+  font-size: 0.92rem;
+}
+
+/* O estado vazio dentro da folha usa as cores do papel */
+.placar .vazio__texto h2 {
+  color: var(--tinta);
+}
+
+.placar .vazio__texto p {
+  color: var(--tinta-suave);
+}
+
+.placar .vazio__imagem {
+  width: 7rem;
+}

@@ -1,0 +1,141 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout > main {
+  flex: 1;
+}
+
+.pular {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--latao);
+  color: #221a05;
+  font-weight: 700;
+}
+
+.pular:focus {
+  top: 1rem;
+}
+
+/* Topo: a borda de madeira da mesa */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(12, 33, 14, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 4px solid #5b3a1f;
+  box-shadow: 0 1px 0 #8a5c33 inset, 0 10px 24px -16px rgba(0, 0, 0, 0.9);
+}
+
+.topo__faixa {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+/* Os quatro naipes num cartãozinho de marfim */
+.marca__naipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 2.1rem;
+  height: 2.8rem;
+  padding: 0.25rem;
+  place-items: center;
+  border-radius: 0.35rem;
+  background: var(--marfim);
+  color: var(--naipe-preto);
+  font-size: 0.85rem;
+  line-height: 1;
+  box-shadow: var(--sombra-carta);
+  rotate: -6deg;
+}
+
+.marca__naipes .vermelho {
+  color: var(--naipe-vermelho);
+}
+
+.marca__nome {
+  font-family: var(--fonte-letreiro);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+}
+
+.menu {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu__link {
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.menu__link:hover {
+  color: var(--texto);
+  background: rgba(243, 234, 211, 0.08);
+}
+
+.menu__link.active {
+  color: #221a05;
+  background: var(--latao);
+}
+
+.rodape {
+  padding: 1.5rem 1.25rem 2rem;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--feltro-borda);
+}
+
+@media (max-width: 720px) {
+  .topo__faixa {
+    padding: 0.5rem 0.9rem 0.4rem;
+    gap: 0.4rem;
+  }
+
+  .menu {
+    width: 100%;
+    margin: 0 -0.9rem;
+    padding: 0 0.9rem 0.25rem;
+    width: calc(100% + 1.8rem);
+  }
+
+  .marca__nome {
+    font-size: 1.05rem;
+  }
+}

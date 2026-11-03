@@ -1,0 +1,58 @@
+.aviso {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.aviso > svg {
+  flex: none;
+  margin-top: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.aviso__texto {
+  flex: 1;
+}
+
+.aviso code {
+  font-size: 0.88em;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.aviso--erro {
+  color: var(--erro);
+  background: var(--erro-fundo);
+  border-color: rgba(255, 180, 171, 0.35);
+}
+
+.aviso--aviso {
+  color: var(--aviso);
+  background: rgba(226, 181, 68, 0.12);
+  border-color: rgba(255, 217, 138, 0.35);
+}
+
+.aviso--sucesso {
+  color: var(--sucesso);
+  background: rgba(185, 231, 166, 0.1);
+  border-color: rgba(185, 231, 166, 0.35);
+}
+
+/* Sobre o papel */
+.folha .aviso--erro {
+  color: #9d1c21;
+  background: #fbe3df;
+  border-color: #efb2aa;
+}
+
+.folha .aviso--aviso {
+  color: #7a4b05;
+  background: #fbf0cf;
+  border-color: #ebcf87;
+}

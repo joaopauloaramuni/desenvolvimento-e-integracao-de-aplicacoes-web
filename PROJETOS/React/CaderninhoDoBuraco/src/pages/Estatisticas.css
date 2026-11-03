@@ -1,0 +1,58 @@
+.numeros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 1.75rem 0;
+}
+
+/* Cada número é uma carta de marfim */
+.numeros__carta {
+  display: grid;
+  align-content: center;
+  min-width: 7.5rem;
+  min-height: 6.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #fffdf7, var(--marfim) 60%, var(--marfim-sombra));
+  color: var(--naipe-preto);
+  box-shadow: var(--sombra-carta), inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  line-height: 1.1;
+}
+
+.numeros__carta b {
+  font-family: var(--fonte-titulo);
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.numeros__carta span {
+  font-size: 0.88rem;
+  color: var(--tinta-suave);
+}
+
+.numeros__carta--vermelha b {
+  color: var(--naipe-vermelho);
+}
+
+.numeros__carta--larga {
+  flex: 1;
+  min-width: 15rem;
+}
+
+.graficos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 860px) {
+  .graficos {
+    grid-template-columns: 1fr;
+  }
+
+  .numeros__carta {
+    min-width: calc(50% - 0.45rem);
+    flex: 1;
+  }
+}

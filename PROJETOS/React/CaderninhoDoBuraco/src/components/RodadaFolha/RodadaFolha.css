@@ -1,0 +1,136 @@
+/* Espiral do caderninho: furinhos no topo da folha */
+.folha--espiral {
+  padding-top: 2.1rem;
+}
+
+.folha--espiral::before {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: 1rem;
+  right: 1rem;
+  height: 0.7rem;
+  background: radial-gradient(circle at 50% 50%, var(--feltro-escuro) 0 0.26rem, rgba(0, 0, 0, 0.2) 0.27rem 0.34rem, transparent 0.35rem) 0 0 / 1.35rem 0.7rem repeat-x;
+}
+
+.rodada__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.rodada__topo h3 {
+  font-size: 2.1rem;
+}
+
+.rodada__acoes {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.rodada__linhas {
+  list-style: none;
+}
+
+.rodada__linhas > li {
+  border-bottom: 1px solid transparent;
+}
+
+.rodada__linhas summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "nome pontos"
+    "selos selos";
+  align-items: center;
+  gap: 0.15rem 1rem;
+  min-height: 2rem;
+  padding: 0.35rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.rodada__linhas summary::-webkit-details-marker {
+  display: none;
+}
+
+.rodada__linhas summary .avatar {
+  grid-area: nome;
+}
+
+.rodada__pontos {
+  grid-area: pontos;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.rodada__pontos b {
+  font-family: var(--fonte-mao);
+  font-size: 1.85rem;
+  color: var(--tinta-azul);
+  line-height: 1;
+}
+
+.rodada__selos {
+  grid-area: selos;
+  display: flex;
+  gap: 0.35rem;
+  padding-left: 2.35rem;
+}
+
+.rodada__selos:empty {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .rodada__linhas summary {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-areas: "nome selos pontos";
+  }
+
+  .rodada__selos {
+    padding-left: 0;
+  }
+}
+
+.rodada__linha--venceu .avatar__nome {
+  text-decoration: underline;
+  text-decoration-color: var(--latao);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+.rodada__mesa {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.4rem 0 0.8rem 2.35rem;
+}
+
+.rodada__jogo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.rodada__jogo b {
+  font-family: var(--fonte-titulo);
+  margin-left: auto;
+}
+
+.rodada__cartas {
+  display: flex;
+}
+
+.rodada__cartas .carta + .carta {
+  margin-left: -0.62rem;
+}
+
+.rodada__conta,
+.rodada__nota {
+  font-size: 0.88rem;
+  color: var(--tinta-suave);
+}

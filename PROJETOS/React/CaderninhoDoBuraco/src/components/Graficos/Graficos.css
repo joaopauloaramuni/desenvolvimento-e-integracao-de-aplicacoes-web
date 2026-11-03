@@ -1,0 +1,35 @@
+.grafico {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  min-width: 0;
+}
+
+.grafico h3 {
+  font-size: 1.35rem;
+}
+
+.grafico p {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.grafico__area {
+  margin-top: 1rem;
+  min-width: 0;
+}
+
+.grafico--largo {
+  grid-column: 1 / -1;
+}
+
+/* O Recharts desenha o rótulo da pizza em SVG: deixa legível no feltro */
+.grafico .recharts-pie-label-text {
+  fill: var(--texto);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.grafico .recharts-legend-item-text {
+  color: var(--texto) !important;
+}

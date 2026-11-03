@@ -1,0 +1,160 @@
+.pontuacao {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.pontuacao--lider {
+  box-shadow: var(--sombra-papel), 0 0 0 3px var(--latao);
+}
+
+.pontuacao__topo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-left: -1.1rem;
+}
+
+.pontuacao__nome {
+  flex: 1;
+  min-width: 0;
+  font-size: 2.1rem;
+  overflow-wrap: anywhere;
+}
+
+.pontuacao__total {
+  display: grid;
+  justify-items: end;
+  line-height: 1;
+}
+
+.pontuacao__total strong {
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.pontuacao__total > span:last-child {
+  font-size: 0.8rem;
+  color: var(--tinta-suave);
+}
+
+.pontuacao__coroa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--latao-escuro);
+  margin-bottom: 0.2rem;
+}
+
+.pontuacao__modo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.pontuacao__modo label,
+.pontuacao__bateu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+}
+
+.pontuacao__modo input,
+.pontuacao__bateu input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--tinta-azul);
+}
+
+.pontuacao__linha {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.pontuacao__mao-cartas {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.pontuacao__total-manual {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 700;
+  max-width: 12rem;
+}
+
+.pontuacao__bateu {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px dashed rgba(35, 70, 138, 0.4);
+  background: rgba(35, 70, 138, 0.05);
+}
+
+.pontuacao__bateu span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.pontuacao__bateu small {
+  color: var(--tinta-suave);
+}
+
+/* A conta, como se fosse feita na margem do caderno */
+.pontuacao__conta {
+  display: grid;
+  gap: 0.1rem;
+  font-size: 0.95rem;
+}
+
+.pontuacao__conta > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pontuacao__conta dt {
+  color: var(--tinta-suave);
+}
+
+.pontuacao__conta dd {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.pontuacao__conta-total {
+  margin-top: 0.3rem;
+  padding-top: 0.35rem;
+  border-top: 2px solid var(--tinta);
+}
+
+.pontuacao__conta-total dt {
+  color: var(--tinta);
+  font-weight: 700;
+}
+
+.pontuacao__conta-total dd {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 520px) {
+  .pontuacao__linha {
+    grid-template-columns: 1fr;
+  }
+
+  .pontuacao__topo {
+    margin-left: -1.6rem;
+  }
+
+  .pontuacao__nome {
+    font-size: 1.8rem;
+  }
+}

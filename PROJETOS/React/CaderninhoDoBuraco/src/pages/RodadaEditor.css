@@ -1,0 +1,114 @@
+.rodada-editor {
+  padding-bottom: 9rem;
+}
+
+.rodada-editor__ajuda {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.rodada-editor__ajuda summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.rodada-editor__legenda {
+  margin-top: 0.85rem;
+}
+
+.rodada-editor__folhas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 31rem), 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Barra do placar, presa no pé da tela */
+.rodada-editor__barra {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 0.75rem max(1.25rem, calc((100vw - var(--largura-max)) / 2 + 1.25rem));
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(12, 33, 14, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 4px solid #5b3a1f;
+}
+
+.rodada-editor__placar {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+}
+
+.rodada-editor__placar li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.rodada-editor__nome {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.rodada-editor__placar b {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+}
+
+.rodada-editor__coroa {
+  color: var(--latao);
+}
+
+.rodada-editor__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.rodada-editor__acoes .aviso {
+  margin: 0;
+  flex-basis: 100%;
+}
+
+@media (max-width: 640px) {
+  .rodada-editor__barra {
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .rodada-editor__placar {
+    gap: 0.3rem 0.8rem;
+  }
+
+  .rodada-editor__nome,
+  .rodada-editor__cancelar,
+  .rodada-editor__so-largo {
+    display: none;
+  }
+
+  .rodada-editor__placar b {
+    font-size: 1.15rem;
+  }
+
+  /* o erro aparece em cima da barra, sem empurrar os botões */
+  .rodada-editor__acoes .aviso {
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: calc(100% + 0.5rem);
+  }
+}

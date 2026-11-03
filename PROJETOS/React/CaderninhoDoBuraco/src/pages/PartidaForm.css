@@ -1,0 +1,75 @@
+.partida-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.partida-form__linha {
+  display: grid;
+  grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.partida-form input[type="date"] {
+  color-scheme: dark;
+}
+
+.partida-form__jogadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.partida-form__jogador {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem 0.45rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(243, 234, 211, 0.25);
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.partida-form__jogador input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.partida-form__jogador:has(input:checked) {
+  background: var(--marfim);
+  color: var(--tinta);
+  border-color: var(--marfim);
+}
+
+.partida-form__jogador:has(input:focus-visible) {
+  outline: 3px solid var(--latao);
+  outline-offset: 2px;
+}
+
+.partida-form__ordem {
+  display: grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--latao);
+  color: #221a05;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.partida-form__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+@media (max-width: 560px) {
+  .partida-form__linha {
+    grid-template-columns: 1fr;
+  }
+}
