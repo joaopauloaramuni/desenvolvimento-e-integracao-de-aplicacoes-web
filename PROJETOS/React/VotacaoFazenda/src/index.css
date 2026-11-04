@@ -1,0 +1,298 @@
+/* Fontes locais (pasta public/fonts), funcionam mesmo sem internet */
+@font-face { font-family: 'Rye'; src: url('/fonts/rye.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Nunito'; src: url('/fonts/nunito-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Nunito'; src: url('/fonts/nunito-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Nunito'; src: url('/fonts/nunito-800.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+
+:root {
+  --madeira-escura: #3a2211;
+  --madeira: #6b4423;
+  --madeira-clara: #9a6a3c;
+  --palha: #f2cf73;
+  --papel: #f4e6c4;
+  --tinta: #2b1a0c;
+  --celeiro: #b5332a;
+  --pasto: #4f7f3a;
+
+  --fonte-titulo: 'Rye', 'Georgia', serif;
+  --fonte-texto: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--fonte-texto);
+  color: var(--papel);
+  background-color: #4a2d16;
+  /* tábuas de madeira: emendas escuras a cada 120px + veios finos */
+  background-image:
+    repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0 3px, transparent 3px 120px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 9px),
+    linear-gradient(180deg, #5a3719, #432812);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-block;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.75rem 1.4rem;
+  font: 800 1rem var(--fonte-texto);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+
+.botao:hover {
+  filter: brightness(1.08);
+}
+
+.botao:active {
+  transform: translateY(2px);
+}
+
+.botao:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--palha);
+  outline-offset: 3px;
+}
+
+.botao-principal {
+  background: var(--celeiro);
+  color: #fff;
+  box-shadow: 0 4px 0 #7c1f19;
+}
+
+.botao-secundario {
+  background: transparent;
+  color: var(--tinta);
+  box-shadow: inset 0 0 0 2px var(--tinta);
+}
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.6rem clamp(1rem, 4vw, 3rem);
+  background: var(--madeira-escura);
+  border-bottom: 4px solid var(--madeira-clara);
+}
+
+.topo-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.topo-logo {
+  height: 64px;
+  width: 86px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.topo-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  color: var(--palha);
+}
+
+.topo-menu {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.topo-menu a {
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--papel);
+}
+
+.topo-menu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.topo-menu a.active {
+  background: var(--palha);
+  color: var(--tinta);
+}
+
+/* ---------- Home ---------- */
+.home {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem 3rem;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(240px, 380px) 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.fazendeiro {
+  margin: 0;
+  text-align: center;
+}
+
+.fazendeiro img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 0;
+  border-radius: 50%;
+  border: 12px solid var(--madeira-clara);
+  box-shadow: 0 0 0 4px var(--madeira-escura), 0 18px 40px rgba(0, 0, 0, 0.45);
+  background: #87c8ea;
+}
+
+.fazendeiro figcaption {
+  display: inline-block;
+  margin-top: -1.4rem;
+  position: relative;
+  padding: 0.4rem 1rem;
+  background: var(--palha);
+  color: var(--tinta);
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+}
+
+.balao {
+  position: relative;
+  background: var(--papel);
+  color: var(--tinta);
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* pontinha do balão apontando para o fazendeiro */
+.balao::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 40%;
+  border: 14px solid transparent;
+  border-right: 22px solid var(--papel);
+  border-left: 0;
+}
+
+.balao h1 {
+  font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  margin-bottom: 0.8rem;
+}
+
+.balao p {
+  font-size: 1.1rem;
+  line-height: 1.55;
+  max-width: 60ch;
+  margin: 0 0 1.4rem;
+}
+
+.home-acoes {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.home-roca {
+  margin-top: 3rem;
+}
+
+.home-roca h2 {
+  color: var(--palha);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.home-roca-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.home-roca-lista li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.4rem 1rem 0.4rem 0.4rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--celeiro);
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.home-roca-lista img {
+  width: 80px;
+  height: 45px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 720px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .fazendeiro {
+    max-width: 280px;
+  }
+
+  .balao::before {
+    left: 50%;
+    top: -22px;
+    transform: translateX(-50%);
+    border: 14px solid transparent;
+    border-bottom: 22px solid var(--papel);
+    border-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
