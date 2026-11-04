@@ -1,0 +1,263 @@
+/* ---------- Estrutura das páginas ---------- */
+.pagina {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem 2rem;
+}
+
+.pagina-cabecalho {
+  margin-bottom: 1.8rem;
+}
+
+.pagina-cabecalho h1 {
+  color: var(--palha);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  margin-bottom: 0.4rem;
+}
+
+.pagina-cabecalho p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* ---------- Grades ---------- */
+.grade-roca {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.grade-participantes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.9rem;
+}
+
+/* ---------- Card do participante ---------- */
+.card {
+  position: relative;
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-foto {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.card-corpo {
+  padding: 0.6rem 0.2rem 0.2rem;
+  text-align: center;
+}
+
+.card-nome {
+  font-size: 1rem;
+}
+
+/* Destaque de quem está na roça: cartaz de "procurado" com borda vermelha e selo */
+.card-roca {
+  padding: 0.8rem;
+  border: 4px solid var(--celeiro);
+  box-shadow: 0 0 0 4px var(--papel), 0 14px 30px rgba(0, 0, 0, 0.45);
+  transform: rotate(-1deg);
+}
+
+.card-roca:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.card-roca .card-nome {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.selo-roca {
+  position: absolute;
+  top: 1.2rem;
+  right: -0.6rem;
+  z-index: 1;
+  padding: 0.35rem 0.9rem;
+  background: var(--celeiro);
+  color: #fff;
+  font-family: var(--fonte-titulo);
+  font-size: 1.05rem;
+  transform: rotate(6deg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Participantes fora da roça ficam mais apagados */
+.grade-participantes .card {
+  filter: saturate(0.55);
+  opacity: 0.9;
+}
+
+.grade-participantes .card-nome {
+  font-family: var(--fonte-texto);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.botao-votar {
+  width: 100%;
+  background: var(--celeiro);
+  color: #fff;
+  box-shadow: 0 4px 0 #7c1f19;
+}
+
+/* ---------- Mensagem de voto registrado ---------- */
+.aviso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--pasto);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.aviso p {
+  margin: 0;
+}
+
+.aviso a {
+  font-weight: 800;
+}
+
+/* ---------- Demais participantes ---------- */
+.demais {
+  margin-top: 3rem;
+}
+
+.demais h2 {
+  color: var(--palha);
+  font-size: 1.5rem;
+}
+
+.demais-legenda {
+  margin: 0.3rem 0 1rem;
+  opacity: 0.85;
+}
+
+/* ---------- Resultado ---------- */
+.total-votos strong {
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  color: var(--palha);
+  font-weight: 400;
+}
+
+.placar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.placar-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.8rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 8px;
+}
+
+.placar-lider {
+  border: 4px solid var(--celeiro);
+}
+
+.placar-foto {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.placar-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.placar-linha {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.placar-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+}
+
+.selo-lider {
+  padding: 0.2rem 0.6rem;
+  background: var(--celeiro);
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.barra {
+  height: 22px;
+  background: rgba(43, 26, 12, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-preenchida {
+  height: 100%;
+  background: var(--madeira);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.placar-lider .barra-preenchida {
+  background: var(--celeiro);
+}
+
+.placar-numeros {
+  display: block;
+  margin-top: 0.4rem;
+  font-weight: 800;
+}
+
+.vazio {
+  padding: 2rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.vazio p {
+  margin: 0 0 1.2rem;
+  font-size: 1.1rem;
+}
+
+.botao-zerar {
+  margin-top: 2rem;
+  background: transparent;
+  color: var(--papel);
+  box-shadow: inset 0 0 0 2px var(--papel);
+}
+
+@media (max-width: 520px) {
+  .placar-foto {
+    width: 96px;
+    height: 54px;
+  }
+}
