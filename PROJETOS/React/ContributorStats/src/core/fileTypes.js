@@ -323,16 +323,11 @@ export function groupFileTypes(aggregate) {
 
 /**
  * Frase-resumo de quem fez um tipo de arquivo:
- * "aluno1 82% · aluno2 12% · aluno4 6%". Os demais são somados em "outros".
+ * "aluno1 82% · aluno2 12% · aluno4 6%", com todos os colaboradores.
  */
-export function describeTypeOwners(owners, limit = 3) {
+export function describeTypeOwners(owners) {
   if (!owners.length) return "";
-  const head = owners.slice(0, limit).map((o) => `${o.contributor.username} ${pct(o.share)}`);
-  const rest = owners.slice(limit);
-  if (rest.length) {
-    head.push(`${pct(rest.reduce((s, o) => s + o.share, 0))} em ${rest.length} outro(s)`);
-  }
-  return head.join(" · ");
+  return owners.map((o) => `${o.contributor.username} ${pct(o.share)}`).join(" · ");
 }
 
 
