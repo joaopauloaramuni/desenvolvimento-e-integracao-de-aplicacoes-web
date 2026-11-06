@@ -1,0 +1,287 @@
+/* =========================================================
+   ESTANTE
+   ========================================================= */
+
+.shelf {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.shelf-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.shelf-account {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  min-width: 0;
+}
+
+.shelf-server {
+  color: var(--muted);
+
+  font-size: 0.8rem;
+
+  overflow-wrap: anywhere;
+}
+
+.shelf-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Resumo em frase: os números em Literata, dourados */
+
+.shelf-summary {
+  max-width: 62ch;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.shelf-summary b {
+  color: var(--title);
+
+  font-family: var(--font-book);
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* =========================================================
+   ABAS + BUSCA
+   ========================================================= */
+
+.shelf-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  padding: 0.7rem 0.85rem;
+
+  color: var(--muted);
+
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--foreground);
+}
+
+.tab[aria-selected="true"] {
+  color: var(--title);
+
+  border-bottom-color: var(--foil);
+
+  font-weight: 600;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: -2px;
+
+  border-radius: 6px 6px 0 0;
+}
+
+.tab-count {
+  min-width: 1.4rem;
+
+  padding: 0.05rem 0.4rem;
+
+  color: var(--muted);
+
+  background: var(--surface-muted);
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.tab[aria-selected="true"] .tab-count {
+  color: var(--brand);
+
+  background: var(--brand-tint);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  width: min(260px, 100%);
+
+  margin-bottom: 0.5rem;
+  padding: 0 0.75rem;
+
+  color: var(--muted);
+
+  background: var(--input-background);
+
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+}
+
+.search:focus-within {
+  border-color: var(--brand);
+
+  box-shadow: var(--focus-ring);
+}
+
+.search input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 0.55rem 0;
+
+  color: var(--foreground);
+
+  background: none;
+  border: 0;
+  outline: none;
+
+  font-size: 0.88rem;
+}
+
+/* =========================================================
+   GRADE DE LIVROS
+   ========================================================= */
+
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2rem 1.5rem;
+
+  list-style: none;
+}
+
+.skeleton {
+  aspect-ratio: 2 / 3.9;
+
+  background:
+    linear-gradient(var(--surface-muted), var(--surface-muted)) top / 100% 77% no-repeat,
+    linear-gradient(var(--surface-muted), var(--surface-muted)) 0 82% / 80% 4% no-repeat,
+    linear-gradient(var(--surface-muted), var(--surface-muted)) 0 90% / 55% 3% no-repeat;
+
+  border-radius: 6px;
+
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.shelf-empty {
+  padding: 2.5rem 1rem;
+
+  color: var(--muted);
+
+  text-align: center;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.shelf-empty-title {
+  margin-bottom: 0.4rem;
+
+  color: var(--foreground);
+
+  font-family: var(--font-book);
+  font-size: 1.1rem;
+}
+
+.shelf-empty p:not(.shelf-empty-title) {
+  max-width: 52ch;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .shelf-controls {
+    flex-direction: column-reverse;
+    align-items: stretch;
+
+    border-bottom: 0;
+  }
+
+  .tabs {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .search {
+    width: 100%;
+
+    margin-bottom: 0;
+  }
+
+  .shelf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1.75rem 1rem;
+  }
+
+  .shelf-summary {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .shelf-actions {
+    width: 100%;
+  }
+
+  .shelf-actions .btn {
+    flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

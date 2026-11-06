@@ -1,0 +1,111 @@
+/* =========================================================
+   CAPA
+   Proporção de livro (2:3) e uma lombada escura à esquerda.
+   ========================================================= */
+
+.cover {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 2 / 3;
+
+  overflow: hidden;
+
+  container-type: inline-size;
+
+  background: var(--surface-muted);
+
+  border-radius: 3px 6px 6px 3px;
+
+  box-shadow:
+    inset 6px 0 6px -4px rgba(0, 0, 0, 0.35),
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    0 10px 20px -10px rgba(0, 0, 0, 0.45);
+}
+
+.cover img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* Lombada (vale para capa real e gerada) */
+
+.cover::after {
+  content: "";
+
+  position: absolute;
+  inset: 0 auto 0 0;
+
+  width: 7px;
+
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.28), rgba(255, 255, 255, 0.08) 70%, transparent);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CAPA GERADA (TECIDO + FILETE DOURADO)
+   ========================================================= */
+
+.cover-cloth {
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0 1px, transparent 1px 3px),
+    var(--cloth);
+}
+
+.cover-frame {
+  position: absolute;
+  inset: 9% 10% 9% 14%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14% 6% 10%;
+
+  text-align: center;
+
+  border: 1px solid rgba(232, 201, 128, 0.7);
+  outline: 1px solid rgba(232, 201, 128, 0.35);
+  outline-offset: 3px;
+}
+
+.cover-title {
+  color: #f3e3b5;
+
+  font-family: var(--font-book);
+  font-size: clamp(0.7rem, 10.5cqi, 1.4rem);
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  text-wrap: balance;
+  hyphens: auto;
+  overflow-wrap: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cover-author {
+  color: rgba(243, 227, 181, 0.8);
+
+  font-size: clamp(0.5rem, 5cqi, 0.8rem);
+  font-weight: 500;
+
+  letter-spacing: 0.06em;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

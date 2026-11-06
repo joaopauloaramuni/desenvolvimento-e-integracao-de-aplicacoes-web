@@ -1,0 +1,291 @@
+/* =========================================================
+   PAINEL DO LIVRO (<dialog>)
+   ========================================================= */
+
+.details {
+  width: min(760px, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+
+  margin: auto;
+  padding: 0;
+
+  color: var(--foreground);
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-card);
+}
+
+.details::backdrop {
+  background: rgba(10, 20, 16, 0.55);
+
+  backdrop-filter: blur(3px);
+}
+
+.details[open] {
+  animation: details-open 0.22s ease-out;
+}
+
+@keyframes details-open {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+.details-body {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 2rem;
+
+  padding: 2rem;
+}
+
+.details-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  color: var(--muted);
+
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  font-size: 1.1rem;
+
+  cursor: pointer;
+}
+
+.details-close:hover {
+  color: var(--foreground);
+
+  background: var(--surface-muted);
+}
+
+.details-close:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.details-info h2 {
+  margin-top: 0.6rem;
+  padding-right: 2rem;
+
+  color: var(--title);
+
+  font-family: var(--font-book);
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+.details-author {
+  margin-top: 0.3rem;
+
+  color: var(--muted);
+}
+
+.details-progress {
+  margin-top: 1rem;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+.details-progress strong {
+  color: var(--foreground);
+
+  font-family: var(--font-book);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.details-info h3 {
+  margin: 1.5rem 0 0.75rem;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.details-loading {
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+.details-file {
+  margin-top: 1.25rem;
+
+  color: var(--muted);
+
+  font-size: 0.75rem;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-pill {
+  display: inline-block;
+
+  padding: 0.2rem 0.65rem;
+
+  color: var(--brand);
+
+  background: var(--brand-tint);
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.status-finished {
+  color: var(--success-text);
+
+  background: var(--success-background);
+}
+
+.status-paused,
+.status-dnf {
+  color: var(--muted);
+
+  background: var(--surface-muted);
+}
+
+/* =========================================================
+   APARELHOS
+   ========================================================= */
+
+.devices {
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+
+  border-top: 1px solid var(--border);
+}
+
+.device {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 6.5rem;
+  grid-template-areas:
+    "icon name pct"
+    "icon bar  when";
+  column-gap: 0.75rem;
+  row-gap: 0.35rem;
+  align-items: center;
+
+  padding: 0.8rem 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.device-icon {
+  grid-area: icon;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  color: var(--brand);
+
+  background: var(--brand-tint);
+
+  border-radius: 8px;
+}
+
+.device-icon-kindle {
+  color: var(--kindle-text);
+
+  background: var(--kindle-bg);
+}
+
+.device-name {
+  grid-area: name;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.device-tag {
+  color: var(--foil-text);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.device-pct {
+  grid-area: pct;
+
+  text-align: right;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.device-bar {
+  grid-area: bar;
+}
+
+.device-when {
+  grid-area: when;
+
+  text-align: right;
+
+  color: var(--muted);
+
+  font-size: 0.75rem;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .details-body {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    padding: 1.5rem 1.25rem;
+  }
+
+  .details-cover {
+    width: 120px;
+  }
+
+  .details-info h2 {
+    font-size: 1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .details[open] {
+    animation: none;
+  }
+}

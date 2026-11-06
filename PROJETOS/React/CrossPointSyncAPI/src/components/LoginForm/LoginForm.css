@@ -1,0 +1,100 @@
+/* =========================================================
+   ENTRADA
+   ========================================================= */
+
+.login {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.login-hint {
+  margin-top: -0.4rem;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.login-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  margin-top: 0.4rem;
+}
+
+/* =========================================================
+   QUADRO DO KINDLE
+   ========================================================= */
+
+.login-aside {
+  padding: 1.5rem;
+
+  background: var(--surface-muted);
+
+  border-left: 3px solid var(--foil);
+  border-radius: 0 var(--radius) var(--radius) 0;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.login-aside h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-bottom: 0.75rem;
+
+  color: var(--title);
+
+  font-family: var(--font-book);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.login-aside p + p {
+  margin-top: 0.75rem;
+}
+
+.login-aside-note {
+  color: var(--muted);
+
+  font-size: 0.82rem;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 820px) {
+  .login {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .login-actions .btn {
+    flex: 1 1 100%;
+  }
+}

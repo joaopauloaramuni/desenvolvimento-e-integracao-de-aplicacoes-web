@@ -1,0 +1,418 @@
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   VARIÁVEIS: TEMA CLARO
+   Paleta de encadernação: tecido verde + filete dourado.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  --font-body: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --font-book: "Literata", Georgia, "Times New Roman", serif;
+
+  --brand: #2f5d50;
+  --brand-deep: #1a3a31;
+  --brand-tint: #e6efeb;
+
+  --title: #1d3d34;
+
+  /* Dourado do filete */
+  --foil: #b8923a;
+  --foil-bright: #e8c980;
+  --foil-text: #8a6a1f;
+
+  /* Faixa do topo */
+  --hero-from: #142e27;
+  --hero-to: #2f5d50;
+
+  /* Botão principal */
+  --primary: #2f5d50;
+  --primary-hover: #234a3f;
+  --on-primary: #ffffff;
+
+  /* Selo do Kindle */
+  --kindle-bg: #fff1d6;
+  --kindle-text: #8a4b00;
+
+  --background: #eef2f0;
+  --foreground: #18211e;
+  --muted: #5d6a65;
+  --border: #dde5e1;
+  --border-strong: #c3cfca;
+  --surface: #ffffff;
+  --surface-muted: #f3f6f4;
+  --input-background: #ffffff;
+  --placeholder: #93a19b;
+
+  --track: #e3e9e6;
+
+  --glow-1: rgba(47, 93, 80, 0.1);
+  --glow-2: rgba(184, 146, 58, 0.08);
+
+  --shadow-card:
+    0 2px 4px rgba(20, 46, 39, 0.06),
+    0 24px 56px -12px rgba(20, 46, 39, 0.24);
+  --focus-ring: 0 0 0 4px rgba(47, 93, 80, 0.16);
+
+  /* Mensagens */
+  --error-background: #fef2f2;
+  --error-border: #fecaca;
+  --error-text: #b42318;
+
+  --success-background: #e8f5e9;
+  --success-border: #a5d6a7;
+  --success-text: #2e7d32;
+
+  --radius: 12px;
+}
+
+/* ==========================================================================
+   VARIÁVEIS: TEMA ESCURO
+   ========================================================================== */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --brand: #8cc4b2;
+  --brand-deep: #0d1f1a;
+  --brand-tint: rgba(140, 196, 178, 0.14);
+
+  --title: #e6efe9;
+
+  --foil: #d4b062;
+  --foil-bright: #ecd08f;
+  --foil-text: #e0bf73;
+
+  --hero-from: #0b1915;
+  --hero-to: #23473d;
+
+  --primary: #8cc4b2;
+  --primary-hover: #a6d3c4;
+  --on-primary: #0d1f1a;
+
+  --kindle-bg: rgba(255, 176, 64, 0.16);
+  --kindle-text: #ffc670;
+
+  --background: #0f1513;
+  --foreground: #e3e9e6;
+  --muted: #9aa8a2;
+  --border: #26302c;
+  --border-strong: #35413c;
+  --surface: #161e1b;
+  --surface-muted: #1d2724;
+  --input-background: #121916;
+  --placeholder: #6b7a74;
+
+  --track: #27332f;
+
+  --glow-1: rgba(140, 196, 178, 0.07);
+  --glow-2: rgba(212, 176, 98, 0.05);
+
+  --shadow-card:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 24px 56px -12px rgba(0, 0, 0, 0.6);
+  --focus-ring: 0 0 0 4px rgba(140, 196, 178, 0.2);
+
+  --error-background: rgba(244, 63, 94, 0.1);
+  --error-border: rgba(244, 63, 94, 0.35);
+  --error-text: #fda4af;
+
+  --success-background: rgba(74, 222, 128, 0.1);
+  --success-border: rgba(74, 222, 128, 0.3);
+  --success-text: #86efac;
+}
+
+/* ==========================================================================
+   BODY
+   ========================================================================== */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 2rem;
+
+  font-family: var(--font-body);
+
+  color: var(--foreground);
+
+  background:
+    radial-gradient(circle at 10% 10%, var(--glow-1), transparent 30%),
+    radial-gradient(circle at 90% 90%, var(--glow-2), transparent 30%),
+    var(--background);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   COMPONENTES COMPARTILHADOS
+   ========================================================================== */
+
+.section-title {
+  color: var(--title);
+
+  font-family: var(--font-book);
+  font-size: 1.35rem;
+  font-weight: 600;
+
+  line-height: 1.25;
+}
+
+/* Campos */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  min-width: 0;
+}
+
+.field > span {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+
+  padding: 0.75rem 0.9rem;
+
+  color: var(--foreground);
+
+  background: var(--input-background);
+
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.field input::placeholder {
+  color: var(--placeholder);
+}
+
+.field input:focus {
+  border-color: var(--brand);
+  outline: none;
+
+  box-shadow: var(--focus-ring);
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  font-size: 0.88rem;
+
+  cursor: pointer;
+}
+
+.check input {
+  width: 1rem;
+  height: 1rem;
+
+  accent-color: var(--brand);
+}
+
+/* Botões */
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.7rem 1.2rem;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.btn:focus-visible {
+  outline: none;
+
+  box-shadow: var(--focus-ring);
+}
+
+.btn-primary {
+  color: var(--on-primary);
+
+  background: var(--primary);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: var(--primary-hover);
+}
+
+.btn-ghost {
+  color: var(--foreground);
+
+  background: transparent;
+
+  border-color: var(--border-strong);
+}
+
+.btn-ghost:not(:disabled):hover {
+  background: var(--surface-muted);
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alertas */
+
+.alert {
+  padding: 0.75rem 1rem;
+
+  border: 1px solid;
+  border-radius: 10px;
+
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.alert-error {
+  color: var(--error-text);
+
+  background: var(--error-background);
+
+  border-color: var(--error-border);
+}
+
+/* Barra de progresso */
+
+.progress {
+  display: block;
+
+  width: 100%;
+  height: 4px;
+
+  overflow: hidden;
+
+  background: var(--track);
+
+  border-radius: 999px;
+}
+
+.progress-fill {
+  display: block;
+
+  height: 100%;
+
+  background: linear-gradient(90deg, var(--brand), var(--foil));
+
+  border-radius: inherit;
+}
+
+/* Selo do Kindle */
+
+.kindle-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  padding: 0.15rem 0.5rem;
+
+  color: var(--kindle-text);
+
+  background: var(--kindle-bg);
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  body {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin {
+    animation: none;
+  }
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./pucminas-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="O que estou lendo: estante em React + Vite a partir do crosspoint-sync, com o progresso do CrossPoint, do KOReader e do Kindle."
+    />
+    <title>CrossPoint Sync API - React</title>
+
+    <!-- Aplica o tema (light/dark) ANTES do React carregar, para não piscar.
+         A chave "crosspoint:theme" é a mesma do src/config/crosspointConfig.js -->
+    <script>
+      (function () {
+        var tema = null;
+        try {
+          tema = localStorage.getItem("crosspoint:theme");
+        } catch (e) {}
+        if (tema !== "light" && tema !== "dark") {
+          tema = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = tema;
+      })();
+    </script>
+
+    <!-- Fontes: Montserrat (interface) e Literata (títulos de livros) - Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
