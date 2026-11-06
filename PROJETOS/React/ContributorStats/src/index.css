@@ -1,0 +1,109 @@
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   VARIÁVEIS (mesma paleta do SecureLoginPUC_React)
+   ========================================================================== */
+
+:root {
+  --brand: #005380;
+  --brand-deep: #00334f;
+  --brand-mid: #0a6ea6;
+  --brand-soft: #4fa8d8;
+
+  --background: #f8fafc;
+  --foreground: #171717;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --input-background: #ffffff;
+  --placeholder: #94a3b8;
+
+  /* Mensagens */
+  --error-background: #fef2f2;
+  --error-border: #fecaca;
+  --error-text: #b91c1c;
+
+  --success-background: #e8f5e9;
+  --success-border: #a5d6a7;
+  --success-text: #2e7d32;
+
+  --warning-background: #fffbeb;
+  --warning-border: #fde68a;
+  --warning-text: #92400e;
+
+  --radius: 12px;
+}
+
+/* ==========================================================================
+   BODY
+   ========================================================================== */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 2rem;
+
+  font-family: "Montserrat", sans-serif;
+
+  color: var(--foreground);
+
+  background:
+    radial-gradient(circle at 10% 10%, rgba(0, 83, 128, 0.08), transparent 30%),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(79, 168, 216, 0.1),
+      transparent 30%
+    ),
+    var(--background);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+/* Inputs e botões herdam a fonte Montserrat */
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  body {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 0.75rem;
+  }
+}
