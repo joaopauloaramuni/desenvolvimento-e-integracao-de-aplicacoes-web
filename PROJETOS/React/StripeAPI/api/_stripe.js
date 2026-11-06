@@ -58,6 +58,7 @@ function sendError(res, status, error, message, retryAfter) {
    ===================================================================== */
 
 const requests = new Map(); // ip → [timestamps]
+const MAX_TRACKED_IPS = 5000; // evita crescimento ilimitado do Map (CWE-770)
 
 const ipOf = (req) =>
   String(req.headers["x-forwarded-for"] ?? "").split(",")[0].trim() ||
@@ -68,6 +69,15 @@ const ipOf = (req) =>
 function waitSeconds(ip, now = Date.now()) {
   const biggest = Math.max(...LIMITS.map((l) => l.windowMs));
   const recent = (requests.get(ip) ?? []).filter((t) => now - t < biggest);
+
+  if (recent.length === 0) {
+    requests.delete(ip);
+    // Mapa cheio de visitantes novos: descarta o registro mais antigo
+    // antes de criar outro, para não crescer sem limite (memória).
+    if (requests.size >= MAX_TRACKED_IPS) {
+      requests.delete(requests.keys().next().value);
+    }
+  }
 
   for (const { windowMs, max } of LIMITS) {
     const inWindow = recent.filter((t) => now - t < windowMs);
