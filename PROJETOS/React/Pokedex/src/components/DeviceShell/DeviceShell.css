@@ -1,0 +1,630 @@
+/* =====================================================================
+   Mesa (fundo da página)
+   ===================================================================== */
+.desk {
+  isolation: isolate;
+  display: grid;
+  /* minmax(0, 1fr): o aparelho nunca fica mais largo que a janela (sem rolagem lateral) */
+  grid-template-columns: minmax(0, 1fr);
+  place-items: center;
+  min-height: 100dvh;
+  padding: clamp(10px, 2.6vw, 30px);
+  padding-top: max(clamp(10px, 2.6vw, 30px), env(safe-area-inset-top));
+  padding-bottom: max(clamp(10px, 2.6vw, 30px), env(safe-area-inset-bottom));
+  background-color: var(--desk);
+  background-image:
+    radial-gradient(ellipse 70% 60% at 28% 8%, var(--desk-light), transparent 70%),
+    radial-gradient(ellipse 90% 70% at 80% 110%, var(--desk-shade), transparent 70%), var(--grain);
+}
+
+/* =====================================================================
+   Carcaça
+   ===================================================================== */
+.device {
+  --pad: 26px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(1760px, 100%);
+  height: clamp(560px, calc(100dvh - 2 * clamp(10px, 2.6vw, 30px)), 1000px);
+  padding: 18px var(--pad) 14px;
+  border-radius: 34px 34px 44px 44px;
+  background:
+    radial-gradient(ellipse 60% 40% at 18% 0%, rgb(255 255 255 / 0.22), transparent 70%),
+    linear-gradient(
+      165deg,
+      var(--shell-hi) 0%,
+      var(--shell) 24%,
+      var(--shell) 72%,
+      var(--shell-lo) 100%
+    );
+  box-shadow:
+    inset 0 2px 1px rgb(255 255 255 / 0.45),
+    inset 0 -4px 3px rgb(0 0 0 / 0.28),
+    inset 3px 0 3px rgb(255 255 255 / 0.12),
+    inset -3px 0 3px rgb(0 0 0 / 0.16),
+    0 1px 0 var(--shell-lo),
+    0 9px 0 var(--shell-edge),
+    0 12px 3px rgb(0 0 0 / 0.25),
+    0 36px 50px -16px rgb(0 0 0 / 0.5),
+    0 80px 120px -40px rgb(0 0 0 / 0.45);
+}
+
+/* Textura fosca do plástico */
+.device::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: var(--grain);
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Linha de junção do molde */
+.device::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgb(0 0 0 / 0.2);
+  border-radius: 28px 28px 38px 38px;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.1),
+    inset 0 1px 0 rgb(255 255 255 / 0.08);
+  pointer-events: none;
+}
+
+/* Empunhaduras de borracha nas laterais */
+.device__grip {
+  position: absolute;
+  top: 24%;
+  z-index: -1;
+  width: 14px;
+  height: 44%;
+  border-radius: 8px;
+  background: repeating-linear-gradient(180deg, var(--accent) 0 7px, var(--accent-lo) 7px 9px);
+  box-shadow:
+    inset 0 0 0 1px rgb(0 0 0 / 0.25),
+    0 6px 10px rgb(0 0 0 / 0.3);
+}
+
+.device__grip--left {
+  left: -8px;
+}
+
+.device__grip--right {
+  right: -8px;
+}
+
+/* =====================================================================
+   Parte de cima: sensor, nome, LED e botões
+   ===================================================================== */
+.device__top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 18px;
+  padding: 2px 4px 0;
+}
+
+.device__sensor {
+  position: relative;
+  flex: none;
+  width: 118px;
+  height: 42px;
+  overflow: hidden;
+  border-radius: 11px;
+  background:
+    repeating-linear-gradient(90deg, rgb(120 210 255 / 0.13) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(0deg, rgb(120 210 255 / 0.1) 0 1px, transparent 1px 9px),
+    linear-gradient(180deg, #08101c, #17243a);
+  box-shadow:
+    inset 0 3px 5px rgb(0 0 0 / 0.85),
+    inset 0 0 0 1px rgb(0 0 0 / 0.6),
+    0 1px 0 rgb(255 255 255 / 0.28),
+    0 -1px 0 rgb(0 0 0 / 0.25);
+}
+
+/* Reflexo do vidro do sensor */
+.device__sensor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.22), transparent 42%);
+}
+
+.device__sweep {
+  position: absolute;
+  inset: 0 auto 0 -40px;
+  width: 36px;
+  background: linear-gradient(90deg, transparent, rgb(130 230 255 / 0.85), transparent);
+  animation: sensor-sweep 1.3s cubic-bezier(0.45, 0, 0.3, 1) 0.2s both;
+}
+
+@keyframes sensor-sweep {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+}
+
+.device__brand {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: 0.01em;
+  color: rgb(255 255 255 / 0.92);
+  text-shadow:
+    0 -1px 0 rgb(0 0 0 / 0.35),
+    0 2px 2px rgb(0 0 0 / 0.2);
+}
+
+.device__led {
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #2a3140, #0d1118);
+  box-shadow:
+    inset 0 2px 3px rgb(0 0 0 / 0.8),
+    0 1px 0 rgb(255 255 255 / 0.25);
+}
+
+.led {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgb(255 255 255 / 0.55), transparent 45%), var(--led-color);
+  box-shadow:
+    0 0 6px 1px var(--led-glow),
+    0 0 16px 3px var(--led-glow);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.led[data-status="ok"] {
+  --led-color: var(--led-ok);
+  --led-glow: rgb(59 219 107 / 0.55);
+}
+
+.led[data-status="loading"],
+.led[data-status="saving"] {
+  --led-color: var(--led-busy);
+  --led-glow: rgb(255 176 32 / 0.6);
+  animation: led-blink 0.7s steps(2, jump-none) infinite;
+}
+
+.led[data-status="error"] {
+  --led-color: var(--led-error);
+  --led-glow: rgb(255 74 61 / 0.6);
+}
+
+.led[data-status="off"] {
+  --led-color: var(--led-off);
+  --led-glow: transparent;
+}
+
+@keyframes led-blink {
+  50% {
+    filter: brightness(0.45);
+    box-shadow: none;
+  }
+}
+
+.device__controls {
+  display: flex;
+  gap: 10px;
+}
+
+/* No Clássico os dois grupos de botões ficam numa fila só (os grupos não criam caixa) */
+.device__group {
+  display: contents;
+}
+
+/* A lente azul só existe no tema Holo (DeviceShellHolo.css) */
+.device__lens {
+  display: none;
+}
+
+/* Botões físicos */
+.hw-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.08s ease;
+}
+
+.hw-button:active {
+  transform: translateY(3px);
+}
+
+.hw-button--accent {
+  background: linear-gradient(180deg, #ffd34a 0%, var(--accent) 50%, #dca000 100%);
+  color: var(--accent-ink);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.65),
+    inset 0 -2px 0 rgb(0 0 0 / 0.12),
+    0 4px 0 var(--accent-lo),
+    0 7px 8px rgb(0 0 0 / 0.3);
+}
+
+.hw-button--accent:active {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    0 1px 0 var(--accent-lo),
+    0 2px 3px rgb(0 0 0 / 0.3);
+}
+
+.hw-button--rubber {
+  background: linear-gradient(180deg, #434958 0%, #2b303b 100%);
+  color: #e3e7ef;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.18),
+    0 4px 0 #161a21,
+    0 7px 8px rgb(0 0 0 / 0.3);
+}
+
+.hw-button--rubber:active {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.12),
+    0 1px 0 #161a21,
+    0 2px 3px rgb(0 0 0 / 0.3);
+}
+
+.hw-button--rubber[aria-pressed="true"] .icon {
+  color: #ffd34a;
+  filter: drop-shadow(0 0 4px rgb(255 211 74 / 0.7));
+}
+
+.hw-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+/* =====================================================================
+   Moldura e tela
+   ===================================================================== */
+.device__bezel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: 14px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #1f2733, #0f141b);
+  box-shadow:
+    inset 0 2px 4px rgb(0 0 0 / 0.75),
+    inset 0 -1px 0 rgb(255 255 255 / 0.08),
+    0 1px 0 rgb(255 255 255 / 0.32),
+    0 -1px 0 rgb(0 0 0 / 0.3);
+}
+
+.device__screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--screen-bg);
+  color: var(--screen-ink);
+  box-shadow:
+    inset 0 0 0 1px rgb(0 0 0 / 0.45),
+    inset 0 0 30px rgb(0 0 0 / 0.16);
+}
+
+/*
+ * A tela "liga" toda vez que a Pokédex abre (a capa sai da frente).
+ * Duas cópias da mesma animação: trocar o nome faz o navegador tocar de novo
+ * sem remontar a tela (a lista, os filtros e os detalhes continuam como estavam).
+ */
+.device__screen[data-boot="a"] {
+  animation: screen-on 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.device__screen[data-boot="b"] {
+  animation: screen-on-b 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Reflexo no vidro da tela */
+.device__screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background: linear-gradient(116deg, var(--glare) 0%, transparent 26%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Linhas de varredura bem leves (só no modo noturno) */
+.device__screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background: repeating-linear-gradient(0deg, var(--scanline) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+}
+
+/* A tela "liga" como um monitor: uma linha que se abre */
+@keyframes screen-on {
+  0% {
+    clip-path: inset(49.6% 0 49.6% 0);
+    filter: brightness(2.6);
+  }
+  35% {
+    clip-path: inset(49.6% 0 49.6% 0);
+    filter: brightness(2.6);
+  }
+  75% {
+    clip-path: inset(0 0 0 0);
+    filter: brightness(1.25);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    filter: none;
+  }
+}
+
+@keyframes screen-on-b {
+  0% {
+    clip-path: inset(49.6% 0 49.6% 0);
+    filter: brightness(2.6);
+  }
+  35% {
+    clip-path: inset(49.6% 0 49.6% 0);
+    filter: brightness(2.6);
+  }
+  75% {
+    clip-path: inset(0 0 0 0);
+    filter: brightness(1.25);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    filter: none;
+  }
+}
+
+/* =====================================================================
+   Parte de baixo: parafusos, alto-falante e gravação
+   ===================================================================== */
+.device__bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 30px;
+  padding: 0 6px;
+}
+
+.screw {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background:
+    linear-gradient(45deg, transparent 43%, rgb(0 0 0 / 0.55) 44% 56%, transparent 57%),
+    radial-gradient(circle at 35% 30%, #e6d7d8, #8a6a6d 55%, #43282b);
+  box-shadow:
+    inset 0 0 0 1px rgb(0 0 0 / 0.35),
+    0 1px 0 rgb(255 255 255 / 0.2);
+}
+
+.device__speaker {
+  width: 150px;
+  height: 18px;
+  border-radius: 9px;
+  background: radial-gradient(circle, rgb(0 0 0 / 0.6) 0 2px, transparent 2.6px) 1px 0 / 9px 9px;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 0.25);
+}
+
+.device__engraving {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: rgb(0 0 0 / 0.38);
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.18);
+}
+
+/* =====================================================================
+   Tablet e celular
+   ===================================================================== */
+@media (max-width: 900px) {
+  .device {
+    --pad: 18px;
+  }
+
+  .device__grip {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .desk {
+    padding: max(6px, env(safe-area-inset-top)) max(6px, env(safe-area-inset-right))
+      max(6px, env(safe-area-inset-bottom)) max(6px, env(safe-area-inset-left));
+  }
+
+  .device {
+    --pad: 10px;
+    gap: 10px;
+    height: calc(100dvh - 12px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    min-height: 520px;
+    padding: 12px var(--pad) 8px;
+    border-radius: 26px 26px 30px 30px;
+  }
+
+  .device::after {
+    inset: 5px;
+    border-radius: 22px 22px 26px 26px;
+  }
+
+  .device__top {
+    gap: 10px;
+    padding: 0 4px;
+  }
+
+  .device__sensor {
+    width: 54px;
+    height: 32px;
+    border-radius: 9px;
+  }
+
+  .device__brand {
+    min-width: 0;
+    overflow: hidden;
+    font-size: 1.3rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .device__led {
+    width: 22px;
+    height: 22px;
+  }
+
+  .led {
+    width: 11px;
+    height: 11px;
+  }
+
+  .device__controls {
+    gap: 6px;
+  }
+
+  .hw-button {
+    justify-content: center;
+    width: 40px;
+    height: 38px;
+    padding: 0;
+  }
+
+  .hw-button__label {
+    display: none;
+  }
+
+  .device__bezel {
+    padding: 7px;
+    border-radius: 18px;
+  }
+
+  .device__screen {
+    border-radius: 11px;
+  }
+
+  .device__bottom {
+    height: 20px;
+    gap: 12px;
+  }
+
+  .device__speaker {
+    width: 90px;
+    height: 12px;
+    background-size: 7px 6px;
+  }
+
+  .device__engraving {
+    font-size: 0.75rem;
+  }
+
+  .screw {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+/* Celulares estreitos: com quatro botões (Noturno, Tema, Fechar, Sortear), o sensor sai para caber tudo */
+@media (max-width: 420px) {
+  .device__sensor {
+    display: none;
+  }
+
+  .device__top {
+    gap: 8px;
+  }
+}
+
+/* =====================================================================
+   Janelas baixas no desktop (notebook com Dock/barra de tarefas):
+   a carcaça fica mais fina para sobrar altura para a tela.
+   ===================================================================== */
+@media (min-width: 1000px) and (max-height: 820px) {
+  .desk {
+    padding: 10px clamp(10px, 2vw, 24px);
+  }
+
+  .device {
+    gap: 8px;
+    height: max(520px, calc(100dvh - 20px));
+    padding: 10px var(--pad) 6px;
+    border-radius: 28px 28px 34px 34px;
+  }
+
+  .device::after {
+    inset: 5px;
+    border-radius: 23px 23px 29px 29px;
+  }
+
+  .device__sensor {
+    height: 34px;
+  }
+
+  .device__brand {
+    font-size: 1.45rem;
+  }
+
+  .hw-button {
+    height: 38px;
+  }
+
+  .device__bezel {
+    padding: 8px;
+    border-radius: 18px;
+  }
+
+  .device__bottom {
+    height: 18px;
+  }
+
+  .device__speaker {
+    height: 12px;
+    background-size: 7px 6px;
+  }
+
+  .screw {
+    width: 11px;
+    height: 11px;
+  }
+}

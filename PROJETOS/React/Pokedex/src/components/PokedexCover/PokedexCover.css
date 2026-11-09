@@ -1,0 +1,244 @@
+/* =====================================================================
+   Capa: a Pokédex fechada/aberta por cima de tudo
+   Medidas da imagem original (1638 x 2058 px):
+   - tampa:   x 204-1398, y 492-1770 (dobradiça em x 1398)
+   - lente:   centro 336, 264, raio 120
+   - LED verde: centro 747, 201, raio 27
+   - tela:    x 336-1266, y 618-1140
+   ===================================================================== */
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 4px;
+  padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  background-color: var(--desk);
+  background-image:
+    radial-gradient(ellipse 70% 60% at 28% 8%, var(--desk-light), transparent 70%),
+    radial-gradient(ellipse 90% 70% at 80% 110%, var(--desk-shade), transparent 70%), var(--grain);
+}
+
+/*
+ * Fade só quando a capa volta pelo botão Fechar (o aparelho está ligado por baixo).
+ * Ao carregar a página não há fade: a capa já nasce opaca, senão a lista de
+ * Pokémon apareceria por um instante antes da Pokédex fechada.
+ */
+.cover[data-fase="fechando"] {
+  animation: cover-in 0.25s ease both;
+}
+
+@keyframes cover-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Ao ligar, a capa some e revela o aparelho */
+.cover[data-fase="iniciando"] {
+  animation: cover-out 0.35s ease 0.8s both;
+}
+
+@keyframes cover-out {
+  to {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+.cover__device {
+  position: relative;
+  display: block;
+  /* Proporção da imagem: 1638 / 2058 */
+  width: min(92vw, calc((100dvh - 90px) * 1638 / 2058), 620px);
+  aspect-ratio: 1638 / 2058;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  perspective: 2200px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cover__device:disabled {
+  cursor: default;
+}
+
+.cover__device:focus-visible {
+  outline: none;
+}
+
+/* Foco do teclado: a Pokédex ganha um brilho em volta (e a tampa "desgruda", abaixo) */
+.cover__device:focus-visible .cover__img {
+  filter: drop-shadow(0 0 14px rgb(255 255 255 / 0.85));
+}
+
+.cover__img,
+.cover__lid {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---------- Tampa ---------- */
+.cover__lid {
+  clip-path: inset(23.907% 14.652% 13.994% 12.454% round 3.66% / 2.92%);
+  transform-origin: 85.348% 50%;
+  backface-visibility: hidden;
+  transition: transform 0.2s ease;
+}
+
+.cover[data-fase="fechada"] .cover__device:hover .cover__lid,
+.cover[data-fase="fechada"] .cover__device:focus-visible .cover__lid {
+  /* A tampa "desgruda" um pouco: convite para abrir */
+  transform: rotateY(9deg);
+}
+
+.cover[data-fase="abrindo"] .cover__lid,
+.cover[data-fase="iniciando"] .cover__lid {
+  animation: lid-open 0.75s cubic-bezier(0.55, 0, 0.3, 1) both;
+}
+
+.cover[data-fase="fechando"] .cover__lid {
+  animation: lid-open 0.65s cubic-bezier(0.55, 0, 0.3, 1) reverse both;
+}
+
+@keyframes lid-open {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(105deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- Luzes ---------- */
+.cover__lens,
+.cover__led,
+.cover__scan {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.cover__lens {
+  left: calc((336 - 93) / 1638 * 100%);
+  top: calc((264 - 93) / 2058 * 100%);
+  width: calc(186 / 1638 * 100%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 38%,
+    rgb(180 220 255 / 0.95),
+    rgb(80 150 255 / 0.5) 45%,
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+}
+
+.cover__led {
+  left: calc((747 - 27) / 1638 * 100%);
+  top: calc((201 - 27) / 2058 * 100%);
+  width: calc(54 / 1638 * 100%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #3bdb6b;
+  box-shadow: 0 0 10px 3px rgb(59 219 107 / 0.7);
+}
+
+.cover__scan {
+  left: calc(336 / 1638 * 100%);
+  top: calc(618 / 2058 * 100%);
+  width: calc(930 / 1638 * 100%);
+  height: calc(522 / 2058 * 100%);
+  overflow: hidden;
+  border-radius: 1.4% / 3%;
+}
+
+.cover__scan::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -30%;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.55), transparent);
+}
+
+.cover[data-fase="iniciando"] .cover__lens {
+  animation: light-on 0.5s ease both;
+}
+
+.cover[data-fase="iniciando"] .cover__led {
+  animation: led-on 0.36s steps(2, jump-none) 0.15s infinite;
+}
+
+.cover[data-fase="iniciando"] .cover__scan {
+  opacity: 1;
+}
+
+.cover[data-fase="iniciando"] .cover__scan::after {
+  animation: screen-sweep 0.9s cubic-bezier(0.45, 0, 0.3, 1) both;
+}
+
+@keyframes light-on {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes led-on {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes screen-sweep {
+  to {
+    transform: translateX(460%);
+  }
+}
+
+/* ---------- Legenda ---------- */
+.cover__hint {
+  margin: 0;
+  min-height: 1.5em;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: color-mix(in srgb, var(--screen-ink) 75%, var(--desk));
+  text-align: center;
+}
+
+:root[data-theme="dark"] .cover__hint {
+  color: rgb(255 255 255 / 0.72);
+}
+
+.cover__key {
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+@media (hover: none) {
+  .cover__key {
+    display: none;
+  }
+}

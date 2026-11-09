@@ -1,0 +1,359 @@
+/* =====================================================================
+   Tema Holo
+   O aparelho usa a imagem src/assets/images/holo-fundo.webp (1672 x 941 px):
+   moldura vermelha, lente azul, LEDs e a tela azul holográfica com a Pokébola.
+
+   - Telas largas (a partir de 1000 px e mais largas que 4:3): a imagem inteira é o
+     aparelho, sem distorcer. Tudo é posicionado em "pixels da imagem":
+     --u = 1 px da imagem original na tela (calc(N * var(--u)) = N px da imagem).
+   - Celular, tablet em pé e janelas estreitas: a imagem 16:9 ficaria pequena demais.
+     O aparelho volta ao layout do Clássico, com as cores da moldura da imagem, e a
+     tela usa só o miolo da arte (holo-tela.webp), centralizado na Pokébola.
+   ===================================================================== */
+
+/* ---------- Lente azul (os dois layouts) ---------- */
+:root[data-skin="holo"] .device__sensor {
+  display: none;
+}
+
+:root[data-skin="holo"] .device__lens {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  /* Anel metálico com contorno escuro, como na imagem */
+  background: radial-gradient(circle at 50% 38%, #f3f6fa, #a3acb8 52%, #4b525e 100%);
+  box-shadow:
+    0 0 0 2.5px #2a070a,
+    inset 0 -2px 3px rgb(0 0 0 / 0.35),
+    0 2px 3px rgb(0 0 0 / 0.3);
+}
+
+.device__lens-glass,
+.device__lens-glow {
+  position: absolute;
+  inset: 17%;
+  border-radius: 50%;
+}
+
+.device__lens-glass {
+  z-index: 1;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 38% 32%,
+    #d4fcff 0 9%,
+    #4fd8ff 24%,
+    #0b9ad8 56%,
+    #05456f 100%
+  );
+  box-shadow:
+    0 0 0 2px #0d1a26,
+    inset 0 3px 5px rgb(0 0 0 / 0.35);
+}
+
+/*
+ * Mesma varredura do sensor do Clássico (key={scanKey}: toca de novo a cada
+ * Pokémon sorteado): uma faixa de luz atravessa o vidro da lente...
+ */
+.device__lens-sweep {
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: -60%;
+  width: 45%;
+  rotate: 18deg;
+  background: linear-gradient(90deg, transparent, rgb(200 250 255 / 0.9), transparent);
+  animation: lens-sweep 1.3s cubic-bezier(0.45, 0, 0.3, 1) 0.2s both;
+}
+
+@keyframes lens-sweep {
+  0% {
+    translate: 0 0;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    translate: 420% 0;
+    opacity: 0;
+  }
+}
+
+/* ...e a lente acende (brilho em volta e vidro mais claro) enquanto a faixa passa */
+.device__lens-glow {
+  z-index: 2;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: lens-glow 1.3s ease-out 0.2s both;
+}
+
+@keyframes lens-glow {
+  0%,
+  100% {
+    background: transparent;
+    box-shadow: 0 0 0 0 rgb(120 230 255 / 0);
+  }
+  35% {
+    background: rgb(150 240 255 / 0.4);
+    box-shadow:
+      0 0 14px 5px rgb(120 230 255 / 0.75),
+      0 0 34px 12px rgb(80 200 255 / 0.35);
+  }
+}
+
+/* ---------- Texto da tela: sombra leve para ler sobre a arte ---------- */
+:root[data-skin="holo"] .device__screen {
+  text-shadow: var(--screen-text-shadow);
+}
+
+/* =====================================================================
+   Holo em celular, tablet em pé e janelas estreitas (layout do Clássico)
+   ===================================================================== */
+:root[data-skin="holo"] .device {
+  background:
+    radial-gradient(ellipse 60% 40% at 18% 0%, rgb(255 255 255 / 0.14), transparent 70%),
+    linear-gradient(180deg, #e2363c 0%, #d42a30 60%, #c22328 100%);
+  box-shadow:
+    inset 0 0 0 3px #3d0a0e,
+    inset 0 5px 0 rgb(255 255 255 / 0.16),
+    inset 0 -6px 0 rgb(0 0 0 / 0.18),
+    0 9px 0 #6f121a,
+    0 12px 3px rgb(0 0 0 / 0.25),
+    0 36px 50px -16px rgb(0 0 0 / 0.5);
+}
+
+:root[data-skin="holo"] .device::before {
+  opacity: 0.18;
+}
+
+:root[data-skin="holo"] .device__grip {
+  background: repeating-linear-gradient(180deg, #3a3f49 0 7px, #23272e 7px 9px);
+}
+
+:root[data-skin="holo"] .device__bezel {
+  background: #232832;
+  box-shadow:
+    inset 0 0 0 2px #0a0c10,
+    0 1px 0 rgb(255 255 255 / 0.25),
+    0 -1px 0 rgb(0 0 0 / 0.3);
+}
+
+:root[data-skin="holo"] .device__screen {
+  background:
+    linear-gradient(var(--screen-bg), var(--screen-bg)),
+    url("../../assets/images/holo-tela.webp") center / cover no-repeat,
+    #23527f;
+  box-shadow:
+    inset 0 0 0 2px #6fb2ea,
+    inset 0 0 28px rgb(0 10 30 / 0.45);
+}
+
+@media (max-width: 640px) {
+  :root[data-skin="holo"] .device__lens {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root[data-skin="holo"] .device__lens {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* =====================================================================
+   Holo em telas largas: a imagem inteira é o aparelho
+   ===================================================================== */
+@media (min-width: 1000px) and (min-aspect-ratio: 4/3) {
+  :root[data-skin="holo"] {
+    --desk-pad: clamp(10px, 2vw, 28px);
+    /* Largura do aparelho: a maior que cabe na janela sem distorcer a imagem */
+    --u: calc(
+      min(1760px, 100vw - 2 * var(--desk-pad), (100dvh - 2 * var(--desk-pad)) * 1672 / 941) / 1672
+    );
+  }
+
+  :root[data-skin="holo"] .desk {
+    padding: var(--desk-pad);
+  }
+
+  :root[data-skin="holo"] .device {
+    display: block;
+    flex: none;
+    width: calc(1672 * var(--u));
+    height: calc(941 * var(--u));
+    min-height: 0;
+    padding: 0;
+    border-radius: calc(30 * var(--u));
+    background: url("../../assets/images/holo-fundo.webp") 0 0 / 100% 100% no-repeat, #c62329;
+    box-shadow:
+      0 calc(10 * var(--u)) calc(20 * var(--u)) rgb(0 0 0 / 0.3),
+      0 calc(40 * var(--u)) calc(80 * var(--u)) calc(-20 * var(--u)) rgb(0 0 0 / 0.5);
+  }
+
+  :root[data-skin="holo"] .device::before,
+  :root[data-skin="holo"] .device::after,
+  :root[data-skin="holo"] .device__grip,
+  :root[data-skin="holo"] .device__bottom {
+    display: none;
+  }
+
+  /* Os itens da barra de cima são posicionados direto sobre a imagem */
+  :root[data-skin="holo"] .device__top {
+    position: static;
+    display: block;
+    padding: 0;
+  }
+
+  /* Lente: centro (84, 77) e raio 38 na imagem. A imagem já desenha o vidro;
+     aqui só entram a varredura e o brilho. */
+  :root[data-skin="holo"] .device__lens {
+    position: absolute;
+    z-index: 2;
+    left: calc(46 * var(--u));
+    top: calc(39 * var(--u));
+    width: calc(76 * var(--u));
+    height: calc(76 * var(--u));
+    background: none;
+    box-shadow: none;
+  }
+
+  :root[data-skin="holo"] .device__lens-glass,
+  :root[data-skin="holo"] .device__lens-glow {
+    inset: 0;
+  }
+
+  :root[data-skin="holo"] .device__lens-glass {
+    background: none;
+    box-shadow: none;
+  }
+
+  /* LED de sincronização: por cima do LED verde da imagem (centro 358, 34) */
+  :root[data-skin="holo"] .device__led {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    left: calc(341 * var(--u));
+    top: calc(17 * var(--u));
+    width: calc(34 * var(--u));
+    height: calc(34 * var(--u));
+    background: none;
+    box-shadow: none;
+  }
+
+  :root[data-skin="holo"] .led {
+    width: calc(27 * var(--u));
+    height: calc(27 * var(--u));
+  }
+
+  /* Nome gravado na barra vermelha de baixo, à esquerda */
+  :root[data-skin="holo"] .device__brand {
+    position: absolute;
+    z-index: 2;
+    left: calc(96 * var(--u));
+    top: calc(874 * var(--u));
+    height: calc(54 * var(--u));
+    display: flex;
+    align-items: center;
+    font-size: max(16px, calc(34 * var(--u)));
+    color: rgb(255 255 255 / 0.94);
+    text-shadow:
+      0 calc(2 * var(--u)) 0 rgb(80 0 6 / 0.6),
+      0 -1px 0 rgb(0 0 0 / 0.25);
+  }
+
+  /* Botões: Noturno e Tema entre os LEDs e o encaixe do meio;
+     Fechar e Sortear entre o encaixe e as frestas da direita */
+  :root[data-skin="holo"] .device__controls {
+    display: contents;
+  }
+
+  :root[data-skin="holo"] .device__group {
+    position: absolute;
+    z-index: 2;
+    top: calc(9 * var(--u));
+    height: calc(48 * var(--u));
+    display: flex;
+    align-items: center;
+    gap: calc(10 * var(--u));
+    container-type: inline-size;
+  }
+
+  :root[data-skin="holo"] .device__group--tela {
+    left: calc(410 * var(--u));
+    width: calc(300 * var(--u));
+  }
+
+  :root[data-skin="holo"] .device__group--acao {
+    left: calc(960 * var(--u));
+    width: calc(478 * var(--u));
+    justify-content: flex-end;
+  }
+
+  :root[data-skin="holo"] .hw-button {
+    height: calc(46 * var(--u));
+    padding: 0 calc(16 * var(--u));
+    gap: calc(8 * var(--u));
+    border-radius: calc(12 * var(--u));
+    font-size: max(12.5px, calc(17 * var(--u)));
+  }
+
+  /* Janela menor: os dois botões de cima à esquerda ficam só com o ícone */
+  @container (max-width: 225px) {
+    :root[data-skin="holo"] .device__group--tela .hw-button__label {
+      display: none;
+    }
+  }
+
+  /* Tela: o retângulo azul da imagem (x 82-1598, y 88-840), recortado nos chanfros */
+  :root[data-skin="holo"] .device__bezel {
+    position: absolute;
+    left: calc(82 * var(--u));
+    top: calc(88 * var(--u));
+    width: calc(1516 * var(--u));
+    height: calc(752 * var(--u));
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    clip-path: polygon(
+      calc(143 * var(--u)) 0,
+      calc(1474 * var(--u)) 0,
+      100% calc(37 * var(--u)),
+      100% calc(738 * var(--u)),
+      calc(1504 * var(--u)) 100%,
+      calc(48 * var(--u)) 100%,
+      0 calc(702 * var(--u)),
+      0 calc(134 * var(--u))
+    );
+  }
+
+  :root[data-skin="holo"] .device__screen {
+    border-radius: 0;
+    background: var(--screen-bg);
+    box-shadow: none;
+  }
+
+  /* O conteúdo da tela se afasta dos chanfros (cantos cortados) da imagem */
+  :root[data-skin="holo"] .screen-content {
+    padding-left: max(22px, calc(40 * var(--u)));
+    padding-right: max(22px, calc(30 * var(--u)));
+  }
+
+  :root[data-skin="holo"] .screen-tabs {
+    margin-left: calc(108 * var(--u));
+  }
+
+  :root[data-skin="holo"] .details__bar {
+    padding-left: calc(118 * var(--u));
+    padding-right: calc(14px + 26 * var(--u));
+  }
+
+  :root[data-skin="holo"] .status-bar {
+    padding-left: calc(56 * var(--u));
+  }
+}

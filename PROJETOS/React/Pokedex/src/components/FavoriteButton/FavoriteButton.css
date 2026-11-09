@@ -1,0 +1,54 @@
+.favorite-button {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--screen-muted);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.favorite-button:hover:not(:disabled) {
+  color: var(--star);
+}
+
+.favorite-button[aria-pressed="true"] {
+  color: var(--star);
+}
+
+.favorite-button[aria-pressed="true"] .icon {
+  filter: drop-shadow(0 1px 0 rgb(0 0 0 / 0.25));
+  animation: star-pop 0.28s ease-out;
+}
+
+.favorite-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.favorite-button[data-saving] {
+  cursor: progress;
+  opacity: 0.6;
+}
+
+.favorite-button[data-saving] .icon {
+  animation: star-wait 0.8s ease-in-out infinite;
+}
+
+@keyframes star-pop {
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes star-wait {
+  50% {
+    opacity: 0.35;
+  }
+}

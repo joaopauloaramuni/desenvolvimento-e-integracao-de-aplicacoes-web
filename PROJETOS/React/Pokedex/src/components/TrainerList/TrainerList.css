@@ -1,0 +1,114 @@
+.trainer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trainer-card {
+  height: 100%;
+  padding: 16px;
+  border: 1.5px solid var(--screen-line);
+  border-radius: 14px;
+  background: var(--card-bg);
+  scroll-margin: 20px;
+}
+
+.trainer-card:focus {
+  outline: none;
+}
+
+.trainer-card.is-highlighted {
+  border-color: var(--screen-accent);
+  box-shadow: 0 0 0 3px var(--screen-accent-soft);
+}
+
+.trainer-card__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.trainer-card__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.trainer-card__meta {
+  margin: 3px 0 0;
+  font-size: 0.88rem;
+  color: var(--screen-muted);
+}
+
+.trainer-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 14px 0;
+}
+
+.badge-pip {
+  width: 16px;
+  height: 18px;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: var(--screen-track);
+}
+
+.badge-pip.is-on {
+  background: linear-gradient(160deg, #ffe07a, var(--accent) 50%, var(--accent-lo));
+}
+
+.trainer-card__team {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  padding: 6px 4px 8px;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--type-color) 12%, var(--screen-panel));
+  color: var(--screen-ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.team-slot:hover {
+  border-color: var(--type-color);
+}
+
+.team-slot__window img {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+
+.team-slot__name {
+  max-width: 100%;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-slot__number {
+  font-size: 0.75rem;
+  color: var(--screen-muted);
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,111 @@
+.pokemon-card {
+  position: relative;
+  min-width: 0;
+}
+
+.pokemon-card__open {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  grid-template-areas:
+    "window info"
+    "stats  stats";
+  gap: 12px 14px;
+  width: 100%;
+  height: 100%;
+  padding: 12px 12px 14px;
+  border: 1.5px solid var(--screen-line);
+  border-radius: 14px;
+  background: var(--card-bg);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.pokemon-card__open:hover {
+  border-color: var(--type-color);
+}
+
+.pokemon-card__window {
+  grid-area: window;
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 58%,
+      color-mix(in srgb, var(--type-color) 38%, transparent) 0 46%,
+      transparent 47%
+    ),
+    color-mix(in srgb, var(--type-color) 16%, var(--screen-panel));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--type-color) 30%, transparent);
+}
+
+/* Linhas finas de "retícula" atrás do sprite */
+.pokemon-card__window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(var(--reticle), var(--reticle)) 50% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--reticle), var(--reticle)) 0 50% / 100% 1px no-repeat;
+}
+
+.pokemon-card__window img {
+  position: relative;
+  width: 100px;
+  max-width: none;
+  height: 100px;
+}
+
+.pokemon-card__info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  min-width: 0;
+}
+
+.pokemon-card__number {
+  padding-right: 40px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--screen-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.pokemon-card__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+.pokemon-card__types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.pokemon-card__stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--screen-line);
+}
+
+.pokemon-card__favorite {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}

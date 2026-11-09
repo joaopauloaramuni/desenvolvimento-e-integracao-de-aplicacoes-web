@@ -1,0 +1,269 @@
+/* =====================================================================
+   Tokens de cor: aparelho (fixo), mesa e tela (mudam com o tema)
+   ===================================================================== */
+:root {
+  --font-display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+
+  /* Carcaça: vermelho Pokédex moldado + detalhes em amarelo-mostarda */
+  --shell: #e0434b;
+  --shell-hi: #f26e74;
+  --shell-lo: #b22a33;
+  --shell-edge: #6f121a;
+  --accent: #f2b705;
+  --accent-lo: #a87a00;
+  --accent-ink: #2a1e00;
+
+  /* LED */
+  --led-ok: #3bdb6b;
+  --led-busy: #ffb020;
+  --led-error: #ff4a3d;
+  --led-off: #4a5260;
+
+  /* Mesa */
+  --desk: #cbc5bb;
+  --desk-light: rgb(255 255 255 / 0.55);
+  --desk-shade: rgb(90 80 70 / 0.28);
+
+  /* Tela (luz do dia) */
+  --screen-bg: #edf2ee;
+  --screen-solid: #edf2ee; /* cor opaca da tela (texto sobre um botão claro) */
+  --screen-panel: #ffffff;
+  --card-bg: var(--screen-panel); /* fundo dos cards de Pokémon e de treinador */
+  --screen-ink: #15232a;
+  --screen-muted: #56666c;
+  --screen-line: #cad5d1;
+  --screen-track: #dce4e1;
+  --screen-hover: #e1e9e6;
+  --screen-strip: #e3eae6;
+  --screen-accent: #c62832;
+  --screen-accent-soft: rgb(198 40 50 / 0.22);
+  --screen-on-accent: #ffffff;
+  --screen-error: #b3261e;
+  --star: #c48400;
+  --led-ok-ink: #1e9e4a;
+  --reticle: rgb(21 35 42 / 0.08);
+  --reticle-strong: rgb(21 35 42 / 0.2);
+  --glare: rgb(255 255 255 / 0.5);
+  --scanline: transparent;
+
+  /* Granulado (plástico fosco e mesa) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .32 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  color-scheme: light;
+}
+
+/* Tela no modo noturno */
+:root[data-theme="dark"] {
+  --desk: #1d2027;
+  --desk-light: rgb(120 140 200 / 0.14);
+  --desk-shade: rgb(0 0 0 / 0.45);
+
+  --screen-bg: #0d1a20;
+  --screen-solid: #0d1a20;
+  --screen-panel: #14262d;
+  --screen-ink: #dcedea;
+  --screen-muted: #8ea6a7;
+  --screen-line: #27424b;
+  --screen-track: #213a42;
+  --screen-hover: #1b3139;
+  --screen-strip: #0a151a;
+  --screen-accent: #ff8088;
+  --screen-accent-soft: rgb(255 128 136 / 0.25);
+  --screen-on-accent: #0d1a20;
+  --screen-error: #ff8a80;
+  --star: #ffc738;
+  --led-ok-ink: #3bdb6b;
+  --reticle: rgb(220 237 234 / 0.07);
+  --reticle-strong: rgb(220 237 234 / 0.16);
+  --glare: rgb(255 255 255 / 0.07);
+  --scanline: rgb(0 0 0 / 0.16);
+
+  color-scheme: dark;
+}
+
+/* =====================================================================
+   Tema Holo (fundo holo-fundo.webp): a tela é a arte azul da imagem.
+   A tela e os cards ficam transparentes para a Pokébola e as demais artes
+   aparecerem por trás; o texto é claro nos dois modos.
+   ===================================================================== */
+:root[data-skin="holo"] {
+  --desk: #c4ccd6;
+  --desk-light: rgb(255 255 255 / 0.5);
+  --desk-shade: rgb(40 60 90 / 0.3);
+
+  --screen-bg: transparent;
+  --screen-solid: #10294a;
+  --screen-panel: rgb(8 34 66 / 0.42);
+  --card-bg: transparent;
+  --screen-ink: #f2f8ff;
+  --screen-muted: #b6d3ef;
+  --screen-line: rgb(150 205 255 / 0.4);
+  --screen-track: rgb(190 225 255 / 0.2);
+  --screen-hover: rgb(130 195 255 / 0.2);
+  --screen-strip: rgb(6 26 52 / 0.6);
+  --screen-accent: #ffd447;
+  --screen-accent-soft: rgb(255 212 71 / 0.26);
+  --screen-on-accent: #10233d;
+  --screen-error: #ffb4ab;
+  --star: #ffd447;
+  --led-ok-ink: #4ce38a;
+  --reticle: rgb(220 240 255 / 0.12);
+  --reticle-strong: rgb(220 240 255 / 0.28);
+  --glare: rgb(255 255 255 / 0.05);
+  --scanline: transparent;
+  /* Sombra leve no texto: ele continua legível sobre as linhas claras da arte */
+  --screen-text-shadow: 0 1px 2px rgb(0 18 40 / 0.6);
+
+  color-scheme: dark;
+}
+
+/* Holo no modo noturno: a tela escurece (a arte continua aparecendo por baixo) */
+:root[data-skin="holo"][data-theme="dark"] {
+  --desk: #0f141c;
+  --desk-light: rgb(90 150 230 / 0.12);
+  --desk-shade: rgb(0 0 0 / 0.5);
+
+  --screen-bg: rgb(2 10 24 / 0.58);
+  --screen-solid: #061428;
+  --screen-panel: rgb(4 18 40 / 0.5);
+  --screen-ink: #dcecff;
+  --screen-muted: #93b4d4;
+  --screen-line: rgb(120 175 235 / 0.32);
+  --screen-track: rgb(150 195 240 / 0.16);
+  --screen-hover: rgb(110 170 235 / 0.16);
+  --screen-strip: rgb(2 10 22 / 0.72);
+  --screen-accent: #62d2ff;
+  --screen-accent-soft: rgb(98 210 255 / 0.24);
+  --screen-on-accent: #04172b;
+  --star: #ffcf4a;
+  --reticle: rgb(200 230 255 / 0.09);
+  --reticle-strong: rgb(200 230 255 / 0.2);
+  --glare: rgb(255 255 255 / 0.03);
+  --scanline: rgb(0 0 0 / 0.14);
+}
+
+/* =====================================================================
+   Reset e base
+   ===================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  /* Sem o efeito "elástico" do trackpad/celular (a página não arreda para cima e para baixo) */
+  overscroll-behavior: none;
+}
+
+/*
+ * O aparelho sempre cabe na janela (a altura dele acompanha a tela),
+ * então a página em si não precisa rolar: só a lista e os detalhes rolam por dentro.
+ * Em janelas muito baixas (menos de 640 px), a página volta a rolar para nada ficar escondido.
+ */
+@media (min-height: 640px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--desk);
+  color: var(--screen-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+img.is-pixelated {
+  image-rendering: pixelated;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 3px solid var(--screen-accent);
+  outline-offset: 2px;
+}
+
+code {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: var(--screen-hover);
+  font-size: 0.92em;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Botões da interface da tela (Voltar, Limpar, etc.) */
+.screen-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 14px;
+  border: 1.5px solid var(--screen-line);
+  border-radius: 10px;
+  background: var(--screen-panel);
+  color: var(--screen-ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.screen-button:hover {
+  background: var(--screen-hover);
+}
+
+.screen-button--primary {
+  border-color: transparent;
+  background: var(--screen-accent);
+  color: var(--screen-on-accent);
+}
+
+.screen-button--primary:hover {
+  background: color-mix(in srgb, var(--screen-accent) 86%, var(--screen-ink));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

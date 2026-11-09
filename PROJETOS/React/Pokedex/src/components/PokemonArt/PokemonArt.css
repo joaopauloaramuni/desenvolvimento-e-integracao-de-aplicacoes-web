@@ -1,0 +1,18 @@
+/* GIF animado do Showdown nos detalhes (o vídeo próprio usa a mesma classe da arte: .details__art) */
+.details__anim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin: auto;
+  max-width: none;
+  image-rendering: pixelated;
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 6px 4px rgb(0 0 0 / 0.28));
+  transition: opacity 0.25s ease;
+}
+
+/* Vídeo próprio (Higgsfield): mantém a proporção quadrada da arte */
+video.details__art {
+  object-fit: contain;
+  background: transparent;
+}

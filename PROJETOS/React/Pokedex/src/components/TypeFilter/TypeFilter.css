@@ -1,0 +1,101 @@
+.type-filter {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.type-filter__legend {
+  margin-bottom: 8px;
+  padding: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--screen-muted);
+}
+
+.type-filter__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.type-chip {
+  --chip-color: var(--screen-accent);
+  --chip-ink: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 11px;
+  border: 1.5px solid var(--screen-line);
+  border-radius: 999px;
+  background: var(--screen-panel);
+  color: var(--screen-ink);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.type-chip:hover {
+  border-color: var(--chip-color);
+}
+
+.type-chip__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--chip-color);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.2);
+}
+
+.type-chip__count {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: var(--screen-muted);
+}
+
+.type-chip[aria-pressed="true"] {
+  border-color: var(--chip-color);
+  background: var(--chip-color);
+  color: var(--chip-ink);
+}
+
+.type-chip[aria-pressed="true"] .type-chip__count {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.type-chip[aria-pressed="true"] .type-chip__dot {
+  background: var(--chip-ink);
+}
+
+.type-chip--all[aria-pressed="true"] {
+  --chip-color: var(--screen-ink);
+  --chip-ink: var(--screen-solid);
+}
+
+.type-chip[data-empty]:not([aria-pressed="true"]) {
+  opacity: 0.5;
+}
+
+/* No celular os tipos viram uma faixa com rolagem lateral */
+@media (max-width: 640px) {
+  .type-filter__chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0 -14px;
+    padding: 2px 14px 8px;
+    scrollbar-width: none;
+  }
+
+  .type-filter__chips::-webkit-scrollbar {
+    display: none;
+  }
+}

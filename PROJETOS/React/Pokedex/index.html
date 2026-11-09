@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta name="theme-color" content="#e0434b" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Pokédex interativa feita com React + Vite: pesquisa, filtro por tipo, atributos, treinadores e favoritos no Supabase."
+    />
+    <title>Pokédex</title>
+
+    <!-- Chakra Petch para a interface do aparelho e Atkinson Hyperlegible para textos - Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Chakra+Petch:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Aplica o tema (Clássico/Holo) e o modo noturno antes do React carregar, para a página não "piscar" -->
+    <script>
+      (function () {
+        var tema = "light";
+        var visual = "classico";
+        try {
+          var salvo = localStorage.getItem("pokedex:theme");
+          if (salvo === "light" || salvo === "dark") tema = salvo;
+          else if (window.matchMedia("(prefers-color-scheme: dark)").matches) tema = "dark";
+          var salvoVisual = localStorage.getItem("pokedex:skin");
+          if (salvoVisual === "classico" || salvoVisual === "holo") visual = salvoVisual;
+        } catch (e) {}
+        var raiz = document.documentElement;
+        raiz.dataset.theme = tema;
+        raiz.dataset.skin = visual;
+        // A tela do tema Holo é azul escura nos dois modos: controles nativos sempre escuros.
+        raiz.style.colorScheme = visual === "holo" ? "dark" : tema;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
