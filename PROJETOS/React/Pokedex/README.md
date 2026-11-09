@@ -291,6 +291,22 @@ A arte grande dos detalhes é desenhada pelo componente `PokemonArt`, que usa o 
 - Com **"reduzir movimento"** ligado no sistema (`prefers-reduced-motion`), o hook `useReducedMotion` pula os passos 1 e 2 e mostra a arte estática.
 - O vídeo usa a arte oficial como `poster`, então a arte aparece enquanto o vídeo carrega.
 
+### Exemplo: GIF do Charizard
+
+A URL do GIF é montada pelo id do Pokémon (função `animatedUrl` em `src/config/appConfig.js`). O Charizard é o nº **6**, então:
+
+```
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/6.gif
+```
+
+É o mesmo endereço que a PokéAPI devolve em `sprites.other.showdown.front_default` (`https://pokeapi.co/api/v2/pokemon/6`).
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/6.gif" alt="Charizard batendo as asas (GIF do Pokémon Showdown)" />
+</p>
+
+Variações no mesmo repositório: de costas em `.../showdown/back/6.gif` e shiny em `.../showdown/shiny/6.gif`.
+
 ### Como gerar uma animação no Higgsfield
 
 1. No Higgsfield, crie um vídeo do tipo **imagem para vídeo**, usando a arte oficial do Pokémon como quadro inicial:
