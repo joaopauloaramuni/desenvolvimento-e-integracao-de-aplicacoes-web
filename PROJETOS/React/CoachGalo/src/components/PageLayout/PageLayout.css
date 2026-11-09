@@ -1,0 +1,81 @@
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Faixa listrada: a camisa alvinegra */
+.page-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 104px;
+  background: repeating-linear-gradient(90deg, var(--preto) 0 26px, var(--branco) 26px 52px);
+  border-bottom: 3px solid var(--preto);
+}
+
+.page-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 1.4rem 0.45rem 0.9rem;
+  background: var(--preto);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  box-shadow: 0 0 0 3px var(--branco), 0 0 0 6px var(--preto);
+}
+
+/* Escudo do Atlético (src/assets/images/atletico.svg), proporção 322.7 x 480.1 */
+.page-escudo {
+  display: block;
+  height: 58px;
+  width: auto;
+}
+
+.page-intro {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 1.5rem 20px 0.25rem;
+}
+
+.page-intro h1 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.05;
+}
+
+.page-intro p {
+  max-width: 68ch;
+  margin: 0.4rem 0 0;
+  color: var(--texto-2);
+}
+
+.page-conteudo {
+  flex: 1;
+}
+
+.page-rodape {
+  padding: 1.25rem 20px 1.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--texto-3);
+}
+
+@media (max-width: 600px) {
+  .page-hero {
+    height: 84px;
+    background: repeating-linear-gradient(90deg, var(--preto) 0 18px, var(--branco) 18px 36px);
+  }
+  .page-marca {
+    font-size: 1.5rem;
+  }
+  .page-escudo {
+    height: 44px;
+  }
+}

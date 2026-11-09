@@ -1,0 +1,25 @@
+.foto {
+  position: relative;
+  overflow: hidden;
+}
+
+.foto img,
+.foto-silhueta {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.foto-silhueta-num {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 22px;
+  fill: var(--ouro);
+  paint-order: stroke;
+  stroke: #000;
+  stroke-width: 4px;
+}
