@@ -1,0 +1,157 @@
+.campo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 68 / 80;
+  border-radius: 6px;
+  background:
+    repeating-linear-gradient(180deg, var(--grama-1) 0 10%, var(--grama-2) 10% 20%);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+/* Linhas do campo desenhadas em SVG */
+.campo-linhas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 0.35;
+  vector-effect: non-scaling-stroke;
+}
+
+.campo-linhas rect,
+.campo-linhas path,
+.campo-linhas line {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 2px;
+}
+
+.vaga {
+  position: absolute;
+  translate: -50% -50%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: grab;
+  touch-action: none;
+  border-radius: 8px;
+}
+
+.vaga:active {
+  cursor: grabbing;
+}
+
+.vaga:focus-visible {
+  outline: 3px solid var(--branco);
+  outline-offset: 4px;
+}
+
+.vaga-livre {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 2px dashed rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.vaga.is-alvo .vaga-livre {
+  background: rgba(255, 255, 255, 0.28);
+  border-style: solid;
+}
+
+.vaga.is-alvo .carta {
+  outline: none;
+  filter: drop-shadow(0 0 8px #fff);
+  transform: scale(1.08);
+}
+
+.vaga.is-origem {
+  opacity: 0.35;
+}
+
+@media (max-width: 600px) {
+  .vaga-livre {
+    width: 46px;
+    height: 46px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Faixas dos setores: verde = melhorou, vermelho = piorou na última mudança */
+.zonas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.zona {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: background-color 300ms, box-shadow 300ms;
+}
+
+.zona--sobe {
+  background: color-mix(in srgb, #22ff6a 30%, transparent);
+  box-shadow:
+    inset 5px 0 0 var(--sobe),
+    inset 0 0 0 2px color-mix(in srgb, var(--sobe) 70%, transparent);
+}
+
+.zona--desce {
+  background: color-mix(in srgb, #ff3b3b 38%, transparent);
+  box-shadow:
+    inset 5px 0 0 var(--desce),
+    inset 0 0 0 2px color-mix(in srgb, var(--desce) 75%, transparent);
+}
+
+/* Rótulo na lateral esquerda, de baixo para cima */
+.zona-rotulo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+  padding: 8px 4px;
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 0 4px 4px 0;
+}
+
+.zona--sobe .zona-rotulo {
+  color: #052e12;
+  background: var(--sobe);
+}
+
+.zona--desce .zona-rotulo {
+  color: #3b0707;
+  background: var(--desce);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zona {
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .zona-rotulo {
+    font-size: 0.6rem;
+    padding: 4px 2px;
+  }
+}

@@ -1,0 +1,202 @@
+.forca-destaques {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.forca-numero {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px 10px;
+  background: var(--painel-2);
+  border-radius: 6px;
+}
+
+.forca-numero strong {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.forca-numero span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--texto-2);
+}
+
+/* Cores de nível (verde, amarelo, vermelho) */
+.nivel--forte {
+  background: var(--sobe);
+}
+.nivel--regular {
+  background: var(--aviso);
+}
+.nivel--fraco {
+  background: var(--desce);
+}
+.nivel-texto--forte {
+  color: var(--sobe);
+}
+.nivel-texto--regular {
+  color: var(--aviso);
+}
+.nivel-texto--fraco {
+  color: var(--desce);
+}
+
+.forca-barras {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.forca-barra {
+  display: grid;
+  grid-template-columns: 84px 1fr 26px 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px 5px 8px;
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 300ms, border-color 300ms;
+}
+
+/* Linha do setor que mudou na última jogada */
+.mudou--sobe {
+  border-left-color: var(--sobe);
+  background: color-mix(in srgb, var(--sobe) 12%, transparent);
+}
+.mudou--desce {
+  border-left-color: var(--desce);
+  background: color-mix(in srgb, var(--desce) 12%, transparent);
+}
+
+.forca-trilho {
+  position: relative;
+  height: 12px;
+  background: var(--painel-2);
+  border-radius: 2px;
+}
+
+.forca-valor {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  transition: width 420ms cubic-bezier(0.2, 0.8, 0.2, 1), background-color 300ms;
+}
+
+.forca-antes {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--branco);
+}
+
+.forca-num {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.delta span {
+  font-size: 0.6rem;
+}
+
+.delta--sobe {
+  background: color-mix(in srgb, var(--sobe) 22%, transparent);
+  color: var(--sobe);
+}
+
+.delta--desce {
+  background: color-mix(in srgb, var(--desce) 22%, transparent);
+  color: var(--desce);
+}
+
+.forca-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.78rem;
+  color: var(--texto-2);
+}
+
+.forca-legenda li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legenda-cor {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.forca-veredito {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--linha);
+}
+
+.forca-ultima {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--texto-2);
+}
+
+.veredito {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.veredito span {
+  font-size: 0.7rem;
+}
+
+.veredito--sobe {
+  color: var(--sobe);
+}
+
+.veredito--desce {
+  color: var(--desce);
+}
+
+.forca-aviso {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  color: var(--aviso);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forca-valor,
+  .forca-barra {
+    transition: none;
+  }
+}

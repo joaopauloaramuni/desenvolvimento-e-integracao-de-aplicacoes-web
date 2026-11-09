@@ -1,0 +1,84 @@
+.ficha-cabeca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ficha-cabeca .secao-titulo {
+  margin: 0;
+}
+
+.ficha-corpo {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.ficha-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ficha-linha {
+  margin: 0;
+  font-weight: 600;
+}
+
+.ficha-linha small {
+  font-weight: 400;
+  color: var(--texto-2);
+}
+
+.ficha-meta {
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--texto-2);
+}
+
+.ficha-atributos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 12px;
+  margin: 10px 0 0;
+}
+
+.ficha-atributos div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--linha);
+  padding-bottom: 2px;
+}
+
+.ficha-atributos dt {
+  color: var(--texto-2);
+  font-size: 0.85rem;
+}
+
+.ficha-atributos dd {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+}
+
+.ficha-situacao {
+  margin: 12px 0 10px;
+  font-size: 0.86rem;
+  color: var(--texto-2);
+}
+
+.ficha-situacao strong {
+  color: var(--texto);
+}
+
+.ficha-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ficha-revisar {
+  margin: 10px 0 0;
+  font-size: 0.8rem;
+  color: var(--aviso);
+}

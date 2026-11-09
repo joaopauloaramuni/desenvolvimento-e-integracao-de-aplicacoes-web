@@ -1,0 +1,702 @@
+{
+  "meta": {
+    "clube": "Atlético Mineiro",
+    "temporada": 2026,
+    "fonte": "Site oficial do Atlético",
+    "url": "https://atletico.com.br/futebol/masculino/elenco/",
+    "atualizadoEm": "2026-11-09"
+  },
+  "jogadores": [
+    {
+      "id": "gabriel-delfim",
+      "nome": "Gabriel Delfim",
+      "nomeCompleto": "Gabriel Delfim",
+      "numero": 1,
+      "posicao": "GOL",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": null,
+      "overall": 68,
+      "atributos": {
+        "elasticidade": 70,
+        "manejo": 67,
+        "chute": 62,
+        "reflexos": 71,
+        "velocidade": 43,
+        "posicionamento": 69
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2022/02/GOL_Delfim_Site.png"
+    },
+    {
+      "id": "everson",
+      "nome": "Everson",
+      "nomeCompleto": "Everson Felipe Marques Pires",
+      "numero": 22,
+      "posicao": "GOL",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": 1990,
+      "overall": 77,
+      "atributos": {
+        "elasticidade": 79,
+        "manejo": 76,
+        "chute": 75,
+        "reflexos": 82,
+        "velocidade": 52,
+        "posicionamento": 78
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2022/02/GOL_Everson_Site.png"
+    },
+    {
+      "id": "robert-alves",
+      "nome": "Robert Alves",
+      "nomeCompleto": "Robert Alves",
+      "numero": 31,
+      "posicao": "GOL",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": null,
+      "overall": 62,
+      "atributos": {
+        "elasticidade": 64,
+        "manejo": 61,
+        "chute": 56,
+        "reflexos": 65,
+        "velocidade": 37,
+        "posicionamento": 63
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/03/GOL_Robert_Site.png"
+    },
+    {
+      "id": "pedro-cobra",
+      "nome": "Pedro Cobra",
+      "nomeCompleto": "Pedro Cobra",
+      "numero": 46,
+      "posicao": "GOL",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": null,
+      "overall": 60,
+      "atributos": {
+        "elasticidade": 62,
+        "manejo": 59,
+        "chute": 54,
+        "reflexos": 63,
+        "velocidade": 35,
+        "posicionamento": 61
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/GOL_Cobra_Site.png"
+    },
+    {
+      "id": "leo-duarte",
+      "nome": "Léo Duarte",
+      "nomeCompleto": "Leonardo Pereira Duarte",
+      "numero": 3,
+      "posicao": "ZAG",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": 1996,
+      "overall": 75,
+      "atributos": {
+        "ritmo": 63,
+        "finalizacao": 40,
+        "passe": 66,
+        "drible": 60,
+        "defesa": 78,
+        "fisico": 79
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/06/LeoDuarte_Site.png"
+    },
+    {
+      "id": "ruan",
+      "nome": "Ruan",
+      "nomeCompleto": "Ruan Tressoldi Netto",
+      "numero": 4,
+      "posicao": "ZAG",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": 1999,
+      "overall": 74,
+      "atributos": {
+        "ritmo": 66,
+        "finalizacao": 39,
+        "passe": 62,
+        "drible": 59,
+        "defesa": 77,
+        "fisico": 78
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2025/08/Ruan_Site.png"
+    },
+    {
+      "id": "lyanco",
+      "nome": "Lyanco",
+      "nomeCompleto": "Lyanco Evangelista Silveira Neves Vojnović",
+      "numero": 13,
+      "posicao": "ZAG",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": 1997,
+      "overall": 76,
+      "atributos": {
+        "ritmo": 64,
+        "finalizacao": 41,
+        "passe": 64,
+        "drible": 61,
+        "defesa": 79,
+        "fisico": 83
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2024/07/Lyanco_Site-1.png"
+    },
+    {
+      "id": "vitor-hugo",
+      "nome": "Vitor Hugo",
+      "nomeCompleto": "Vitor Hugo Franchescoli de Souza",
+      "numero": 14,
+      "posicao": "ZAG",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": 1991,
+      "overall": 72,
+      "atributos": {
+        "ritmo": 54,
+        "finalizacao": 37,
+        "passe": 60,
+        "drible": 57,
+        "defesa": 75,
+        "fisico": 80
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2025/03/VitorHugo_Site.png"
+    },
+    {
+      "id": "vitao",
+      "nome": "Vitão",
+      "nomeCompleto": "Vitor Eduardo da Silva Matos",
+      "numero": 40,
+      "posicao": "ZAG",
+      "secundarias": [
+        "LE"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 2000,
+      "overall": 74,
+      "atributos": {
+        "ritmo": 62,
+        "finalizacao": 39,
+        "passe": 62,
+        "drible": 59,
+        "defesa": 77,
+        "fisico": 78
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Vitao_Site.png"
+    },
+    {
+      "id": "natanael",
+      "nome": "Natanael",
+      "nomeCompleto": "Natanael Moreira Milouski",
+      "numero": 2,
+      "posicao": "LD",
+      "secundarias": [
+        "ALD"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 2002,
+      "overall": 71,
+      "atributos": {
+        "ritmo": 78,
+        "finalizacao": 53,
+        "passe": 68,
+        "drible": 70,
+        "defesa": 68,
+        "fisico": 69
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2025/01/Natanael_Site-1.png"
+    },
+    {
+      "id": "renan-lodi",
+      "nome": "Renan Lodi",
+      "nomeCompleto": "Renan Augusto Lodi dos Santos",
+      "numero": 6,
+      "posicao": "LE",
+      "secundarias": [
+        "ALE",
+        "ZAG"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 1998,
+      "overall": 77,
+      "atributos": {
+        "ritmo": 81,
+        "finalizacao": 59,
+        "passe": 77,
+        "drible": 76,
+        "defesa": 74,
+        "fisico": 75
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Lodi_Site.png"
+    },
+    {
+      "id": "angelo-preciado",
+      "nome": "A. Preciado",
+      "nomeCompleto": "Ángelo Preciado",
+      "numero": 23,
+      "posicao": "LD",
+      "secundarias": [
+        "ALD"
+      ],
+      "nacionalidade": "Equador",
+      "nascimento": 1998,
+      "overall": 74,
+      "atributos": {
+        "ritmo": 82,
+        "finalizacao": 56,
+        "passe": 71,
+        "drible": 73,
+        "defesa": 71,
+        "fisico": 72
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Preciado_Site.png"
+    },
+    {
+      "id": "kaua-pascini",
+      "nome": "K. Pascini",
+      "nomeCompleto": "Kauã Pascini",
+      "numero": 36,
+      "posicao": "LE",
+      "secundarias": [
+        "ALE"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": null,
+      "overall": 64,
+      "atributos": {
+        "ritmo": 68,
+        "finalizacao": 46,
+        "passe": 61,
+        "drible": 63,
+        "defesa": 61,
+        "fisico": 62
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Pascini_Site.png"
+    },
+    {
+      "id": "alexsander",
+      "nome": "Alexsander",
+      "nomeCompleto": "Alexsander Gomes da Costa",
+      "numero": 5,
+      "posicao": "VOL",
+      "secundarias": [
+        "MC"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 2003,
+      "overall": 68,
+      "atributos": {
+        "ritmo": 60,
+        "finalizacao": 53,
+        "passe": 67,
+        "drible": 63,
+        "defesa": 69,
+        "fisico": 70
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2025/08/Alexander_Site.png"
+    },
+    {
+      "id": "fred",
+      "nome": "Fred",
+      "nomeCompleto": "Frederico Rodrigues de Paula Santos",
+      "numero": 7,
+      "posicao": "VOL",
+      "secundarias": [
+        "MC"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 1993,
+      "overall": 78,
+      "atributos": {
+        "ritmo": 66,
+        "finalizacao": 63,
+        "passe": 83,
+        "drible": 73,
+        "defesa": 79,
+        "fisico": 80
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/08/Fred_Site.png"
+    },
+    {
+      "id": "maycon",
+      "nome": "Maycon",
+      "nomeCompleto": "Maycon de Andrade Barberan",
+      "numero": 8,
+      "posicao": "MC",
+      "secundarias": [
+        "VOL",
+        "MEI"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 1997,
+      "overall": 75,
+      "atributos": {
+        "ritmo": 70,
+        "finalizacao": 67,
+        "passe": 77,
+        "drible": 75,
+        "defesa": 67,
+        "fisico": 72
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Maycon_Site.png"
+    },
+    {
+      "id": "gustavo-scarpa",
+      "nome": "G. Scarpa",
+      "nomeCompleto": "Gustavo Henrique Furtado Scarpa",
+      "numero": 10,
+      "posicao": "MEI",
+      "secundarias": [
+        "MC",
+        "ME",
+        "PE"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 1994,
+      "overall": 78,
+      "atributos": {
+        "ritmo": 70,
+        "finalizacao": 78,
+        "passe": 89,
+        "drible": 81,
+        "defesa": 48,
+        "fisico": 66
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2024/01/Scarpa_Site-1.png"
+    },
+    {
+      "id": "bernard",
+      "nome": "Bernard",
+      "nomeCompleto": "Bernard Anício Caldeira Duarte",
+      "numero": 11,
+      "posicao": "MEI",
+      "secundarias": [
+        "PE",
+        "ME"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 1992,
+      "overall": 75,
+      "atributos": {
+        "ritmo": 70,
+        "finalizacao": 72,
+        "passe": 78,
+        "drible": 84,
+        "defesa": 45,
+        "fisico": 63
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2024/07/Bernard_Site.png"
+    },
+    {
+      "id": "kevin-castano",
+      "nome": "K. Castaño",
+      "nomeCompleto": "Kevin Castaño",
+      "numero": 15,
+      "posicao": "VOL",
+      "secundarias": [
+        "MC"
+      ],
+      "nacionalidade": "Colômbia",
+      "nascimento": 2000,
+      "overall": 75,
+      "atributos": {
+        "ritmo": 67,
+        "finalizacao": 60,
+        "passe": 74,
+        "drible": 70,
+        "defesa": 78,
+        "fisico": 77
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/08/Kevin_Site.png"
+    },
+    {
+      "id": "igor-gomes",
+      "nome": "Igor Gomes",
+      "nomeCompleto": "Igor Silveira Gomes",
+      "numero": 17,
+      "posicao": "MC",
+      "secundarias": [
+        "MEI",
+        "MD"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 1999,
+      "overall": 73,
+      "atributos": {
+        "ritmo": 68,
+        "finalizacao": 65,
+        "passe": 75,
+        "drible": 73,
+        "defesa": 65,
+        "fisico": 70
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2023/01/IgorGomes_Site.png"
+    },
+    {
+      "id": "reinier",
+      "nome": "Reinier",
+      "nomeCompleto": "Reinier Jesus Carvalho",
+      "numero": 19,
+      "posicao": "MEI",
+      "secundarias": [
+        "ATA",
+        "MC"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 2002,
+      "overall": 72,
+      "atributos": {
+        "ritmo": 70,
+        "finalizacao": 69,
+        "passe": 75,
+        "drible": 75,
+        "defesa": 42,
+        "fisico": 60
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2025/08/Reinier_Site.png"
+    },
+    {
+      "id": "alan-franco",
+      "nome": "Franco",
+      "nomeCompleto": "Alan Steven Franco Palma",
+      "numero": 21,
+      "posicao": "VOL",
+      "secundarias": [
+        "MC"
+      ],
+      "nacionalidade": "Equador",
+      "nascimento": 1998,
+      "overall": 76,
+      "atributos": {
+        "ritmo": 68,
+        "finalizacao": 61,
+        "passe": 75,
+        "drible": 71,
+        "defesa": 79,
+        "fisico": 82
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2023/07/AlanFranco_Site.png"
+    },
+    {
+      "id": "tomas-perez",
+      "nome": "Tomás Perez",
+      "nomeCompleto": "Tomás Pérez",
+      "numero": 25,
+      "posicao": "MC",
+      "secundarias": [
+        "VOL"
+      ],
+      "nacionalidade": "Argentina",
+      "nascimento": 2005,
+      "overall": 72,
+      "atributos": {
+        "ritmo": 67,
+        "finalizacao": 64,
+        "passe": 74,
+        "drible": 72,
+        "defesa": 64,
+        "fisico": 69
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/02/Tomas_Site.png"
+    },
+    {
+      "id": "victor-hugo",
+      "nome": "Victor Hugo",
+      "nomeCompleto": "Victor Hugo Santana Carvalho",
+      "numero": 30,
+      "posicao": "MEI",
+      "secundarias": [
+        "MC",
+        "PD"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 2004,
+      "overall": 73,
+      "atributos": {
+        "ritmo": 71,
+        "finalizacao": 70,
+        "passe": 76,
+        "drible": 78,
+        "defesa": 43,
+        "fisico": 61
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/VcitorHugo_Site.png"
+    },
+    {
+      "id": "indio",
+      "nome": "Índio",
+      "nomeCompleto": "Índio",
+      "numero": 38,
+      "posicao": "MC",
+      "secundarias": [],
+      "nacionalidade": "Brasil",
+      "nascimento": null,
+      "overall": 62,
+      "atributos": {
+        "ritmo": 57,
+        "finalizacao": 54,
+        "passe": 64,
+        "drible": 62,
+        "defesa": 54,
+        "fisico": 59
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Indio_Site.png"
+    },
+    {
+      "id": "cisse",
+      "nome": "Cissé",
+      "nomeCompleto": "Cissé",
+      "numero": 39,
+      "posicao": "VOL",
+      "secundarias": [],
+      "nacionalidade": null,
+      "nascimento": null,
+      "overall": 63,
+      "atributos": {
+        "ritmo": 55,
+        "finalizacao": 48,
+        "passe": 62,
+        "drible": 58,
+        "defesa": 64,
+        "fisico": 65
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Cisse_Site.png"
+    },
+    {
+      "id": "mateo-cassierra",
+      "nome": "Cassierra",
+      "nomeCompleto": "Mateo Cassierra",
+      "numero": 9,
+      "posicao": "ATA",
+      "secundarias": [],
+      "nacionalidade": "Colômbia",
+      "nascimento": 1997,
+      "overall": 76,
+      "atributos": {
+        "ritmo": 74,
+        "finalizacao": 79,
+        "passe": 68,
+        "drible": 75,
+        "defesa": 38,
+        "fisico": 82
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Cassierra_Site.png"
+    },
+    {
+      "id": "borbas",
+      "nome": "T. Borbas",
+      "nomeCompleto": "Borbas",
+      "numero": 18,
+      "posicao": "ATA",
+      "secundarias": [],
+      "nacionalidade": null,
+      "nascimento": null,
+      "overall": 70,
+      "atributos": {
+        "ritmo": 68,
+        "finalizacao": 73,
+        "passe": 62,
+        "drible": 69,
+        "defesa": 32,
+        "fisico": 72
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/07/Borbas_Site.png"
+    },
+    {
+      "id": "alan-minda",
+      "nome": "Minda A.",
+      "nomeCompleto": "Alan Minda",
+      "numero": 27,
+      "posicao": "PD",
+      "secundarias": [
+        "PE"
+      ],
+      "nacionalidade": "Equador",
+      "nascimento": 2003,
+      "overall": 74,
+      "atributos": {
+        "ritmo": 84,
+        "finalizacao": 71,
+        "passe": 70,
+        "drible": 80,
+        "defesa": 39,
+        "fisico": 64
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Minda_Site.png"
+    },
+    {
+      "id": "caua-soares",
+      "nome": "C. Soares",
+      "nomeCompleto": "Cauã Soares",
+      "numero": 29,
+      "posicao": "PE",
+      "secundarias": [
+        "PD",
+        "ATA"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": null,
+      "overall": 66,
+      "atributos": {
+        "ritmo": 73,
+        "finalizacao": 63,
+        "passe": 62,
+        "drible": 69,
+        "defesa": 31,
+        "fisico": 56
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2026/01/Caua_Site.png"
+    },
+    {
+      "id": "tomas-cuello",
+      "nome": "Cuello",
+      "nomeCompleto": "Tomás Cuello",
+      "numero": 28,
+      "posicao": "PE",
+      "secundarias": [
+        "PD",
+        "ME"
+      ],
+      "nacionalidade": "Argentina",
+      "nascimento": 2000,
+      "overall": 75,
+      "atributos": {
+        "ritmo": 84,
+        "finalizacao": 72,
+        "passe": 71,
+        "drible": 81,
+        "defesa": 40,
+        "fisico": 65
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2025/01/Cuello_Site-1.png"
+    },
+    {
+      "id": "dudu",
+      "nome": "Dudu",
+      "nomeCompleto": "Eduardo Pereira Rodrigues",
+      "numero": 92,
+      "posicao": "PE",
+      "secundarias": [
+        "PD",
+        "MEI"
+      ],
+      "nacionalidade": "Brasil",
+      "nascimento": 1992,
+      "overall": 74,
+      "atributos": {
+        "ritmo": 76,
+        "finalizacao": 71,
+        "passe": 74,
+        "drible": 82,
+        "defesa": 39,
+        "fisico": 64
+      },
+      "foto": "https://atletico.com.br/wp-content/uploads/2025/05/Dudu_Site.png"
+    }
+  ]
+}
