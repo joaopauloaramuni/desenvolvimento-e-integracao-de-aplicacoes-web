@@ -2,9 +2,9 @@
 
 ## 🌐 Acesse o projeto
 
-[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://reactbits-samples.vercel.app/)
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://react-bits.vercel.app/)
 
-👉 **[reactbits-samples.vercel.app](https://reactbits-samples.vercel.app/)**
+👉 **[react-bits.vercel.app](https://react-bits.vercel.app/)**
 
 Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
 
