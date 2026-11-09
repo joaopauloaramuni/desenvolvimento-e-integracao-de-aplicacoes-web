@@ -29,7 +29,7 @@ O aparelho tem **dois temas**, trocados pelo botão **Tema**: o **Clássico** (o
 - **Ponto forte**: nos detalhes, o melhor atributo do Pokémon e a posição dele entre os 151 (ex.: "Velocidade 90: 32º maior valor entre os 151 Pokémon").
 - **Outros do mesmo tipo**: nos detalhes, até 8 Pokémon do mesmo tipo principal, que abrem com um clique, e o botão "Ver os N do tipo X na Pokédex", que fecha os detalhes e aplica o filtro.
 - 🖥️ **Detalhes sem rolagem**: o aparelho usa a largura da tela (até 1760 px) e os detalhes ficam lado a lado: **arte | Pokédex clássica | atributos | treinadores e outros do tipo**. Em notebooks e desktops (testado de 1280 x 650 a 1920 x 1080, inclusive com o Dock do macOS ocupando altura) tudo cabe sem rolagem vertical. O layout usa *container queries* de **largura e altura** (`container: details / size`): em janelas baixas, a carcaça fica mais fina, as barras de atributos ficam mais compactas e "Outros do tipo" mostra menos Pokémon (o botão "Ver os N do tipo" leva aos demais). A página não rola nem faz o efeito "elástico" do trackpad (`overscroll-behavior: none`), e a área dos detalhes só liga a rolagem quando o conteúdo realmente não cabe (o `PokemonDetails` mede com um `ResizeObserver`), como no celular.
-- 🎬 **Pokémon animado (Higgsfield)**: nos detalhes, o Pokémon se mexe. Se houver uma animação própria gerada no **[Higgsfield](https://higgsfield.ai/)** (`public/animations/{id}.webm`), ela é usada; senão aparece o GIF animado do Pokémon Showdown, ampliado em pixel art nítida. Sem internet, ou com "reduzir movimento" ligado no sistema, aparece a arte estática. Detalhes na seção [Animações dos Pokémon](#-animações-dos-pokémon-higgsfield).
+- 🎬 **Pokémon animado**: nos detalhes, o Pokémon se mexe com o **GIF animado do Pokémon Showdown**, ampliado em pixel art nítida. O projeto também aceita animações próprias geradas no **[Higgsfield](https://higgsfield.ai/)** (`public/animations/{id}.webm`), que têm prioridade sobre o GIF, mas **por enquanto nenhuma foi gerada** (`src/data/animacoes.json` está vazio): todos os 151 usam o GIF. Sem internet, ou com "reduzir movimento" ligado no sistema, aparece a arte estática. Detalhes na seção [Animações dos Pokémon](#-animações-dos-pokémon).
 - 📟 **Pokédex clássica**: nos detalhes, à direita da arte do Pokémon, a Pokédex clássica aparece com o sprite do Pokémon escolhido na telinha dela, com luz de fundo na cor do tipo e linhas de varredura. No painel direito, o visor preto mostra o número e o nome em estilo LCD, e os dois retângulos de baixo mostram os tipos. Ao trocar de Pokémon, as telas "piscam" e mostram o novo.
 - 📕 **Capa: Pokédex fechada e aberta**: ao carregar a página, aparece a Pokédex fechada (`pokedex-fechada.webp`). Um clique (ou `Enter`) gira a tampa na dobradiça, a lente e o LED acendem, a tela mostra "INICIANDO..." (`pokedex-aberta.webp`) e o aparelho liga.
 - 🧢 **Treinadores com imagem**: os 12 treinadores do JSON, com **imagem (sprite do Pokémon Showdown)**, **insígnias** e **time**. Cada Pokémon do time abre os detalhes, e cada treinador nos detalhes (com a imagem dele no botão) leva até o card dele. Se a imagem não carregar, aparecem as iniciais.
@@ -261,7 +261,7 @@ As imagens vêm do repositório público **[PokeAPI/sprites](https://github.com/
 
 - As imagens dos cards usam `loading="lazy"`: só baixam quando aparecem na tela.
 - Os sprites usam `image-rendering: pixelated`, para a pixel art não ficar borrada.
-- **Pokémon animado nos detalhes**: a arte grande mostra, nesta ordem, o que estiver disponível: animação própria gerada no **[Higgsfield](https://higgsfield.ai/)** (`public/animations/{id}.webm`, só para os ids de `src/data/animacoes.json`) → GIF animado do Pokémon Showdown (`.../sprites/pokemon/other/showdown/{id}.gif`, campo `sprites.other.showdown.front_default`) → arte oficial → `sem-imagem.svg`. Com "reduzir movimento" ligado no sistema, aparece a arte estática. Veja a seção [Animações dos Pokémon](#-animações-dos-pokémon-higgsfield).
+- **Pokémon animado nos detalhes**: a arte grande mostra, nesta ordem, o que estiver disponível: animação própria gerada no **[Higgsfield](https://higgsfield.ai/)** (`public/animations/{id}.webm`, só para os ids de `src/data/animacoes.json`) → GIF animado do Pokémon Showdown (`.../sprites/pokemon/other/showdown/{id}.gif`, campo `sprites.other.showdown.front_default`) → arte oficial → `sem-imagem.svg`. Hoje nenhum Pokémon tem animação própria, então o que aparece animado é sempre o GIF do Showdown. Com "reduzir movimento" ligado no sistema, aparece a arte estática. Veja a seção [Animações dos Pokémon](#-animações-dos-pokémon).
 - A **Pokédex clássica** é a imagem local `src/assets/images/pokedex-classica.webp` (684 x 523 px). O componente `ClassicPokedex` coloca o sprite por cima da tela dela e escreve no painel direito. As posições foram medidas na imagem e convertidas em porcentagem no CSS:
 
   | Área | Posição na imagem (px) | O que mostra |
@@ -273,7 +273,7 @@ As imagens vêm do repositório público **[PokeAPI/sprites](https://github.com/
   As fontes do visor usam `cqw` (*container query units*), então o texto cresce e diminui junto com a imagem.
 - Se uma imagem falhar, o componente `PokemonImage` mostra `src/assets/images/sem-imagem.svg`. A Pokédex continua funcionando só com o JSON, como pede a atividade.
 
-## 🎬 Animações dos Pokémon (Higgsfield)
+## 🎬 Animações dos Pokémon
 
 A arte grande dos detalhes é desenhada pelo componente `PokemonArt`, que usa o que estiver disponível, nesta ordem:
 
@@ -283,6 +283,8 @@ A arte grande dos detalhes é desenhada pelo componente `PokemonArt`, que usa o 
 | 2 | GIF animado | Pokémon Showdown, no repositório PokeAPI/sprites (`other/showdown/{id}.gif`) |
 | 3 | Arte oficial | PokeAPI/sprites (`other/official-artwork/{id}.png`) |
 | 4 | Imagem reserva | `src/assets/images/sem-imagem.svg` |
+
+> 📌 **Situação atual:** nenhuma animação do Higgsfield foi gerada ainda. O `src/data/animacoes.json` está vazio (`[]`) e a pasta `public/animations/` não existe no repositório, então todos os Pokémon pulam o passo 1 e mostram o **GIF do Showdown** (passo 2). O passo 1 está pronto para quando os vídeos forem gerados: veja [Como gerar uma animação no Higgsfield](#como-gerar-uma-animação-no-higgsfield).
 
 - Se um passo falhar (arquivo inexistente, sem internet), o `onError` passa para o próximo.
 - O GIF do Showdown é pequeno (40 a 140 px). Ele é ampliado com a propriedade CSS `scale` até ocupar 86% da moldura (no máximo 3x), com `image-rendering: pixelated`. Um `ResizeObserver` refaz a conta quando a moldura muda de tamanho.
@@ -295,7 +297,7 @@ A arte grande dos detalhes é desenhada pelo componente `PokemonArt`, que usa o 
    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png`
 2. Use 5 segundos e formato quadrado (1:1), com o prompt abaixo, trocando `[MOVIMENTO]` e `[FUNDO]`.
 3. Baixe o MP4 e converta para WebM com fundo transparente usando o [ffmpeg](https://ffmpeg.org/).
-4. Salve como `public/animations/{id}.webm` e acrescente o id em `src/data/animacoes.json`, por exemplo `[25, 6]`.
+4. Salve como `public/animations/{id}.webm` (crie a pasta na primeira vez) e acrescente o id em `src/data/animacoes.json`, por exemplo `[25, 6]`.
 
 ```text
 Seamless looping idle animation of the creature in the reference image. It stays in place,
@@ -478,7 +480,7 @@ Cada função confere o `error` devolvido pelo Supabase e lança uma exceção c
 │   └── animacoes.md                       └── Guia completo das animações do Higgsfield
 ├── 📁 imgs                                └── Capturas de tela usadas neste README
 ├── 📁 public
-│   ├── 📁 animations                      └── Animações próprias do Higgsfield ({id}.webm)
+│   ├── 📁 animations                      └── Animações próprias do Higgsfield ({id}.webm); ainda não existe, criar ao gerar a primeira
 │   ├── favicon.ico                        └── Favicon (16, 32, 48 e 64 px)
 │   ├── favicon-32.png / favicon-192.png   └── Favicon em PNG
 │   └── apple-touch-icon.png               └── Ícone da tela inicial (iPhone/iPad)
@@ -498,7 +500,7 @@ Cada função confere o `error` devolvido pelo Supabase e lança uma exceção c
 │   │
 │   ├── 📊 data
 │   │   ├── pokedex-data.json              └── Dados da atividade (Pokémon, tipos e treinadores)
-│   │   └── animacoes.json                 └── Ids que têm animação própria em public/animations
+│   │   └── animacoes.json                 └── Ids que têm animação própria em public/animations (hoje vazio: [])
 │   │
 │   ├── 🧩 model
 │   │   ├── Pokemon.js                     └── Pokémon pronto para a tela + lista dos seis atributos (STATS)
