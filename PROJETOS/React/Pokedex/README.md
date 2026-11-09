@@ -1,5 +1,13 @@
 # Projeto Pokédex (React + Vite + Supabase) 🐾
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://aramuni-pokedex.vercel.app/)
+
+👉 **[aramuni-podekex.vercel.app](https://aramuni-pokedex.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 A **Pokédex** é uma aplicação web feita com **React** e **Vite** para exibir, pesquisar e explorar os 151 Pokémon da primeira geração. Ela resolve a [Atividade 03 - Pokédex com React + Vite](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/blob/main/ATIVIDADES/ATIVIDADE%2003.md).
