@@ -1,5 +1,13 @@
 # Projeto WakaTimeAPI (React + Vite) ⏱️
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://wakatimeapi.vercel.app/)
+
+👉 **[wakatimeapi.vercel.app](https://wakatimeapi.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Painel com as estatísticas do **WakaTime**, feito com **React** e **Vite**: quanto tempo você passou programando, em quais **linguagens**, **editores**, **sistemas operacionais**, **categorias**, **projetos** e **bibliotecas**. Tem botões de período (7 dias, 30 dias, 6 meses, 1 ano e desde sempre), o tempo programado **hoje** e o cartão **🟢 Codando agora**, que mostra em qual projeto você está mexendo no editor **neste momento**.
