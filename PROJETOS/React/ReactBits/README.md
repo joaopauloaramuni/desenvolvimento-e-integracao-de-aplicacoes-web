@@ -1,5 +1,13 @@
 # Projeto ReactBits (React + Vite) 🖱️
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://reactbits-samples.vercel.app/)
+
+👉 **[reactbits-samples.vercel.app](https://reactbits-samples.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Cinco **efeitos que seguem o mouse pelo fundo do site**, feitos com componentes do [React Bits](https://reactbits.dev/). Escolha um efeito, mova o mouse pelas laterais da página e copie o código pronto para o seu projeto.
