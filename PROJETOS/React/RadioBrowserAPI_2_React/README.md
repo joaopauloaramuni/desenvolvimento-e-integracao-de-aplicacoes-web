@@ -1,5 +1,13 @@
 # Projeto RadioBrowserAPI_2 (React + Vite + Supabase) 📻
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://radiobrowser.vercel.app/)
+
+👉 **[radiobrowser.vercel.app](https://radiobrowser.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 O **RadioBrowserAPI_2_React** é a versão em **React** e **Vite** do projeto [RadioBrowserAPI_2 (Spring Boot)](https://github.com/joaopauloaramuni/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/PROJETOS/SpringBoot/RadioBrowserAPI_2). Ele consome a [Radio Browser API](https://api.radio-browser.info/) para exibir estações de rádio, permite filtrar por **país** e **estado**, marcar estações como **favoritas** e ouvi-las direto no navegador pela tag `<audio>` do HTML5.
