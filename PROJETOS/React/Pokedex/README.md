@@ -85,7 +85,7 @@ O aparelho tem **dois temas**, trocados pelo botão **Tema**: o **Clássico** (o
 
 | Celular - Detalhes | Celular - Pokédex clássica |
 | :---: | :---: |
-| ![MobileDetalhes](https://joaopauloaramuni.github.io/react-imgs/Pokedex/imgs/MobileDetalhes.png) | ![MobileClassica](https://joaopauloaramuni.github.io/react-imgs/Pokedex/imgs/MobileClassica.png) |
+| ![MobileDetalhes](https://joaopauloaramuni.github.io/react-imgs/Pokedex/imgs/MobileDetalhes.png?v=2) | ![MobileClassica](https://joaopauloaramuni.github.io/react-imgs/Pokedex/imgs/MobileClassica.png) |
 
 ### Tema Holo
 
