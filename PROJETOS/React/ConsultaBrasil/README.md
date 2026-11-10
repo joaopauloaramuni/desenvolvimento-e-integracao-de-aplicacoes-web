@@ -1,5 +1,13 @@
 # Projeto ConsultaBrasil (React + Vite) 📮
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://consulta-brasil.vercel.app/)
+
+👉 **[consulta-brasil.vercel.app](https://consulta-brasil.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Consultas de dados públicos do Brasil feitas com **React** e **Vite**, direto das APIs gratuitas [**ViaCEP**](https://viacep.com.br), [**BrasilAPI**](https://brasilapi.com.br) e [**IBGE**](https://servicodados.ibge.gov.br/api/docs/localidades). Você digita o CEP e o formulário de endereço se preenche sozinho; escolhe o estado e a lista de cidades aparece; consulta um CNPJ, os feriados do ano ou as cidades de um DDD.
