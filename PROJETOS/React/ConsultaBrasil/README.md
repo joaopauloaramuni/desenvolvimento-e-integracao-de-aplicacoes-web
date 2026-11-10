@@ -2,9 +2,9 @@
 
 ## 🌐 Acesse o projeto
 
-[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://consulta-brasil.vercel.app/)
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://consulta-brasil-puc.vercel.app/)
 
-👉 **[consulta-brasil.vercel.app](https://consulta-brasil.vercel.app/)**
+👉 **[consulta-brasil-puc.vercel.app](https://consulta-brasil-puc.vercel.app/)**
 
 Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
 
