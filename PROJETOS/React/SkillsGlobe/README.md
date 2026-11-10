@@ -1,5 +1,13 @@
 # Projeto SkillsGlobe (React + Vite) 🌐
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://skills-globe.vercel.app/)
+
+👉 **[skills-globe.vercel.app](https://skills-globe.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Um **globo 3D de habilidades** que gira sozinho, pode ser arrastado com o mouse ou com o dedo e abre um link ao clicar em cada ícone. Feito **só com React, CSS e `<canvas>` 2D**: sem three.js e sem nenhuma biblioteca de 3D.
