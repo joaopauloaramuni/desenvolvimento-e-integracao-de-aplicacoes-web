@@ -1,5 +1,13 @@
 # Projeto PixGenerator (React + Vite) 💠
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pix-generator.vercel.app/)
+
+👉 **[pix-generator.vercel.app](https://pix-generator.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Gerador de **Pix** feito com **React**, **Vite** e [**qrcode.react**](https://github.com/zpao/qrcode.react). Você informa a chave, o nome e a cidade de quem recebe (e, se quiser, o valor) e recebe o **QR Code** e o **Pix copia e cola**, prontos para qualquer app de banco.
