@@ -1,5 +1,13 @@
 # Projeto PucMaps (React + Vite) 🗺️
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pucmaps.vercel.app/)
+
+👉 **[pucmaps.vercel.app](https://pucmaps.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Mapa interativo do **Campus Coração Eucarístico da PUC Minas** feito com **React**, **Vite** e [**MapLibre GL JS**](https://maplibre.org/maplibre-gl-js/docs/). Mostra os prédios, cantinas, portarias, estacionamentos e áreas verdes do campus, desenha o **grafo de caminhos a pé** (calçadas, escadas e entradas) e calcula **rotas entre os prédios** com o **algoritmo de Dijkstra**, tudo no navegador.
