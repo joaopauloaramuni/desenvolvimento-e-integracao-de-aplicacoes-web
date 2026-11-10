@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Nomes próprios (e não "favicon.svg"): o navegador guarda o favicon por endereço
+         (localhost:5173) e mostraria o ícone de outro projeto que rodou na mesma porta. -->
+    <link rel="icon" type="image/svg+xml" href="./favicon-yugioh.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0B0806" />
+    <meta name="description" content="Pesquise cartas de Yu-Gi-Oh! pela API da YGOPRODeck e salve suas favoritas no Supabase." />
+    <title>Yu-Gi-Oh! Cartas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Barlow+Condensed:wght@500;600;700&family=Federant&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Aplica o tema antes do React carregar: a página não "pisca".
+      (function () {
+        var tema = null;
+        try { tema = localStorage.getItem("yugioh:theme"); } catch (e) {}
+        // Padrão: tema escuro ("Tumba"). O claro ("Papiro") só se a pessoa escolher.
+        if (tema !== "light" && tema !== "dark") tema = "dark";
+        document.documentElement.dataset.theme = tema;
+        document.documentElement.style.colorScheme = tema;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

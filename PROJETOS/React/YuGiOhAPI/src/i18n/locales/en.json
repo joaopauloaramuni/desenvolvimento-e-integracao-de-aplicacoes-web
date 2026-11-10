@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "title": "Yu-Gi-Oh! Cards"
+  },
+  "language": {
+    "label": "Language",
+    "pt": "Português",
+    "en": "English"
+  },
+  "header": {
+    "brand": "Cards",
+    "homeAria": "Yu-Gi-Oh! Cards, home page",
+    "navAria": "Main",
+    "home": "Home",
+    "cards": "Cards",
+    "favorites": "Favorites",
+    "themeToDark": "Use the Tomb theme (dark)",
+    "themeToLight": "Use the Papyrus theme (light)",
+    "status": {
+      "pronto": "Supabase connected",
+      "carregando": "Connecting to Supabase",
+      "erro": "Supabase connection failed",
+      "desativado": "Supabase not configured"
+    }
+  },
+  "skipLink": "Skip to content",
+  "intro": {
+    "skip": "Skip intro"
+  },
+  "home": {
+    "title": "The Shadow Games begin here",
+    "lead": "Awaken the ancient cards: search monsters, spells and traps, read the full effect, check sets and prices, and keep your favorites in the Pharaoh's vault.",
+    "searchLabel": "Search a card by name",
+    "searchPlaceholder": "Card name",
+    "searchButton": "Search",
+    "shortcuts": "Classic archetypes:",
+    "featuredTitle": "Yugi's deck",
+    "featuredText": "Classic cards of the King of Games, from Dark Magician to Exodia.",
+    "shuffle": "Shuffle others",
+    "typesTitle": "Browse by type",
+    "typesText": "Each color is the color of the card frame.",
+    "vaultTitle": "The Pharaoh's vault",
+    "vaultText": "Tap the star on any card to seal it in the vault. Your favorites are stored in Supabase and come back every time you open the site in this browser.",
+    "vaultButton": "See favorites",
+    "vaultButtonCount_one": "See my favorite",
+    "vaultButtonCount_other": "See my {{count}} favorites",
+    "vaultConnecting": "Connecting to Supabase…",
+    "vaultOff": "Favorites disabled: set up Supabase in <code>.env.local</code> to use the stars.",
+    "vaultError": "The Supabase connection failed. Favorites are disabled for now."
+  },
+  "cards": {
+    "title": "Cards",
+    "found_one": "{{formatted}} card found",
+    "found_other": "{{formatted}} cards found",
+    "none": "No cards found",
+    "loading": "Fetching cards from YGOPRODeck…",
+    "hint": "Names and card text in English, as on the original cards.",
+    "loadErrorTitle": "Could not load the cards.",
+    "emptyTitle": "No cards found",
+    "emptyText": "Check the spelling or remove a filter.",
+    "clearAll": "Clear search and filters",
+    "loadingAria": "Loading cards"
+  },
+  "filters": {
+    "searchLabel": "Search a card by name",
+    "searchPlaceholder": "Search by name, e.g. Dark Magician",
+    "type": "Type",
+    "attribute": "Attribute",
+    "archetype": "Archetype",
+    "archetypePlaceholder": "E.g. Blue-Eyes",
+    "sort": "Sort by",
+    "all": "All",
+    "clear": "Clear filters"
+  },
+  "sort": {
+    "name": "Name (A-Z)",
+    "new": "Newest",
+    "atk": "ATK",
+    "def": "DEF",
+    "level": "Level / Rank"
+  },
+  "pagination": {
+    "aria": "Pages",
+    "previous": "Previous",
+    "next": "Next",
+    "label": "Page <strong>{{page}}</strong> of {{total}}"
+  },
+  "card": {
+    "back": "Back",
+    "loading": "Loading card…",
+    "loadError": "Could not load this card",
+    "notFound": "Card not found",
+    "notFoundText": "No card has the code {{id}}.",
+    "notFoundTextPt": "No card has the code {{id}} in Portuguese. Switch the language to English and try again.",
+    "seeAll": "See all cards",
+    "attribute": "Attribute",
+    "monsterType": "Type",
+    "property": "Property",
+    "level": "Level",
+    "rank": "Rank",
+    "scale": "Pendulum Scale",
+    "pendulumEffect": "Pendulum Effect",
+    "monsterEffect": "Monster Effect",
+    "viewOn": "View on YGOPRODeck",
+    "passcode": "Passcode",
+    "archetype": "Archetype",
+    "linkArrows": "Link Arrows",
+    "prices": "Reference prices",
+    "sets": "Sets ({{count}})",
+    "setName": "Set",
+    "setCode": "Code",
+    "setRarity": "Rarity",
+    "setPrice": "Price",
+    "showLess": "Show less",
+    "showAllSets": "Show all {{count}} sets"
+  },
+  "linkMarkers": {
+    "Top": "Top",
+    "Bottom": "Bottom",
+    "Left": "Left",
+    "Right": "Right",
+    "Top-Left": "Top-Left",
+    "Top-Right": "Top-Right",
+    "Bottom-Left": "Bottom-Left",
+    "Bottom-Right": "Bottom-Right"
+  },
+  "favorites": {
+    "title": "Favorites",
+    "count_one": "{{count}} card saved in this browser.",
+    "count_other": "{{count}} cards saved in this browser, newest first.",
+    "emptyHint": "Cards you mark with the star show up here.",
+    "subtitle": "Your favorite cards, saved in Supabase.",
+    "unavailableTitle": "Favorites unavailable",
+    "unavailableText": "The stars stay disabled while there is no connection to Supabase. Searching and viewing cards still works.",
+    "seeCardsAnyway": "See the cards anyway",
+    "emptyTitle": "You don't have any favorites yet",
+    "emptyText": "Open the card list and tap the star on a card to keep it here.",
+    "chooseCards": "Choose cards",
+    "loadError": "Could not load your favorites"
+  },
+  "favButton": {
+    "add": "Add {{name}} to favorites",
+    "remove": "Remove {{name}} from favorites",
+    "on": "Favorite",
+    "off": "Add to favorites",
+    "desativado": "Favorites unavailable: Supabase is not configured",
+    "erro": "Favorites unavailable: the Supabase connection failed",
+    "carregando": "Connecting to Supabase…"
+  },
+  "notice": {
+    "offTitle": "Favorites disabled: Supabase is not configured.",
+    "offText": "Create a <code>.env.local</code> file from <code>.env.example</code> with your project URL and publishable key, then restart <code>npm run dev</code>. Cards keep working normally.",
+    "errorTitle": "The Supabase connection failed. Favorites are disabled.",
+    "errorText": "Check <code>VITE_SUPABASE_URL</code>, the key, and whether <code>supabase_favorites.sql</code> was run in the SQL Editor. Free-plan projects are paused after a few days without use.",
+    "detail": "Details: {{message}}"
+  },
+  "common": {
+    "retry": "Try again"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This address does not exist on this site.",
+    "back": "Back to home"
+  },
+  "footer": {
+    "credits": "Card data and images: <api>YGOPRODeck API</api>. Favorites: <supabase>Supabase</supabase>. Smoke effect: <bits>React Bits</bits>.",
+    "legal": "Yu-Gi-Oh! is a trademark of Konami and Kazuki Takahashi. Academic project, non-commercial and not affiliated with Konami."
+  },
+  "errors": {
+    "network": "Could not reach the YGOPRODeck API. Check your connection.",
+    "rateLimit": "Too many requests in a row. Wait a few seconds and try again.",
+    "http": "The YGOPRODeck API returned an error (HTTP {{status}}).",
+    "supabaseOff": "Supabase not configured: fill in .env.local (see the README).",
+    "invalidId": "Invalid card id: {{id}}"
+  },
+  "frame": {
+    "normal": {
+      "label": "Normal Monster",
+      "short": "Normal"
+    },
+    "effect": {
+      "label": "Effect Monster",
+      "short": "Effect"
+    },
+    "ritual": {
+      "label": "Ritual Monster",
+      "short": "Ritual"
+    },
+    "fusion": {
+      "label": "Fusion Monster",
+      "short": "Fusion"
+    },
+    "synchro": {
+      "label": "Synchro Monster",
+      "short": "Synchro"
+    },
+    "xyz": {
+      "label": "Xyz Monster",
+      "short": "Xyz"
+    },
+    "link": {
+      "label": "Link Monster",
+      "short": "Link"
+    },
+    "spell": {
+      "label": "Spell",
+      "short": "Spell"
+    },
+    "trap": {
+      "label": "Trap",
+      "short": "Trap"
+    },
+    "token": {
+      "label": "Token",
+      "short": "Token"
+    },
+    "skill": {
+      "label": "Skill",
+      "short": "Skill"
+    },
+    "normal_pendulum": {
+      "label": "Normal Pendulum",
+      "short": "Pendulum"
+    },
+    "effect_pendulum": {
+      "label": "Pendulum Effect",
+      "short": "Pendulum"
+    },
+    "ritual_pendulum": {
+      "label": "Ritual Pendulum",
+      "short": "Pendulum"
+    },
+    "fusion_pendulum": {
+      "label": "Fusion Pendulum",
+      "short": "Pendulum"
+    },
+    "synchro_pendulum": {
+      "label": "Synchro Pendulum",
+      "short": "Pendulum"
+    },
+    "xyz_pendulum": {
+      "label": "Xyz Pendulum",
+      "short": "Pendulum"
+    },
+    "unknown": {
+      "label": "Card",
+      "short": "Card"
+    }
+  },
+  "cardTypes": {
+    "Normal Monster": "Normal Monster",
+    "Effect Monster": "Effect Monster",
+    "Ritual Effect Monster": "Ritual Monster",
+    "Fusion Monster": "Fusion Monster",
+    "Synchro Monster": "Synchro Monster",
+    "XYZ Monster": "Xyz Monster",
+    "Link Monster": "Link Monster",
+    "Pendulum Effect Monster": "Pendulum Effect",
+    "Spell Card": "Spell",
+    "Trap Card": "Trap"
+  },
+  "attributes": {
+    "DARK": "DARK",
+    "LIGHT": "LIGHT",
+    "EARTH": "EARTH",
+    "WATER": "WATER",
+    "FIRE": "FIRE",
+    "WIND": "WIND",
+    "DIVINE": "DIVINE"
+  },
+  "races": {
+    "Aqua": "Aqua",
+    "Beast": "Beast",
+    "Beast-Warrior": "Beast-Warrior",
+    "Creator-God": "Creator-God",
+    "Cyberse": "Cyberse",
+    "Dinosaur": "Dinosaur",
+    "Divine-Beast": "Divine-Beast",
+    "Dragon": "Dragon",
+    "Fairy": "Fairy",
+    "Fiend": "Fiend",
+    "Fish": "Fish",
+    "Illusion": "Illusion",
+    "Insect": "Insect",
+    "Machine": "Machine",
+    "Plant": "Plant",
+    "Psychic": "Psychic",
+    "Pyro": "Pyro",
+    "Reptile": "Reptile",
+    "Rock": "Rock",
+    "Sea Serpent": "Sea Serpent",
+    "Spellcaster": "Spellcaster",
+    "Thunder": "Thunder",
+    "Warrior": "Warrior",
+    "Winged Beast": "Winged Beast",
+    "Wyrm": "Wyrm",
+    "Zombie": "Zombie"
+  },
+  "spellTrapRaces": {
+    "Normal": "Normal",
+    "Continuous": "Continuous",
+    "Quick-Play": "Quick-Play",
+    "Equip": "Equip",
+    "Field": "Field",
+    "Ritual": "Ritual",
+    "Counter": "Counter"
+  },
+  "typeline": {
+    "Normal": "Normal",
+    "Effect": "Effect",
+    "Fusion": "Fusion",
+    "Ritual": "Ritual",
+    "Synchro": "Synchro",
+    "Xyz": "Xyz",
+    "Link": "Link",
+    "Pendulum": "Pendulum",
+    "Tuner": "Tuner",
+    "Flip": "Flip",
+    "Spirit": "Spirit",
+    "Union": "Union",
+    "Gemini": "Gemini",
+    "Toon": "Toon"
+  },
+  "music": {
+    "on": "Mute the music",
+    "off": "Play the music",
+    "blocked": "Tap anywhere to turn on the music",
+    "title": "Yu-Gi-Oh! theme"
+  }
+}

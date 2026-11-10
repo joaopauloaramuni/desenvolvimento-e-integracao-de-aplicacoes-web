@@ -1,0 +1,66 @@
+.fav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: transform 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.fav--icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  border-color: var(--line-gold);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.5);
+}
+
+.fav--full {
+  padding: 0.65rem 1.1rem;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.fav:hover:not(:disabled) {
+  color: var(--gold);
+}
+
+.fav:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.fav--on {
+  color: var(--gold-bright);
+  border-color: var(--gold);
+  box-shadow: 0 0 14px -2px rgb(240 199 94 / 0.6);
+}
+
+.fav--on svg {
+  animation: estrela 0.35s ease-out;
+}
+
+@keyframes estrela {
+  40% { transform: scale(1.35) rotate(-12deg); }
+}
+
+.fav:disabled {
+  cursor: not-allowed;
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.fav--busy:disabled {
+  opacity: 0.75;
+  cursor: progress;
+}
+
+.fav--busy svg {
+  animation: pisca 0.8s ease-in-out infinite;
+}

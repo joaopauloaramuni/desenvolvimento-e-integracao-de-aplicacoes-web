@@ -1,0 +1,21 @@
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 421 / 614;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--surface-2);
+}
+
+.card-image--fallback {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: var(--frame);
+  color: var(--frame-text);
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  border: 6px solid color-mix(in srgb, var(--frame) 70%, black);
+}

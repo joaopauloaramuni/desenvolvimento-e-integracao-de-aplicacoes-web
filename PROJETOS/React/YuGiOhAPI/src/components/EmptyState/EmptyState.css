@@ -1,0 +1,31 @@
+.empty {
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--line-gold);
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+  border-radius: 4px;
+}
+
+.empty h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: var(--gold);
+}
+
+.empty::before {
+  content: "𓂀";
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-hiero);
+  font-size: 2.4rem;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.empty p {
+  margin: 0 auto 1.4rem;
+  max-width: 52ch;
+  color: var(--muted);
+}

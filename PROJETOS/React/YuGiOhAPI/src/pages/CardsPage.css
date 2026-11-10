@@ -1,0 +1,24 @@
+.cards-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--danger);
+  border-radius: 3px;
+  background: var(--surface);
+}
+
+.cards-error > svg {
+  color: var(--danger);
+  flex-shrink: 0;
+}
+
+.cards-error p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}
+
+.cards-error .button {
+  margin-left: auto;
+}

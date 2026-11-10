@@ -1,0 +1,269 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 0.6rem 0.4rem 0.3rem;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.back:hover {
+  color: var(--ink);
+  background: var(--surface-2);
+}
+
+.card-page {
+  display: grid;
+  grid-template-columns: minmax(260px, 400px) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.card-page--loading {
+  grid-template-columns: minmax(260px, 400px) 1fr;
+  color: var(--muted);
+}
+
+.card-page__art {
+  position: sticky;
+  top: 6rem;
+  perspective: 1000px;
+}
+
+/* Carta inclinável (segue o ponteiro) */
+.tilt {
+  position: relative;
+  border-radius: 3px;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.2s ease-out;
+  box-shadow: 0 0 0 1px var(--line-gold), 0 0 70px -12px rgb(255 170 60 / 0.5), 0 30px 50px -20px #000;
+}
+
+.tilt .card-image {
+  border-radius: 3px;
+}
+
+.tilt__shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: var(--shine, 0);
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgb(255 255 255 / 0.45),
+    rgb(226 192 98 / 0.15) 30%,
+    transparent 60%
+  );
+  mix-blend-mode: soft-light;
+}
+
+.card-page__frame {
+  display: inline-block;
+  margin: 0 0 0.6rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--frame);
+  color: var(--frame-text);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card-page__name {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 4.5vw, 3.3rem);
+  line-height: 1.05;
+  color: var(--gold);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0 0 1.2rem;
+  border: 1px solid var(--line-gold);
+  border-radius: 3px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.facts > div {
+  flex: 1 1 110px;
+  padding: 0.75rem 1rem;
+  border-right: 1px solid var(--line);
+}
+
+.facts > div:last-child {
+  border-right: 0;
+}
+
+.facts dt,
+.card-page__extra dt {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.facts dd {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.facts__stat {
+  font-family: var(--font-stat);
+  font-size: 1.6rem !important;
+  line-height: 1;
+}
+
+.facts__stars span {
+  margin-left: 0.4rem;
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.card-page__typeline {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.card-page__text {
+  max-width: 70ch;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.card-page__text h2 {
+  margin: 1rem 0 0.25rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--gold);
+}
+
+.card-page__text p {
+  margin: 0 0 0.6rem;
+}
+
+.card-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.6rem 0;
+}
+
+.card-page__extra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin: 0;
+}
+
+.card-page__extra dd {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-stat);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-page__section {
+  margin-top: 2.2rem;
+}
+
+.card-page__section h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.prices {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.6rem;
+}
+
+.prices li {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.prices span {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.prices strong {
+  font-family: var(--font-stat);
+  font-size: 1.3rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+.sets {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  background: var(--surface);
+}
+
+.sets th,
+.sets td {
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.sets th {
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: var(--surface-2);
+}
+
+.sets tr:last-child td {
+  border-bottom: 0;
+}
+
+.sets__code,
+.sets__price {
+  font-family: var(--font-stat);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sets__more {
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 820px) {
+  .card-page,
+  .card-page--loading {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .card-page__art {
+    position: static;
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}

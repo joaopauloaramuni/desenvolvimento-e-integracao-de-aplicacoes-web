@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "title": "Yu-Gi-Oh! Cartas"
+  },
+  "language": {
+    "label": "Idioma",
+    "pt": "Português",
+    "en": "English"
+  },
+  "header": {
+    "brand": "Cartas",
+    "homeAria": "Yu-Gi-Oh! Cartas, página inicial",
+    "navAria": "Principal",
+    "home": "Início",
+    "cards": "Cartas",
+    "favorites": "Favoritas",
+    "themeToDark": "Usar o tema Tumba (escuro)",
+    "themeToLight": "Usar o tema Papiro (claro)",
+    "status": {
+      "pronto": "Supabase conectado",
+      "carregando": "Conectando ao Supabase",
+      "erro": "Conexão com o Supabase falhou",
+      "desativado": "Supabase não configurado"
+    }
+  },
+  "skipLink": "Pular para o conteúdo",
+  "intro": {
+    "skip": "Pular abertura"
+  },
+  "home": {
+    "title": "Os Jogos das Sombras começam aqui",
+    "lead": "Desperte as cartas antigas: pesquise monstros, magias e armadilhas, leia o efeito completo, veja coleções e preços, e guarde suas favoritas no cofre do Faraó.",
+    "searchLabel": "Pesquisar carta pelo nome",
+    "searchPlaceholder": "Nome da carta",
+    "searchButton": "Pesquisar",
+    "shortcuts": "Arquétipos clássicos:",
+    "featuredTitle": "O deck do Yugi",
+    "featuredText": "Cartas clássicas do Rei dos Jogos, do Mago Negro à Exodia.",
+    "shuffle": "Sortear outras",
+    "typesTitle": "Explorar por tipo",
+    "typesText": "Cada cor é a cor da moldura da carta.",
+    "vaultTitle": "O cofre do Faraó",
+    "vaultText": "Toque na estrela de qualquer carta para selá-la no cofre. Suas favoritas ficam guardadas no Supabase e voltam sempre que você abrir o site neste navegador.",
+    "vaultButton": "Ver favoritas",
+    "vaultButtonCount_one": "Ver minha favorita",
+    "vaultButtonCount_other": "Ver minhas {{count}} favoritas",
+    "vaultConnecting": "Conectando ao Supabase…",
+    "vaultOff": "Favoritos desativados: configure o Supabase no <code>.env.local</code> para usar as estrelas.",
+    "vaultError": "A conexão com o Supabase falhou. Os favoritos estão desativados por enquanto."
+  },
+  "cards": {
+    "title": "Cartas",
+    "found_one": "{{formatted}} carta encontrada",
+    "found_other": "{{formatted}} cartas encontradas",
+    "none": "Nenhuma carta encontrada",
+    "loading": "Buscando cartas na YGOPRODeck…",
+    "hint": "Nomes e textos em português. Troque para English no topo para pesquisar pelos nomes originais.",
+    "loadErrorTitle": "Não foi possível carregar as cartas.",
+    "emptyTitle": "Nenhuma carta encontrada",
+    "emptyText": "Confira a grafia, troque o idioma para English (alguns nomes só existem em inglês) ou remova algum filtro.",
+    "clearAll": "Limpar pesquisa e filtros",
+    "loadingAria": "Carregando cartas"
+  },
+  "filters": {
+    "searchLabel": "Pesquisar carta pelo nome",
+    "searchPlaceholder": "Pesquisar pelo nome, ex.: Mago Negro",
+    "type": "Tipo",
+    "attribute": "Atributo",
+    "archetype": "Arquétipo",
+    "archetypePlaceholder": "Ex.: Blue-Eyes",
+    "sort": "Ordenar por",
+    "all": "Todos",
+    "clear": "Limpar filtros"
+  },
+  "sort": {
+    "name": "Nome (A-Z)",
+    "new": "Mais recentes",
+    "atk": "ATK",
+    "def": "DEF",
+    "level": "Nível / Rank"
+  },
+  "pagination": {
+    "aria": "Páginas",
+    "previous": "Anterior",
+    "next": "Próxima",
+    "label": "Página <strong>{{page}}</strong> de {{total}}"
+  },
+  "card": {
+    "back": "Voltar",
+    "loading": "Carregando carta…",
+    "loadError": "Não foi possível carregar esta carta",
+    "notFound": "Carta não encontrada",
+    "notFoundText": "Nenhuma carta tem o código {{id}}.",
+    "notFoundTextPt": "Nenhuma carta tem o código {{id}} em português. Troque o idioma para English e tente de novo.",
+    "seeAll": "Ver todas as cartas",
+    "attribute": "Atributo",
+    "monsterType": "Tipo",
+    "property": "Propriedade",
+    "level": "Nível",
+    "rank": "Rank",
+    "scale": "Escala Pêndulo",
+    "pendulumEffect": "Efeito de Pêndulo",
+    "monsterEffect": "Efeito do monstro",
+    "viewOn": "Ver na YGOPRODeck",
+    "passcode": "Código (passcode)",
+    "archetype": "Arquétipo",
+    "linkArrows": "Setas Link",
+    "prices": "Preços de referência",
+    "sets": "Coleções ({{count}})",
+    "setName": "Coleção",
+    "setCode": "Código",
+    "setRarity": "Raridade",
+    "setPrice": "Preço",
+    "showLess": "Mostrar menos",
+    "showAllSets": "Mostrar todas as {{count}} coleções"
+  },
+  "linkMarkers": {
+    "Top": "Cima",
+    "Bottom": "Baixo",
+    "Left": "Esquerda",
+    "Right": "Direita",
+    "Top-Left": "Cima-Esquerda",
+    "Top-Right": "Cima-Direita",
+    "Bottom-Left": "Baixo-Esquerda",
+    "Bottom-Right": "Baixo-Direita"
+  },
+  "favorites": {
+    "title": "Favoritas",
+    "count_one": "{{count}} carta salva neste navegador.",
+    "count_other": "{{count}} cartas salvas neste navegador, da mais recente à mais antiga.",
+    "emptyHint": "Cartas que você marcar com a estrela aparecem aqui.",
+    "subtitle": "Suas cartas favoritas, salvas no Supabase.",
+    "unavailableTitle": "Favoritos indisponíveis",
+    "unavailableText": "As estrelas ficam desabilitadas enquanto não houver conexão com o Supabase. Pesquisar e ver as cartas continua funcionando.",
+    "seeCardsAnyway": "Ver as cartas mesmo assim",
+    "emptyTitle": "Você ainda não tem favoritas",
+    "emptyText": "Abra a lista de cartas e toque na estrela de uma carta para guardá-la aqui.",
+    "chooseCards": "Escolher cartas",
+    "loadError": "Não foi possível carregar as favoritas"
+  },
+  "favButton": {
+    "add": "Favoritar {{name}}",
+    "remove": "Remover {{name}} das favoritas",
+    "on": "Favorita",
+    "off": "Favoritar",
+    "desativado": "Favoritos indisponíveis: o Supabase não está configurado",
+    "erro": "Favoritos indisponíveis: a conexão com o Supabase falhou",
+    "carregando": "Conectando ao Supabase…"
+  },
+  "notice": {
+    "offTitle": "Favoritos desativados: o Supabase não está configurado.",
+    "offText": "Crie o arquivo <code>.env.local</code> a partir do <code>.env.example</code> com a URL e a chave publicável do seu projeto e reinicie o <code>npm run dev</code>. As cartas continuam funcionando normalmente.",
+    "errorTitle": "A conexão com o Supabase falhou. Os favoritos estão desativados.",
+    "errorText": "Confira a <code>VITE_SUPABASE_URL</code>, a chave e se o <code>supabase_favorites.sql</code> foi executado no SQL Editor. Projetos do plano gratuito são pausados depois de alguns dias sem uso.",
+    "detail": "Detalhe: {{message}}"
+  },
+  "common": {
+    "retry": "Tentar de novo"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "text": "O endereço não existe neste site.",
+    "back": "Voltar para o início"
+  },
+  "footer": {
+    "credits": "Dados e imagens das cartas: <api>API da YGOPRODeck</api>. Favoritos: <supabase>Supabase</supabase>. Efeito de fumaça: <bits>React Bits</bits>.",
+    "legal": "Yu-Gi-Oh! é marca da Konami e de Kazuki Takahashi. Projeto acadêmico, sem fins comerciais e sem ligação com a Konami."
+  },
+  "errors": {
+    "network": "Não foi possível falar com a API da YGOPRODeck. Verifique sua conexão.",
+    "rateLimit": "Muitas requisições seguidas. Espere alguns segundos e tente de novo.",
+    "http": "A API da YGOPRODeck respondeu com erro (HTTP {{status}}).",
+    "supabaseOff": "Supabase não configurado: preencha o .env.local (veja o README).",
+    "invalidId": "Id de carta inválido: {{id}}"
+  },
+  "frame": {
+    "normal": {
+      "label": "Monstro Normal",
+      "short": "Normal"
+    },
+    "effect": {
+      "label": "Monstro de Efeito",
+      "short": "Efeito"
+    },
+    "ritual": {
+      "label": "Monstro de Ritual",
+      "short": "Ritual"
+    },
+    "fusion": {
+      "label": "Monstro de Fusão",
+      "short": "Fusão"
+    },
+    "synchro": {
+      "label": "Monstro Sincro",
+      "short": "Sincro"
+    },
+    "xyz": {
+      "label": "Monstro Xyz",
+      "short": "Xyz"
+    },
+    "link": {
+      "label": "Monstro Link",
+      "short": "Link"
+    },
+    "spell": {
+      "label": "Magia",
+      "short": "Magia"
+    },
+    "trap": {
+      "label": "Armadilha",
+      "short": "Armadilha"
+    },
+    "token": {
+      "label": "Ficha",
+      "short": "Ficha"
+    },
+    "skill": {
+      "label": "Habilidade",
+      "short": "Habilidade"
+    },
+    "normal_pendulum": {
+      "label": "Pêndulo Normal",
+      "short": "Pêndulo"
+    },
+    "effect_pendulum": {
+      "label": "Pêndulo de Efeito",
+      "short": "Pêndulo"
+    },
+    "ritual_pendulum": {
+      "label": "Pêndulo de Ritual",
+      "short": "Pêndulo"
+    },
+    "fusion_pendulum": {
+      "label": "Pêndulo de Fusão",
+      "short": "Pêndulo"
+    },
+    "synchro_pendulum": {
+      "label": "Pêndulo Sincro",
+      "short": "Pêndulo"
+    },
+    "xyz_pendulum": {
+      "label": "Pêndulo Xyz",
+      "short": "Pêndulo"
+    },
+    "unknown": {
+      "label": "Carta",
+      "short": "Carta"
+    }
+  },
+  "cardTypes": {
+    "Normal Monster": "Monstro Normal",
+    "Effect Monster": "Monstro de Efeito",
+    "Ritual Effect Monster": "Monstro de Ritual",
+    "Fusion Monster": "Monstro de Fusão",
+    "Synchro Monster": "Monstro Sincro",
+    "XYZ Monster": "Monstro Xyz",
+    "Link Monster": "Monstro Link",
+    "Pendulum Effect Monster": "Pêndulo de Efeito",
+    "Spell Card": "Magia",
+    "Trap Card": "Armadilha"
+  },
+  "attributes": {
+    "DARK": "Trevas",
+    "LIGHT": "Luz",
+    "EARTH": "Terra",
+    "WATER": "Água",
+    "FIRE": "Fogo",
+    "WIND": "Vento",
+    "DIVINE": "Divino"
+  },
+  "races": {
+    "Aqua": "Aqua",
+    "Beast": "Besta",
+    "Beast-Warrior": "Besta-Guerreira",
+    "Creator-God": "Deus Criador",
+    "Cyberse": "Ciberso",
+    "Dinosaur": "Dinossauro",
+    "Divine-Beast": "Besta Divina",
+    "Dragon": "Dragão",
+    "Fairy": "Fada",
+    "Fiend": "Demônio",
+    "Fish": "Peixe",
+    "Illusion": "Ilusão",
+    "Insect": "Inseto",
+    "Machine": "Máquina",
+    "Plant": "Planta",
+    "Psychic": "Psíquico",
+    "Pyro": "Piro",
+    "Reptile": "Réptil",
+    "Rock": "Rocha",
+    "Sea Serpent": "Serpente Marinha",
+    "Spellcaster": "Mago",
+    "Thunder": "Trovão",
+    "Warrior": "Guerreiro",
+    "Winged Beast": "Besta Alada",
+    "Wyrm": "Wyrm",
+    "Zombie": "Zumbi"
+  },
+  "spellTrapRaces": {
+    "Normal": "Normal",
+    "Continuous": "Contínua",
+    "Quick-Play": "Rápida",
+    "Equip": "Equipamento",
+    "Field": "Campo",
+    "Ritual": "Ritual",
+    "Counter": "Resposta"
+  },
+  "typeline": {
+    "Normal": "Normal",
+    "Effect": "Efeito",
+    "Fusion": "Fusão",
+    "Ritual": "Ritual",
+    "Synchro": "Sincro",
+    "Xyz": "Xyz",
+    "Link": "Link",
+    "Pendulum": "Pêndulo",
+    "Tuner": "Regulador",
+    "Flip": "Virar",
+    "Spirit": "Espírito",
+    "Union": "União",
+    "Gemini": "Gêmeos",
+    "Toon": "Toon"
+  },
+  "music": {
+    "on": "Silenciar a música",
+    "off": "Tocar a música",
+    "blocked": "Toque em qualquer lugar para ativar a música",
+    "title": "Tema de Yu-Gi-Oh!"
+  }
+}

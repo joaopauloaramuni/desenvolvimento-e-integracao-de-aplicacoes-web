@@ -1,0 +1,28 @@
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  gap: 1.1rem;
+}
+
+.grid--refreshing {
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+/* "Carta virada" (verso genérico) enquanto a API responde */
+.grid__placeholder {
+  aspect-ratio: 421 / 700;
+  border-radius: 3px;
+  border: 1px solid var(--line-gold);
+  background:
+    radial-gradient(ellipse 34% 26% at 50% 45%, color-mix(in srgb, var(--ember) 45%, transparent), transparent 70%),
+    linear-gradient(160deg, var(--surface-2), var(--surface));
+  animation: respira 1.4s ease-in-out infinite;
+}
+
+@keyframes respira {
+  50% { opacity: 0.55; }
+}

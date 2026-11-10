@@ -1,0 +1,329 @@
+/*
+ * Tokens de cor (inspirados num templo egípcio ao entardecer)
+ *  - Tumba (escuro, padrão): pedra queimada, bronze, ouro do Milênio e luz âmbar do sol
+ *  - Papiro (claro): arenito e papiro, com tinta marrom-escura
+ */
+:root,
+:root[data-theme="dark"] {
+  --bg: #110b06;
+  --surface: #1c140c;
+  --surface-2: #281c10;
+  --ink: #f3e5c6;
+  --muted: #b5a07c;
+  --line: #45331f;
+  --line-gold: rgb(224 180 74 / 0.38);
+  --accent: #e0b44a;
+  --accent-ink: #1a1004;
+  --gold: #e0b44a;
+  --gold-bright: #ffd66b;
+  --gold-on-dark: #ecc35a;
+  --ember: #d9822b;
+  --hero-bg: #0d0804;
+  --danger: #f07a5f;
+  --ok: #8cc47a;
+  --glow: 0 0 0 1px var(--line-gold), 0 12px 32px -12px rgb(255 190 80 / 0.45);
+  --texture-opacity: 0.09;
+
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #e7d5ae;
+  --surface: #f3e6c9;
+  --surface-2: #e0caa0;
+  --ink: #24170b;
+  --muted: #64492a;
+  --line: #ccb07c;
+  --line-gold: rgb(138 96 20 / 0.45);
+  --accent: #24170b;
+  --accent-ink: #ffd66b;
+  --gold: #7f5710;
+  --gold-bright: #b8821a;
+  --ember: #a4541a;
+  --danger: #a3271b;
+  --ok: #3f6b2f;
+  --glow: 0 0 0 1px var(--line-gold), 0 12px 26px -14px rgb(60 35 10 / 0.5);
+  --texture-opacity: 0.16;
+
+  color-scheme: light;
+}
+
+:root {
+  --font-display: "Federant", "Cinzel", Georgia, serif;
+  --font-body: "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
+  --font-stat: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-hiero: "Noto Sans Egyptian Hieroglyphs", "Segoe UI Historic", "Noto Sans", sans-serif;
+
+  --max: 1240px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 110% 70% at 80% -10%, color-mix(in srgb, var(--ember) 16%, transparent), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Textura de pedra/papiro (ruído SVG) atrás de toda a página */
+body {
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--texture-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .75 0 0 0 0 .58 0 0 0 0 .32 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--gold);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--muted) 16%, transparent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold-bright);
+  outline-offset: 2px;
+}
+
+main:focus {
+  outline: none;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+select,
+.field input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 3px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- Layout ---------- */
+.page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 0;
+}
+
+.page-head {
+  margin-bottom: 1.5rem;
+}
+
+.page-head h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  letter-spacing: 0.01em;
+  color: var(--gold);
+}
+
+.page-head p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+}
+
+.page-head__hint {
+  font-size: 0.9rem;
+  margin-top: 0.1rem !important;
+}
+
+/* ---------- Botões ---------- */
+.button {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.button--primary:hover {
+  background: var(--gold-bright);
+}
+
+:root[data-theme="light"] .button--primary:hover {
+  background: #3a2a1a;
+}
+
+.button--gold {
+  background: linear-gradient(180deg, #ffd66b, #c99229);
+  color: #1a1004;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35), 0 6px 20px -8px rgb(240 199 94 / 0.7);
+}
+
+.button--gold:hover {
+  background: linear-gradient(180deg, #ffd977, #d9a83a);
+}
+
+.button--ghost {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.button--ghost:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ---------- Toques egípcios ---------- */
+
+/* Friso de hieróglifos (decorativo: aria-hidden no HTML) */
+.frieze {
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-hiero);
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.6rem;
+  color: var(--gold);
+  opacity: 0.55;
+  text-align: center;
+  border-block: 1px solid var(--line-gold);
+  user-select: none;
+}
+
+/* Cartucho: o oval com uma barra na ponta onde os egípcios escreviam o nome do faraó */
+.cartouche {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.35rem 1.6rem 0.4rem 1.2rem;
+  border: 2px solid var(--gold);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1.15;
+}
+
+.cartouche::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 12%;
+  bottom: 12%;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--gold);
+}
+
+.cartouche__glyph {
+  font-family: var(--font-hiero);
+  font-size: 0.9em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

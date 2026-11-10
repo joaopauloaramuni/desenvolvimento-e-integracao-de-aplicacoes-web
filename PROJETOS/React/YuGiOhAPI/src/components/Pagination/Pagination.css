@@ -1,0 +1,17 @@
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination__label {
+  font-family: var(--font-stat);
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.pagination__label strong {
+  color: var(--ink);
+}

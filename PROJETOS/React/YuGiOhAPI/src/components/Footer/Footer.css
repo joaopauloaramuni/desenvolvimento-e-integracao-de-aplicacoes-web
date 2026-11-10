@@ -1,0 +1,21 @@
+.footer {
+  max-width: var(--max);
+  margin: 4rem auto 0;
+  padding: 1.75rem var(--gutter) calc(2rem + env(safe-area-inset-bottom, 0px));
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.footer__frieze {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  opacity: 0.4;
+}
+
+.footer p {
+  margin: 0 0 0.4rem;
+}
+
+.footer__legal {
+  font-size: 0.8rem;
+}

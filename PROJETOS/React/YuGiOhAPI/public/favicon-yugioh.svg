@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Olho do Milênio em ouro: traço grosso para continuar legível em 16 px -->
+  <defs>
+    <linearGradient id="ouro" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE08A"/>
+      <stop offset="1" stop-color="#C38A22"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#ouro)"/>
+  <path d="M7 30 Q32 6 57 30 Q32 52 7 30 Z" fill="#1A1004"/>
+  <circle cx="32" cy="29" r="10" fill="url(#ouro)"/>
+  <circle cx="32" cy="29" r="5" fill="#1A1004"/>
+  <path d="M28 44 h8 v14 h-8 z" fill="#1A1004"/>
+</svg>
