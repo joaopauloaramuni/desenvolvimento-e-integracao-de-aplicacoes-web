@@ -208,7 +208,7 @@ EXAMPLES: { ... },                  // dados dos botões "Usar exemplo"
 
 - **PUC Minas**: `src/assets/images/pucminas-logo.png` (a mesma dos outros projetos).
 - **BrasilAPI**: `src/assets/images/brasilapi-logo.png`, do [repositório oficial](https://github.com/BrasilAPI/BrasilAPI/tree/main/public).
-- **ViaCEP**: salve a logo do [site do ViaCEP](https://viacep.com.br) em **`public/logos/viacep.png`**. Enquanto o arquivo não existir, a faixa azul mostra o nome "ViaCEP" em texto.
+- **ViaCEP**: `public/logos/viacep.png`, do [site do ViaCEP](https://viacep.com.br).
 
 ## ☁️ Deploy na Vercel
 
