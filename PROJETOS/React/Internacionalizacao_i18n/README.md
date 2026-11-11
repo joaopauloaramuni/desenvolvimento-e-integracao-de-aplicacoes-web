@@ -1,5 +1,13 @@
 # Projeto Internacionalizacao_i18n (React + Vite) 🌎
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://i18next-demo.vercel.app/)
+
+👉 **[i18next-demo.vercel.app](https://i18next-demo.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Exemplo de **internacionalização (i18n)** em **React** com **i18next** e **react-i18next**: o site inteiro é escrito em **português (pt-BR)** e traduzido para **inglês** e **espanhol**. A troca de idioma é feita por **botões com bandeiras** 🇧🇷 🇺🇸 🇪🇸 (componentes SVG do `country-flag-icons`) e acontece **na hora, sem recarregar a página**.
