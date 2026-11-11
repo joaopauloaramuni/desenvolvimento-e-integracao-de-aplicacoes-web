@@ -2,9 +2,9 @@
 
 ## 🌐 Acesse o projeto
 
-[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pix-generator.vercel.app/)
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pix-generator-api.vercel.app/)
 
-👉 **[pix-generator.vercel.app](https://pix-generator.vercel.app/)**
+👉 **[pix-generator-api.vercel.app](https://pix-generator-api.vercel.app/)**
 
 Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
 
