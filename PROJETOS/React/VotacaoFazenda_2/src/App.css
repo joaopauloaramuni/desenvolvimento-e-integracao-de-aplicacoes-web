@@ -1,0 +1,381 @@
+/* ---------- Estrutura das páginas ---------- */
+.pagina {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem 2rem;
+}
+
+.pagina-cabecalho {
+  margin-bottom: 1.8rem;
+}
+
+.pagina-cabecalho h1 {
+  color: var(--palha);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  margin-bottom: 0.4rem;
+}
+
+.pagina-cabecalho p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* ---------- Grades ---------- */
+/* 4 peões na roça: 4 colunas fixas no desktop, 2 no tablet e 1 no celular (media queries no fim) */
+.grade-roca {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.grade-participantes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.9rem;
+}
+
+/* ---------- Card do participante ---------- */
+.card {
+  position: relative;
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, outline-color 0.2s ease;
+}
+
+.card-foto {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.card-corpo {
+  padding: 0.6rem 0.2rem 0.2rem;
+  text-align: center;
+}
+
+.card-nome {
+  font-size: 1rem;
+}
+
+/* Peões na roça: borda vermelha de celeiro */
+.card-roca {
+  padding: 0.7rem;
+  border: 4px solid var(--celeiro);
+}
+
+.card-roca .card-nome {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
+/* Fazendeiro da semana: borda cor de palha */
+.card-fazendeiro {
+  border: 4px solid var(--palha);
+}
+
+/* Card selecionado: contorno verde e o card "sobe" um pouco */
+.card-selecionado {
+  outline: 5px solid var(--pasto);
+  outline-offset: 4px;
+  transform: translateY(-8px);
+}
+
+/* Selos (o card precisa de position: relative para o selo se posicionar) */
+.selo {
+  position: absolute;
+  top: 1rem;
+  right: -0.6rem;
+  z-index: 1;
+  padding: 0.3rem 0.8rem;
+  font-family: var(--fonte-titulo);
+  font-size: 0.95rem;
+  transform: rotate(6deg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.selo-roca {
+  background: var(--celeiro);
+  color: #fff;
+}
+
+.selo-fazendeiro {
+  background: var(--palha);
+  color: var(--tinta);
+}
+
+/* Participantes fora da roça ficam mais apagados */
+.card-peao {
+  filter: saturate(0.55);
+  opacity: 0.9;
+}
+
+.grade-participantes .card-nome {
+  font-family: var(--fonte-texto);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.botao-selecionar {
+  width: 100%;
+  background: transparent;
+  color: var(--tinta);
+  box-shadow: inset 0 0 0 2px var(--tinta);
+}
+
+.card-selecionado .botao-selecionar {
+  background: var(--pasto);
+  color: #fff;
+  box-shadow: 0 4px 0 #2f4f22;
+}
+
+/* ---------- Barra de confirmação (gruda no rodapé da tela ao rolar) ---------- */
+.confirmacao {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--madeira-escura);
+  border: 3px solid var(--madeira-clara);
+  border-radius: 10px;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.confirmacao p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.confirmacao strong {
+  color: var(--palha);
+}
+
+.botao:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}
+
+/* ---------- Histórico de votos da sessão ---------- */
+.historico {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: var(--pasto);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.historico h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.historico-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.3rem 1rem;
+  margin: 0 0 0.8rem;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.historico a {
+  font-weight: 800;
+}
+
+/* ---------- Demais participantes ---------- */
+.demais {
+  margin-top: 3rem;
+}
+
+.demais h2 {
+  color: var(--palha);
+  font-size: 1.5rem;
+}
+
+.demais-legenda {
+  margin: 0.3rem 0 1rem;
+  opacity: 0.85;
+}
+
+/* ---------- Resultado ---------- */
+.total-votos strong {
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  color: var(--palha);
+  font-weight: 400;
+}
+
+.zona-eliminacao {
+  margin: 0 0 1.2rem;
+  padding: 0.7rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 6px solid var(--celeiro);
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.placar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.placar-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.8rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 8px;
+  border: 4px solid transparent;
+}
+
+.placar-salvo {
+  border-color: var(--pasto);
+}
+
+.placar-eliminado {
+  border-color: var(--celeiro);
+}
+
+.placar-posicao {
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  min-width: 2.2rem;
+  text-align: center;
+}
+
+.placar-foto {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.placar-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.placar-linha {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.placar-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+}
+
+.selo-placar {
+  padding: 0.2rem 0.6rem;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.selo-salvo {
+  background: var(--pasto);
+}
+
+.selo-eliminado {
+  background: var(--celeiro);
+}
+
+.barra {
+  height: 22px;
+  background: rgba(43, 26, 12, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-preenchida {
+  height: 100%;
+  background: var(--madeira);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.placar-salvo .barra-preenchida {
+  background: var(--pasto);
+}
+
+.placar-eliminado .barra-preenchida {
+  background: var(--celeiro);
+}
+
+.placar-numeros {
+  display: block;
+  margin-top: 0.4rem;
+  font-weight: 800;
+}
+
+.vazio {
+  padding: 2rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.vazio p {
+  margin: 0 0 1.2rem;
+  font-size: 1.1rem;
+}
+
+.resultado-acoes {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.botao-desfazer {
+  background: var(--palha);
+  color: var(--tinta);
+  box-shadow: 0 4px 0 #b8933a;
+}
+
+.botao-zerar {
+  background: transparent;
+  color: var(--papel);
+  box-shadow: inset 0 0 0 2px var(--papel);
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 900px) {
+  .grade-roca {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .grade-roca {
+    grid-template-columns: 1fr;
+  }
+
+  .placar-foto {
+    width: 96px;
+    height: 54px;
+  }
+}
