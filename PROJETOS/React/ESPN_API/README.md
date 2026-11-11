@@ -1,5 +1,13 @@
 # Projeto ESPN_API (React + Vite) ⚽🏀
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://espn-api.vercel.app/)
+
+👉 **[espn-api.vercel.app](https://espn-api.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Painel de **futebol** e **basquete** feito com **React** e **Vite**, lido ao vivo da **API pública da ESPN**: próximos jogos com **contagem regressiva**, **placar ao vivo**, últimos resultados e **classificação**.
