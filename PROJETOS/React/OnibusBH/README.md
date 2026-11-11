@@ -12,7 +12,7 @@ Abra no navegador do celular ou do computador e acesse direto, sem instalar nada
 
 Consulta de **linhas de ônibus de Belo Horizonte** feita com **React**, **Vite** e [**MapLibre GL JS**](https://maplibre.org/maplibre-gl-js/docs/). Busca a linha pelo número ou pelo nome, **desenha o trajeto no mapa**, mostra o **quadro de horários da BHTrans** (dias úteis, sábado e domingo/feriado) e a **posição dos ônibus em tempo real**. Na página inicial, lista as **linhas que passam perto dos campi Coração Eucarístico e Lourdes da PUC Minas**, com o ponto mais próximo, a distância a pé e os próximos horários previstos nele.
 
-Os dados são **abertos e oficiais**: 
+Os dados são **abertos e oficiais**:
 
 - **GTFS estático da BHTrans**: linhas, pontos, trajetos e horários programados. O `npm run dados` baixa o arquivo e transforma em JSONs pequenos em `public/data`.
 - **GTFS-Realtime da Prefeitura de Belo Horizonte** ([dados.pbh.gov.br/dataset/gtfs-rt](https://dados.pbh.gov.br/dataset/gtfs-rt)): a posição de cada ônibus, atualizada a cada ~20 segundos. Como a URL tem uma **chave de acesso**, quem fala com a PBH é o servidor (Vercel Function `api/pbh.js`), nunca o navegador.
