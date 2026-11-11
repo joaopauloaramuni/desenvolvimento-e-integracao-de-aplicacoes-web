@@ -2,9 +2,9 @@
 
 ## 🌐 Acesse o projeto
 
-[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://espn-api.vercel.app/)
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://aramuni-espn-api.vercel.app/)
 
-👉 **[espn-api.vercel.app](https://espn-api.vercel.app/)**
+👉 **[aramuni-espn-api.vercel.app](https://aramuni-espn-api.vercel.app/)**
 
 Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
 
