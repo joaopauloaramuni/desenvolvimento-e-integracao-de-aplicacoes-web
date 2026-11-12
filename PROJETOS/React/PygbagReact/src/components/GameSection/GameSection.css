@@ -1,0 +1,78 @@
+.jogo {
+  padding-block: 0.75rem 3rem;
+}
+
+.jogo-cabecalho {
+  max-width: 44rem;
+  margin-bottom: 1.5rem;
+}
+
+.jogo-titulo {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: clamp(2.5rem, 6.5vw, 4rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-shadow: 4px 4px 0 var(--py-yellow);
+}
+
+.jogo-descricao {
+  margin: 0.85rem 0 1rem;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.jogo-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.jogo-tecnologias li {
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--py-blue);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.jogo-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 46rem) minmax(16rem, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.jogo-lateral h3 {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-pixel);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.jogo-lateral h3:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.jogo-lateral p {
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.jogo-lateral strong {
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .jogo-grade {
+    grid-template-columns: 1fr;
+  }
+}

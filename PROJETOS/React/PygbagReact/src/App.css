@@ -1,0 +1,10 @@
+.pagina {
+  width: min(100% - 2.5rem, 70rem);
+  margin-inline: auto;
+}
+
+@media (max-width: 560px) {
+  .pagina {
+    width: calc(100% - 1.5rem);
+  }
+}

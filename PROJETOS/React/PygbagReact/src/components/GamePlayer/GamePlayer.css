@@ -1,0 +1,147 @@
+/* A "tela" do jogo: uma moldura escura com a proporção do pygame.display.set_mode() */
+.player-moldura {
+  padding: 10px;
+  border-radius: 14px;
+  background: var(--bezel);
+  box-shadow:
+    0 0 0 2px var(--ink),
+    8px 8px 0 0 var(--py-blue);
+}
+
+.player-tela {
+  position: relative;
+  aspect-ratio: var(--proporcao);
+  overflow: hidden;
+  border-radius: 6px;
+  background: #0c1230;
+}
+
+.player-tela iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Capa: o print do jogo com o botão Jogar por cima */
+.player-capa {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.player-capa img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  transition: filter 0.2s;
+}
+
+.player-capa:hover img,
+.player-capa:focus-visible img {
+  filter: brightness(0.85);
+}
+
+.player-jogar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem 0.85rem 1.3rem;
+  border: 3px solid #10162b;
+  border-radius: 10px;
+  background: var(--py-yellow);
+  color: #10162b;
+  font-family: var(--font-pixel);
+  font-size: 1.6rem;
+  font-weight: 700;
+  box-shadow: 5px 5px 0 #10162b;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.player-jogar .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.player-capa:hover .player-jogar {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #10162b;
+}
+
+.player-capa:active .player-jogar {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #10162b;
+}
+
+.player-capa:focus-visible {
+  outline: none;
+}
+
+.player-capa:focus-visible .player-jogar {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Tela cheia: a moldura ocupa a tela e o jogo fica centralizado, sem distorcer */
+.player-moldura.is-fullscreen {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 0;
+  background: #000;
+  box-shadow: none;
+}
+
+.player-moldura.is-fullscreen .player-tela {
+  width: min(100vw, 100vh * var(--proporcao));
+  border-radius: 0;
+}
+
+/* Barra embaixo do jogo */
+.player-barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-top: 1.4rem;
+}
+
+.player-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.player-status.is-ativo {
+  color: var(--ok);
+  font-weight: 500;
+}
+
+.player-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-capa img,
+  .player-jogar {
+    transition: none;
+  }
+}

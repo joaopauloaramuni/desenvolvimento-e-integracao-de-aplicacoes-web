@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem;
+}
+
+.header-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-marca img {
+  border-radius: 8px;
+}
+
+.header-marca strong {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.header-marca span {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.header-acoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 560px) {
+  .some-no-celular {
+    display: none;
+  }
+}

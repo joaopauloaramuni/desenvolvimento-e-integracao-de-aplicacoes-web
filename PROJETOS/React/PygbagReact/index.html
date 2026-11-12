@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pygame no portfólio - React + pygbag</title>
+    <meta name="description" content="Exemplo de como jogar um jogo feito com Pygame dentro de um site React + Vite usando o pygbag." />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1d2b53" />
+
+    <!-- Fontes: Pixelify Sans (títulos), IBM Plex Sans (textos) e IBM Plex Mono (código) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Pixelify+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Aplica o tema antes do React carregar, para a página não "piscar" -->
+    <script>
+      (function () {
+        var tema = null;
+        try { tema = localStorage.getItem("pygbag-react:theme"); } catch (e) {}
+        if (tema !== "light" && tema !== "dark") {
+          tema = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = tema;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+/* Tokens de cor: papel quadriculado de caderno + azul e amarelo do logo do Python */
+:root {
+  --paper: #f3f6fb;
+  --paper-raised: #ffffff;
+  --grid: #dbe3f0;
+  --line-strong: #b8c4d9;
+  --ink: #1d2b53;
+  --ink-soft: #4a5878;
+  --py-blue: #3776ab;
+  --py-yellow: #ffd43b;
+  --bezel: #141b3a;
+  --ok: #1d7a4a;
+
+  --font-pixel: "Pixelify Sans", "Courier New", monospace;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --paper: #10172e;
+  --paper-raised: #1a2342;
+  --grid: #19223f;
+  --line-strong: #34406a;
+  --ink: #e8eefc;
+  --ink-soft: #a7b3d1;
+  --py-blue: #4b8bc4;
+  --bezel: #070b1c;
+  --ok: #6ad39a;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--py-blue);
+  text-underline-offset: 3px;
+}
+
+[data-theme="dark"] a {
+  color: #8cc0ef;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+p code {
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+  background: var(--paper-raised);
+  border: 1px solid var(--grid);
+}
+
+/* Botões secundários (barra do jogo e cabeçalho) */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--paper-raised);
+  color: var(--ink);
+  font: 500 0.9rem/1 var(--font-sans);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--py-yellow);
+  color: #10162b;
+}
+
+.botao-icone {
+  padding: 0.5rem 0.6rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--py-blue);
+  outline-offset: 2px;
+}

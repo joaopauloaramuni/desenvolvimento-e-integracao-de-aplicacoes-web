@@ -1,0 +1,3 @@
+# Para rodar o jogo no computador e gerar o build web
+pygame-ce>=2.5
+pygbag>=0.9.3

@@ -1,0 +1,37 @@
+.controles {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+/* teclas em cima, descrição embaixo: funciona com 1 ou 4 teclas */
+.controles-item {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.controles-item dt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.controles-item dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.9rem;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  background: var(--paper-raised);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--ink);
+}

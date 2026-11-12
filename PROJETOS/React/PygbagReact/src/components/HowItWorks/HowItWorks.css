@@ -1,0 +1,83 @@
+.passos {
+  padding-block: 3rem 2rem;
+  border-top: 2px solid var(--ink);
+}
+
+.passos h2 {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.passos-intro {
+  max-width: 40rem;
+  margin: 0.75rem 0 2.25rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.passos ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 2.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: passo;
+}
+
+.passos li {
+  counter-increment: passo;
+  position: relative;
+  padding-left: 3.25rem;
+}
+
+.passos li::before {
+  content: counter(passo);
+  position: absolute;
+  top: -0.2rem;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--py-yellow);
+  color: #10162b;
+  font-family: var(--font-pixel);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.passos h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.passos li p {
+  margin: 0 0 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.passos pre {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: var(--bezel);
+  color: #e6ecfa;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .passos ol {
+    grid-template-columns: 1fr;
+  }
+}
