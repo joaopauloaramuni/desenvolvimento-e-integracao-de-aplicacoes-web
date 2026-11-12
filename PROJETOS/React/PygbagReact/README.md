@@ -2,9 +2,9 @@
 
 ## 🌐 Acesse o projeto
 
-[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://aramuni-pygbag-react.vercel.app/)
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pygbag-react.vercel.app/)
 
-👉 **[aramuni-pygbag-react.vercel.app](https://aramuni-pygbag-react.vercel.app/)**
+👉 **[pygbag-react.vercel.app](https://pygbag-react.vercel.app/)**
 
 Abra no navegador do celular ou do computador e jogue direto, sem instalar nada.
 
