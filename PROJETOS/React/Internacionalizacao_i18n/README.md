@@ -2,9 +2,9 @@
 
 ## 🌐 Acesse o projeto
 
-[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://i18next-demo.vercel.app/)
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://demo-i18next.vercel.app/)
 
-👉 **[i18next-demo.vercel.app](https://i18next-demo.vercel.app/)**
+👉 **[demo-i18next.vercel.app](https://demo-i18next.vercel.app/)**
 
 Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
 
