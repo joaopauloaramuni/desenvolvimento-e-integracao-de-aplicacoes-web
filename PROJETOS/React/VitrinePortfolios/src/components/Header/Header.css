@@ -1,0 +1,125 @@
+.cabecalho {
+  background: var(--superficie);
+  border-bottom: 3px solid var(--ouro);
+}
+
+.cabecalho-conteudo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2rem) 1.25rem;
+}
+
+.cabecalho-logo {
+  width: clamp(80px, 10vw, 120px);
+  height: auto;
+}
+
+.cabecalho-titulo {
+  margin: 0 0 0.6rem;
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--azul);
+}
+
+.cabecalho-descricao {
+  margin: 0;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  font-size: clamp(0.92rem, 1.2vw, 1rem);
+  line-height: 1.65;
+  color: var(--texto-suave);
+}
+
+.cabecalho-descricao strong {
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.cabecalho-descricao a {
+  font-weight: 700;
+  color: var(--azul);
+}
+
+/* Logos dos cursos: fundo branco nos dois temas, porque as logos são feitas para fundo claro */
+.cabecalho-cursos {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cabecalho-cursos li {
+  display: grid;
+  place-items: center;
+  width: 118px;
+  height: 132px;
+  padding: 0.6rem;
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cabecalho-cursos img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Telas médias: as logos descem para baixo do texto */
+@media (max-width: 1080px) {
+  .cabecalho-conteudo {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .cabecalho-cursos {
+    grid-column: 2;
+  }
+
+  .cabecalho-cursos li {
+    width: 96px;
+    height: 108px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Brasão da PUC e logos dos cursos na mesma linha, texto embaixo */
+  .cabecalho-conteudo {
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+  }
+
+  .cabecalho-logo {
+    width: 64px;
+  }
+
+  .cabecalho-cursos {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    gap: 0.5rem;
+  }
+
+  .cabecalho-cursos li {
+    width: 76px;
+    height: 86px;
+    padding: 0.4rem;
+  }
+
+  .cabecalho-texto {
+    grid-column: 1 / -1;
+  }
+}

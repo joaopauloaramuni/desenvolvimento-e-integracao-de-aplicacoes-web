@@ -1,0 +1,31 @@
+.rodape {
+  margin-top: 4rem;
+  background: var(--superficie);
+  border-top: 1px solid var(--linha);
+}
+
+.rodape-conteudo {
+  display: grid;
+  gap: 0.4rem;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 2.25rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.rodape-conteudo p {
+  margin: 0;
+}
+
+.rodape a {
+  font-weight: 600;
+  color: var(--azul);
+}
+
+.rodape-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
