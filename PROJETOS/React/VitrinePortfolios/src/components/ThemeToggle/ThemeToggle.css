@@ -1,0 +1,29 @@
+.tema {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--linha-forte);
+  border-radius: 8px;
+  background: var(--superficie);
+  color: var(--tinta);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tema:hover {
+  border-color: var(--azul);
+  color: var(--azul);
+}
+
+.tema svg {
+  font-size: 1rem;
+}
+
+@media (max-width: 520px) {
+  .tema span {
+    display: none;
+  }
+}
