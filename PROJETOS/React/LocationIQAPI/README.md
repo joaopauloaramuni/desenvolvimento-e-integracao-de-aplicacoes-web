@@ -1,5 +1,13 @@
 # Projeto LocationIQAPI (React + Vite) 📍
 
+## 🌐 Acesse o projeto
+
+[![Deploy na Vercel](https://img.shields.io/badge/Vercel-online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://locationiq-api.vercel.app/)
+
+👉 **[locationiq-api.vercel.app](https://locationiq-api.vercel.app/)**
+
+Abra no navegador do celular ou do computador e acesse direto, sem instalar nada.
+
 ## 📖 Descrição
 
 Exemplo completo da [**API do LocationIQ**](https://locationiq.com/) feito com **React**, **Vite** e [**MapLibre GL JS**](https://maplibre.org/). O mapa usa os **vector tiles do LocationIQ** (dados do OpenStreetMap) e a lateral tem uma aba para cada recurso da API, partindo das **unidades da PUC Minas**.
