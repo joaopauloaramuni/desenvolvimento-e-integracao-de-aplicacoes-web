@@ -1,0 +1,91 @@
+.busca {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin: 0 -1rem 1.75rem;
+  padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--papel) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linha);
+}
+
+.busca-campo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 320px;
+  max-width: 520px;
+}
+
+.busca-icone {
+  position: absolute;
+  left: 0.95rem;
+  color: var(--texto-suave);
+  pointer-events: none;
+}
+
+.busca input {
+  width: 100%;
+  padding: 0.8rem 2.75rem 0.8rem 2.6rem;
+  border: 1.5px solid var(--linha-forte);
+  border-radius: 8px;
+  background: var(--superficie);
+  color: var(--tinta);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.busca input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.busca input:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--azul) 22%, transparent);
+}
+
+.busca-atalho,
+.busca-limpar {
+  position: absolute;
+  right: 0.7rem;
+}
+
+.busca-atalho {
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--linha-forte);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.busca-limpar {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--papel-2);
+  color: var(--tinta);
+  cursor: pointer;
+}
+
+.busca-contagem {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+/* Sem teclado físico, o atalho "/" não faz sentido */
+@media (hover: none) {
+  .busca-atalho {
+    display: none;
+  }
+}
