@@ -1,0 +1,355 @@
+/* Fontes locais (pasta public/fonts), funcionam mesmo sem internet */
+@font-face { font-family: 'Saira Condensed'; src: url('/fonts/saira-condensed-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Saira Condensed'; src: url('/fonts/saira-condensed-800.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'Saira'; src: url('/fonts/saira-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Saira'; src: url('/fonts/saira-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Saira'; src: url('/fonts/saira-800.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+
+:root {
+  --preto: #0a0a0a;
+  --grafite: #1a1a1a;
+  --grafite-claro: #2e2e2e;
+  --branco: #f5f5f5;
+  --cinza: #a6a6a6;
+  --ouro: #d4af37;
+  --prata: #b8bcc4;
+  --gramado: #2f9e44;
+  --amarelo: #facc15;
+
+  --fonte-titulo: 'Saira Condensed', 'Arial Narrow', sans-serif;
+  --fonte-texto: 'Saira', 'Segoe UI', system-ui, sans-serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--fonte-texto);
+  color: var(--branco);
+  background-color: var(--preto);
+  /* listras verticais bem discretas, como a camisa alvinegra */
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 70px, transparent 70px 140px),
+    radial-gradient(ellipse at top, rgba(212, 175, 55, 0.12), transparent 60%);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-block;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.75rem 1.4rem;
+  font: 800 1rem var(--fonte-texto);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+
+.botao:hover {
+  filter: brightness(1.08);
+}
+
+.botao:active {
+  transform: translateY(2px);
+}
+
+.botao:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--ouro);
+  outline-offset: 3px;
+}
+
+.botao-principal {
+  background: var(--ouro);
+  color: var(--preto);
+  box-shadow: 0 4px 0 #8f7420;
+}
+
+.botao-secundario {
+  background: transparent;
+  color: var(--preto);
+  box-shadow: inset 0 0 0 2px var(--preto);
+}
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.6rem clamp(1rem, 4vw, 3rem);
+  background: var(--preto);
+  border-bottom: 4px solid var(--ouro);
+}
+
+.topo-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.topo-escudo {
+  height: 60px;
+  width: auto;
+}
+
+.topo-titulo {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--branco);
+}
+
+.topo-titulo small {
+  font-size: 0.95rem;
+  color: var(--ouro);
+  letter-spacing: 0.12em;
+}
+
+.topo-menu {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.topo-menu a {
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--branco);
+}
+
+.topo-menu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.topo-menu a.active {
+  background: var(--branco);
+  color: var(--preto);
+}
+
+/* ---------- Home ---------- */
+.home {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem 3rem;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.escudo {
+  margin: 0;
+  text-align: center;
+}
+
+.escudo img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  padding: 12%;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(90deg, #111 0 26px, #1d1d1d 26px 52px);
+  border: 10px solid var(--branco);
+  box-shadow: 0 0 0 5px var(--ouro), 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.escudo figcaption {
+  display: inline-block;
+  margin-top: -1.4rem;
+  position: relative;
+  padding: 0.35rem 1.1rem;
+  background: var(--ouro);
+  color: var(--preto);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+}
+
+.balao {
+  position: relative;
+  background: var(--branco);
+  color: var(--preto);
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* pontinha do balão apontando para o escudo */
+.balao::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 40%;
+  border: 14px solid transparent;
+  border-right: 22px solid var(--branco);
+  border-left: 0;
+}
+
+.placar-jogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0 1rem;
+  padding: 0.3rem 0.9rem;
+  background: var(--preto);
+  color: var(--branco);
+  border-radius: 6px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.placar-jogo strong {
+  color: var(--ouro);
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+.balao h1 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  margin-bottom: 0.8rem;
+}
+
+.balao p {
+  font-size: 1.1rem;
+  line-height: 1.55;
+  max-width: 60ch;
+  margin: 0 0 1.4rem;
+}
+
+.balao .placar-jogo {
+  margin: 0 0 1rem;
+}
+
+.home-acoes {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.home-indicados {
+  margin-top: 3rem;
+}
+
+.home-indicados h2 {
+  color: var(--ouro);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.home-indicados-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.home-indicados-lista li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 1.1rem 0.3rem 0.3rem;
+  background: var(--grafite);
+  border: 2px solid var(--ouro);
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.home-indicados-lista img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 0;
+  background: var(--branco);
+}
+
+.home-numero {
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  color: var(--ouro);
+}
+
+.home-suspenso {
+  margin: 1.2rem 0 0;
+  font-size: 1.05rem;
+}
+
+.home-suspenso strong {
+  color: var(--amarelo);
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 720px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .escudo {
+    max-width: 240px;
+  }
+
+  .balao::before {
+    left: 50%;
+    top: -22px;
+    transform: translateX(-50%);
+    border: 14px solid transparent;
+    border-bottom: 22px solid var(--branco);
+    border-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

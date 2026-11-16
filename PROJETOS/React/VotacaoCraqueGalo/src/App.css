@@ -1,0 +1,403 @@
+/* ---------- Estrutura das páginas ---------- */
+.pagina {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem 2rem;
+}
+
+.pagina-cabecalho {
+  margin-bottom: 1.8rem;
+}
+
+.pagina-cabecalho h1 {
+  color: var(--ouro);
+  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  margin-bottom: 0.4rem;
+}
+
+.pagina-cabecalho p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* ---------- Grades ---------- */
+/* 4 indicados: 4 colunas fixas no desktop, 2 no tablet e 1 no celular (media queries no fim) */
+.grade-indicados {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.grade-elenco {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.9rem;
+}
+
+/* ---------- Card do jogador ---------- */
+.card {
+  position: relative;
+  background: var(--grafite);
+  border: 2px solid var(--grafite-claro);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s ease, outline-color 0.2s ease;
+}
+
+/* fotos verticais: proporção 3/4, recortando por baixo para não cortar o rosto */
+.card-foto {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 0;
+  background: var(--branco);
+}
+
+.card-corpo {
+  padding: 0.7rem 0.6rem 0.8rem;
+  text-align: center;
+}
+
+.card-nome {
+  font-size: 1.05rem;
+}
+
+.card-numero {
+  color: var(--ouro);
+}
+
+.card-posicao {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--cinza);
+}
+
+/* Indicados: borda dourada */
+.card-indicado {
+  border: 4px solid var(--ouro);
+}
+
+.card-indicado .card-nome {
+  font-size: 1.45rem;
+}
+
+.card-indicado .card-posicao {
+  margin-bottom: 0.8rem;
+}
+
+/* Suspenso: borda amarela, como o cartão */
+.card-suspenso {
+  border: 4px solid var(--amarelo);
+}
+
+/* Demais jogadores do elenco ficam em preto e branco */
+.card-elenco {
+  filter: grayscale(1);
+  opacity: 0.85;
+}
+
+/* Card selecionado: contorno verde e o card "sobe" um pouco */
+.card-selecionado {
+  outline: 5px solid var(--gramado);
+  outline-offset: 4px;
+  transform: translateY(-8px);
+}
+
+/* Selos (o card precisa de position: relative para o selo se posicionar) */
+.selo {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  z-index: 1;
+  padding: 0.2rem 0.7rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.selo-indicado {
+  background: var(--ouro);
+  color: var(--preto);
+}
+
+.selo-suspenso {
+  background: var(--amarelo);
+  color: var(--preto);
+}
+
+.grade-elenco .selo {
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.botao-selecionar {
+  width: 100%;
+  background: transparent;
+  color: var(--branco);
+  box-shadow: inset 0 0 0 2px var(--branco);
+}
+
+.card-selecionado .botao-selecionar {
+  background: var(--gramado);
+  color: #fff;
+  box-shadow: 0 4px 0 #1d6a2c;
+}
+
+/* ---------- Barra de confirmação (gruda no rodapé da tela ao rolar) ---------- */
+.confirmacao {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--preto);
+  border: 3px solid var(--ouro);
+  border-radius: 10px;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.confirmacao p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.confirmacao strong {
+  color: var(--ouro);
+}
+
+.botao:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}
+
+/* ---------- Histórico de votos da sessão ---------- */
+.historico {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: var(--gramado);
+  border-radius: 8px;
+  color: #fff;
+}
+
+.historico h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.historico-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.3rem 1rem;
+  margin: 0 0 0.8rem;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.historico a {
+  font-weight: 800;
+}
+
+/* ---------- Demais jogadores ---------- */
+.demais {
+  margin-top: 3rem;
+}
+
+.demais h2 {
+  color: var(--ouro);
+  font-size: 1.7rem;
+}
+
+.demais-legenda {
+  margin: 0.3rem 0 1rem;
+  opacity: 0.85;
+}
+
+/* ---------- Resultado ---------- */
+.total-votos strong {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: var(--ouro);
+}
+
+.disputa {
+  margin: 0 0 1.2rem;
+  padding: 0.7rem 1rem;
+  background: var(--grafite);
+  border-left: 6px solid var(--ouro);
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.placar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.placar-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.8rem;
+  background: var(--grafite);
+  border-radius: 10px;
+  border: 4px solid var(--grafite-claro);
+}
+
+.placar-craque {
+  border-color: var(--ouro);
+}
+
+.placar-vice {
+  border-color: var(--prata);
+}
+
+.placar-posicao {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.9rem;
+  min-width: 2.4rem;
+  text-align: center;
+}
+
+.placar-foto {
+  width: 84px;
+  height: 112px;
+  object-fit: cover;
+  object-position: 50% 0;
+  border-radius: 6px;
+  background: var(--branco);
+  flex-shrink: 0;
+}
+
+.placar-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.placar-linha {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.placar-nome {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.selo-placar {
+  padding: 0.2rem 0.6rem;
+  color: var(--preto);
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.selo-craque {
+  background: var(--ouro);
+}
+
+.selo-vice {
+  background: var(--prata);
+}
+
+.barra {
+  height: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-preenchida {
+  height: 100%;
+  background: var(--cinza);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.placar-craque .barra-preenchida {
+  background: var(--ouro);
+}
+
+.placar-vice .barra-preenchida {
+  background: var(--prata);
+}
+
+.placar-numeros {
+  display: block;
+  margin-top: 0.4rem;
+  font-weight: 800;
+}
+
+.vazio {
+  padding: 2rem;
+  background: var(--grafite);
+  border: 2px dashed var(--grafite-claro);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.vazio p {
+  margin: 0 0 1.2rem;
+  font-size: 1.1rem;
+}
+
+.resultado-acoes {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.botao-desfazer {
+  background: var(--branco);
+  color: var(--preto);
+  box-shadow: 0 4px 0 #9a9a9a;
+}
+
+.botao-zerar {
+  background: transparent;
+  color: var(--branco);
+  box-shadow: inset 0 0 0 2px var(--branco);
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 900px) {
+  .grade-indicados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .grade-indicados {
+    grid-template-columns: 1fr;
+  }
+
+  .placar-foto {
+    width: 60px;
+    height: 80px;
+  }
+}
