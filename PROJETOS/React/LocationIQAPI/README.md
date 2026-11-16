@@ -1,4 +1,4 @@
-# Projeto LocationIQAPI (React + Vite) 📍
+# Projeto LocationIQAPI (React + Vite) 📍 
 
 ## 🌐 Acesse o projeto
 
