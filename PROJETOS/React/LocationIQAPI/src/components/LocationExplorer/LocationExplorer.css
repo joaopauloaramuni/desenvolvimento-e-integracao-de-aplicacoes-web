@@ -1,0 +1,1339 @@
+/* =========================================================
+   LOCATION EXPLORER (abas + mapa + requisições)
+   ========================================================= */
+
+.liq-explorer,
+.liq-token-missing {
+  --mx-brand: var(--brand, #005380);
+  --mx-brand-deep: var(--brand-deep, #00334f);
+  --mx-brand-soft: var(--brand-soft, #4fa8d8);
+  --mx-text: var(--foreground, #171717);
+  --mx-muted: var(--muted, #64748b);
+  --mx-border: var(--border, #e2e8f0);
+  --mx-surface: var(--surface-muted, #f1f5f9);
+}
+
+.liq-explorer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  color: var(--mx-text);
+}
+
+.liq-grid {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+
+  height: 640px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid var(--mx-border);
+  border-radius: 16px;
+}
+
+/* =========================================================
+   LATERAL + ABAS
+   ========================================================= */
+
+.liq-sidebar {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+
+  border-right: 1px solid var(--mx-border);
+}
+
+.liq-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-bottom: 1px solid var(--mx-border);
+}
+
+.liq-tabs button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+
+  padding: 0.75rem 0.25rem;
+
+  color: var(--mx-muted);
+
+  background: none;
+
+  border: none;
+  border-bottom: 3px solid transparent;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.liq-tabs button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.liq-tabs button:hover {
+  color: var(--mx-brand);
+}
+
+.liq-tabs button.active {
+  color: var(--mx-brand);
+
+  border-bottom-color: var(--mx-brand);
+}
+
+.liq-tab-body {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+}
+
+.liq-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding: 1rem;
+}
+
+.liq-attribution {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+
+  padding: 0.6rem;
+
+  color: var(--mx-muted);
+
+  border-top: 1px solid var(--mx-border);
+
+  font-size: 0.72rem;
+
+  text-decoration: none;
+}
+
+.liq-attribution:hover {
+  color: var(--mx-brand);
+}
+
+/* Títulos de seção */
+
+.liq-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 0.4rem;
+}
+
+.liq-section-head h3 {
+  color: var(--mx-brand);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.liq-section-head span {
+  color: var(--mx-muted);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.liq-section-head button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  color: var(--mx-brand);
+
+  background: none;
+
+  border: none;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.liq-section-head button:hover {
+  text-decoration: underline;
+}
+
+.liq-hint,
+.liq-empty,
+.liq-center {
+  color: var(--mx-muted);
+
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.liq-center {
+  color: var(--mx-text);
+
+  font-size: 0.87rem;
+  font-weight: 500;
+}
+
+.liq-info {
+  color: var(--mx-muted);
+
+  font-size: 0.8rem;
+}
+
+.liq-info.error {
+  padding: 0.6rem 0.75rem;
+
+  color: var(--error-text, #b91c1c);
+
+  background: var(--error-background, #fef2f2);
+
+  border: 1px solid var(--error-border, #fecaca);
+  border-radius: 8px;
+}
+
+/* =========================================================
+   BUSCA
+   ========================================================= */
+
+.liq-search {
+  position: relative;
+}
+
+.liq-search-icon {
+  position: absolute;
+  top: 22px;
+  left: 0.85rem;
+
+  color: var(--mx-muted);
+
+  transform: translateY(-50%);
+}
+
+.liq-search input {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 2.4rem 0 2.5rem;
+
+  color: var(--mx-text);
+
+  background: #ffffff;
+
+  border: 1px solid var(--mx-border);
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 0.9rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.liq-search input:focus {
+  border-color: var(--mx-brand);
+
+  box-shadow: 0 0 0 3px rgba(0, 83, 128, 0.12);
+}
+
+.liq-search-clear {
+  position: absolute;
+  top: 22px;
+  right: 0.6rem;
+
+  display: flex;
+
+  color: var(--mx-muted);
+
+  background: none;
+
+  border: none;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+}
+
+.liq-dropdown {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  left: 0;
+  z-index: 10;
+
+  max-height: 300px;
+
+  overflow-y: auto;
+
+  list-style: none;
+
+  background: #ffffff;
+
+  border: 1px solid var(--mx-border);
+  border-radius: 10px;
+
+  box-shadow: 0 16px 32px -12px rgba(0, 51, 79, 0.35);
+}
+
+.liq-dropdown .liq-info {
+  padding: 0.65rem 0.85rem;
+}
+
+.liq-dropdown .liq-info.error {
+  margin: 0.4rem;
+}
+
+.liq-dropdown button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  width: 100%;
+
+  padding: 0.65rem 0.85rem;
+
+  color: inherit;
+
+  background: none;
+
+  border: none;
+  border-bottom: 1px solid var(--mx-border);
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.liq-dropdown li:last-child button {
+  border-bottom: none;
+}
+
+.liq-dropdown button:hover {
+  background: var(--mx-surface);
+}
+
+.liq-dropdown strong {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.liq-dropdown span {
+  color: var(--mx-muted);
+
+  font-size: 0.75rem;
+}
+
+/* Cartão do ponto escolhido */
+
+.liq-point-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  padding: 0.85rem;
+
+  background: rgba(0, 83, 128, 0.06);
+
+  border-left: 3px solid #e11d48;
+  border-radius: 10px;
+}
+
+.liq-point-card strong {
+  color: var(--mx-brand-deep);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.liq-point-card > span {
+  color: var(--mx-muted);
+
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.liq-point-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  margin-top: 0.5rem;
+}
+
+.liq-point-actions button,
+.liq-route-end-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  height: 30px;
+
+  padding: 0 0.65rem;
+
+  color: var(--mx-brand);
+
+  background: #ffffff;
+
+  border: 1px solid var(--mx-border);
+  border-radius: 7px;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.liq-point-actions button:hover,
+.liq-route-end-actions button:hover {
+  border-color: var(--mx-brand);
+}
+
+/* =========================================================
+   LISTAS (unidades, resultados, pontos de interesse)
+   ========================================================= */
+
+.liq-list {
+  margin: 0 -0.4rem;
+
+  list-style: none;
+}
+
+.liq-list button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  width: 100%;
+
+  padding: 0.6rem 0.4rem;
+
+  color: inherit;
+
+  background: none;
+
+  border: none;
+  border-radius: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.liq-list button:hover {
+  background: var(--mx-surface);
+}
+
+.liq-list button.active {
+  background: rgba(0, 83, 128, 0.08);
+}
+
+.liq-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+
+  background: var(--mx-brand);
+
+  border-radius: 50%;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.liq-list button.active .liq-number {
+  background: var(--mx-brand-deep);
+
+  box-shadow: 0 0 0 3px rgba(79, 168, 216, 0.45);
+}
+
+.liq-list-icon {
+  flex-shrink: 0;
+
+  color: #e11d48;
+}
+
+.liq-dot {
+  width: 12px;
+  height: 12px;
+
+  flex-shrink: 0;
+
+  background: var(--mx-brand-soft);
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  box-shadow: 0 0 0 1px var(--mx-brand-soft);
+}
+
+.liq-list-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  min-width: 0;
+}
+
+.liq-list-text strong {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.liq-list-text span {
+  overflow: hidden;
+
+  color: var(--mx-muted);
+
+  font-size: 0.75rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.liq-distance {
+  flex-shrink: 0;
+
+  color: var(--mx-brand);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   BOTÕES: chips, segmentado, principal
+   ========================================================= */
+
+.liq-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.liq-chips button {
+  height: 30px;
+
+  padding: 0 0.75rem;
+
+  color: var(--mx-muted);
+
+  background: #ffffff;
+
+  border: 1px solid var(--mx-border);
+  border-radius: 999px;
+
+  font-size: 0.76rem;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.liq-chips button:hover {
+  color: var(--mx-brand);
+}
+
+.liq-chips button.active {
+  color: #ffffff;
+
+  background: var(--mx-brand);
+
+  border-color: var(--mx-brand);
+}
+
+.liq-segmented {
+  display: flex;
+  gap: 4px;
+
+  padding: 4px;
+
+  background: var(--mx-surface);
+
+  border-radius: 10px;
+}
+
+.liq-segmented button {
+  flex: 1;
+
+  height: 32px;
+
+  color: var(--mx-muted);
+
+  background: transparent;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.liq-segmented button.active {
+  color: var(--mx-brand);
+
+  background: #ffffff;
+
+  box-shadow: 0 1px 4px rgba(0, 51, 79, 0.15);
+}
+
+.liq-primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  height: 44px;
+
+  color: #ffffff;
+
+  background: var(--mx-brand);
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.liq-primary:hover:not(:disabled) {
+  background: var(--mx-brand-deep);
+}
+
+.liq-primary:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   ABA PONTO (reverse, fuso, static map)
+   ========================================================= */
+
+.liq-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 3rem 1rem;
+
+  color: var(--mx-muted);
+
+  font-size: 0.87rem;
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+.liq-empty-state svg {
+  width: 36px;
+  height: 36px;
+
+  color: var(--mx-brand-soft);
+}
+
+.liq-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.liq-coords {
+  align-self: flex-start;
+
+  padding: 0.2rem 0.55rem;
+
+  color: var(--mx-brand-deep);
+
+  background: var(--mx-surface);
+
+  border-radius: 6px;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.liq-detail-title {
+  color: var(--mx-brand-deep);
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.liq-detail-address {
+  color: var(--mx-muted);
+
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.liq-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1rem;
+
+  margin-top: 0.4rem;
+}
+
+.liq-fields dt {
+  color: var(--mx-muted);
+
+  font-size: 0.7rem;
+}
+
+.liq-fields dd {
+  font-size: 0.83rem;
+  font-weight: 500;
+}
+
+.liq-timezone {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.liq-timezone svg {
+  width: 28px;
+  height: 28px;
+
+  color: var(--mx-brand);
+}
+
+.liq-timezone div {
+  display: flex;
+  flex-direction: column;
+}
+
+.liq-timezone strong {
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.liq-timezone span {
+  color: var(--mx-muted);
+
+  font-size: 0.76rem;
+}
+
+.liq-static-map {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+
+  object-fit: cover;
+
+  background: var(--mx-surface);
+
+  border: 1px solid var(--mx-border);
+  border-radius: 10px;
+}
+
+/* =========================================================
+   ABA ROTA
+   ========================================================= */
+
+.liq-route-ends {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.liq-route-end {
+  position: relative;
+
+  display: flex;
+  gap: 0.7rem;
+
+  padding: 0.75rem;
+
+  background: var(--mx-surface);
+
+  border-radius: 10px;
+}
+
+.liq-route-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 26px;
+  height: 26px;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+
+  background: #16a34a;
+
+  border-radius: 50%;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.liq-route-end.destination .liq-route-badge {
+  background: #e11d48;
+}
+
+.liq-route-end-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  min-width: 0;
+  padding-right: 1.25rem;
+}
+
+.liq-route-label {
+  color: var(--mx-muted);
+
+  font-size: 0.7rem;
+}
+
+.liq-route-end-body strong {
+  overflow: hidden;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.liq-route-placeholder {
+  color: var(--mx-muted);
+
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.liq-route-end-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  margin-top: 0.35rem;
+}
+
+.liq-route-end-actions select {
+  max-width: 170px;
+  height: 30px;
+
+  padding: 0 0.4rem;
+
+  color: var(--mx-brand);
+
+  background: #ffffff;
+
+  border: 1px solid var(--mx-border);
+  border-radius: 7px;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.liq-route-clear {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+
+  display: flex;
+
+  color: var(--mx-muted);
+
+  background: none;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.liq-swap {
+  position: absolute;
+  top: 50%;
+  right: -0.4rem;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  color: var(--mx-brand);
+
+  background: #ffffff;
+
+  border: 1px solid var(--mx-border);
+  border-radius: 50%;
+
+  box-shadow: 0 2px 8px rgba(0, 51, 79, 0.15);
+
+  cursor: pointer;
+
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.liq-route-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.85rem 1rem;
+
+  color: #ffffff;
+
+  background: linear-gradient(145deg, var(--mx-brand-deep), var(--mx-brand));
+
+  border-radius: 10px;
+}
+
+.liq-route-summary div {
+  display: flex;
+  flex-direction: column;
+}
+
+.liq-route-summary strong {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.liq-route-summary span {
+  font-size: 0.8rem;
+
+  opacity: 0.85;
+}
+
+.liq-route-summary button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  border: none;
+  border-radius: 7px;
+
+  padding: 0.4rem 0.65rem;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.liq-steps {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 1.4rem;
+
+  font-size: 0.82rem;
+}
+
+.liq-steps li {
+  padding: 0.5rem 0;
+
+  border-bottom: 1px solid var(--mx-border);
+}
+
+.liq-steps li::marker {
+  color: var(--mx-brand);
+
+  font-weight: 600;
+}
+
+.liq-steps small {
+  display: block;
+
+  color: var(--mx-muted);
+
+  font-size: 0.72rem;
+}
+
+/* =========================================================
+   MAPA + BOTÕES DE ESTILO
+   ========================================================= */
+
+.liq-stage {
+  position: relative;
+
+  min-height: 0;
+}
+
+.liq-styles {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  padding: 4px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 14px rgba(0, 51, 79, 0.2);
+}
+
+.liq-styles button {
+  height: 30px;
+
+  padding: 0 0.7rem;
+
+  color: var(--mx-muted);
+
+  background: transparent;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.liq-styles button:hover {
+  color: var(--mx-brand);
+}
+
+.liq-styles button.active {
+  color: #ffffff;
+
+  background: var(--mx-brand);
+}
+
+.liq-map-hint {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  z-index: 2;
+
+  padding: 0.35rem 0.8rem;
+
+  color: #ffffff;
+
+  background: rgba(0, 51, 79, 0.82);
+
+  border-radius: 999px;
+
+  font-size: 0.74rem;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  transform: translateX(-50%);
+}
+
+/* =========================================================
+   REQUISIÇÕES
+   ========================================================= */
+
+.liq-log {
+  padding: 1rem 1.25rem;
+
+  background: var(--mx-surface);
+
+  border: 1px solid var(--mx-border);
+  border-radius: 16px;
+}
+
+.liq-log-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-bottom: 0.75rem;
+}
+
+.liq-log-head h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  color: var(--mx-brand);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.liq-log-head button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  height: 30px;
+
+  padding: 0 0.7rem;
+
+  color: var(--mx-brand);
+
+  background: #ffffff;
+
+  border: 1px solid var(--mx-border);
+  border-radius: 7px;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.liq-log-empty {
+  color: var(--mx-muted);
+
+  font-size: 0.8rem;
+}
+
+.liq-log ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  list-style: none;
+}
+
+.liq-log li {
+  display: grid;
+  grid-template-columns: auto 130px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.45rem 0.65rem;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: 0.78rem;
+}
+
+.liq-log strong {
+  font-weight: 600;
+}
+
+.liq-log code {
+  overflow: hidden;
+
+  color: var(--mx-muted);
+
+  font-size: 0.72rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.liq-log small {
+  color: var(--mx-muted);
+
+  font-variant-numeric: tabular-nums;
+}
+
+.liq-status {
+  min-width: 38px;
+
+  padding: 0.1rem 0.4rem;
+
+  border-radius: 5px;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.liq-status.ok {
+  color: var(--success-text, #2e7d32);
+
+  background: var(--success-background, #e8f5e9);
+}
+
+.liq-status.fail {
+  color: var(--error-text, #b91c1c);
+
+  background: var(--error-background, #fef2f2);
+}
+
+/* =========================================================
+   SEM TOKEN
+   ========================================================= */
+
+.liq-token-missing {
+  max-width: 620px;
+  margin: 0 auto;
+
+  padding: 2rem;
+
+  color: var(--mx-text);
+
+  background: var(--warning-background, #fffbeb);
+
+  border: 1px solid var(--warning-border, #fde68a);
+  border-radius: 16px;
+}
+
+.liq-token-icon {
+  width: 36px;
+  height: 36px;
+
+  color: var(--warning-text, #92400e);
+}
+
+.liq-token-missing h3 {
+  margin-top: 0.75rem;
+
+  color: var(--warning-text, #92400e);
+
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.liq-token-missing p {
+  margin-top: 0.4rem;
+
+  color: var(--mx-muted);
+
+  font-size: 0.9rem;
+}
+
+.liq-token-missing ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  margin-top: 1.25rem;
+  padding-left: 1.25rem;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.liq-token-missing a {
+  color: var(--mx-brand);
+
+  font-weight: 500;
+}
+
+.liq-token-missing code,
+.liq-token-missing pre {
+  padding: 0.1rem 0.35rem;
+
+  background: #ffffff;
+
+  border: 1px solid var(--warning-border, #fde68a);
+  border-radius: 4px;
+
+  font-size: 0.85em;
+}
+
+.liq-token-missing pre {
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.8rem;
+
+  overflow-x: auto;
+}
+
+/* =========================================================
+   FOCO VISÍVEL
+   ========================================================= */
+
+.liq-explorer button:focus-visible,
+.liq-explorer select:focus-visible,
+.liq-explorer a:focus-visible {
+  outline: 2px solid var(--mx-brand-soft);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .liq-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 440px;
+
+    height: auto;
+  }
+
+  .liq-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--mx-border);
+  }
+
+  .liq-tab-body {
+    max-height: 420px;
+  }
+
+  .liq-log li {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .liq-log code {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liq-tabs button,
+  .liq-list button,
+  .liq-primary,
+  .liq-search input {
+    transition: none;
+  }
+}
