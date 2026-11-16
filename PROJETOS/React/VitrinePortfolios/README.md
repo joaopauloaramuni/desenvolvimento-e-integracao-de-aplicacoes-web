@@ -122,19 +122,19 @@ Cada tutorial tem link próprio, como `#tutoriais-dominios`. A navegação usa s
 
 | Tema claro | Tema escuro |
 | :---: | :---: |
-| ![Home](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/Home.png?v=3) | ![HomeEscuro](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/HomeEscuro.png?v=3) |
+| ![Home](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/Home.png?v=4) | ![HomeEscuro](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/HomeEscuro.png?v=4) |
 
 | Busca pelo nome | Busca sem resultado |
 | :---: | :---: |
-| ![Busca](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/Busca.png?v=3) | ![BuscaVazia](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/BuscaVazia.png?v=3) |
+| ![Busca](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/Busca.png?v=4) | ![BuscaVazia](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/BuscaVazia.png?v=4) |
 
 | Preview do portfólio |
 | :---: |
-| ![Preview](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/Preview.png?v=3) |
+| ![Preview](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/Preview.png?v=4) |
 
 | Página inteira | Celular |
 | :---: | :---: |
-| ![HomeCompleta](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/HomeCompleta.png?v=3) | ![Mobile](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/Mobile.png?v=3) |
+| ![HomeCompleta](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/HomeCompleta.png?v=4) | ![Mobile](https://joaopauloaramuni.github.io/react-imgs/VitrinePortfolios/imgs/Mobile.png?v=4) |
 
 > 📸 As capturas são geradas pelo `npm run screenshots` (veja abaixo) e ficam em `imgs/`.
 
