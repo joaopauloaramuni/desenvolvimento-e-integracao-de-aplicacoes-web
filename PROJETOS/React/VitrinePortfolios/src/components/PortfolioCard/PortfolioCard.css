@@ -1,0 +1,138 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-barra {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--papel-2);
+  border-bottom: 1px solid var(--linha);
+}
+
+.card-cadeado {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  color: var(--verde);
+}
+
+.card-dominio {
+  flex: 1;
+  min-width: 0;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--azul);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-dominio:hover {
+  border-color: var(--azul);
+  text-decoration: underline;
+}
+
+.card-preview {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.card-preview-acao {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: var(--azul);
+  color: var(--superficie);
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.card-preview:hover .card-preview-acao,
+.card-preview:focus-visible .card-preview-acao {
+  opacity: 1;
+  transform: none;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 1rem 1.1rem;
+  border-top: 1px solid var(--linha);
+}
+
+.card-nome {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--tinta);
+}
+
+.card-links {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+}
+
+.card-links li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  color: var(--texto-suave);
+}
+
+.card-links svg {
+  flex-shrink: 0;
+}
+
+.card-links a {
+  color: var(--tinta);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-links a:hover {
+  color: var(--azul);
+  text-decoration: underline;
+}
+
+.card-vazio {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-preview-acao {
+    transition: none;
+  }
+}
