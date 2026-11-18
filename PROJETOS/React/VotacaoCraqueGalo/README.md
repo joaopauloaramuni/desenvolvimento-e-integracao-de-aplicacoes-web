@@ -11,27 +11,27 @@ Aplicação React + Vite para a votação do **Craque do Jogo** do **Atlético M
 - **Resultado**: Mostra o total de votos computados, uma faixa com a situação da **disputa pela liderança** (quantos votos de vantagem o 1º tem sobre o 2º, ou aviso de empate) e o placar dos 4 indicados com posição, foto, barra de progresso, percentual e quantidade de votos. O mais votado recebe o selo **Craque do jogo** (dourado) e o segundo, o selo **Vice** (prata). Os botões **Desfazer último voto** e **Zerar votação** alteram a contagem. Quando não há votos, uma mensagem convida o usuário a votar.
 - **Tela estreita**: Em telas de até 900px, a grade dos indicados passa para 2 colunas; em até 520px, para 1 coluna.
 
-| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/01_home.png" alt="Home" width="1000"/> |
+| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/01_home.png?v=2" alt="Home" width="1000"/> |
 |:----------------------------------------------------:|
 |                        Home                          |
 
-| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/03_votacao.png" alt="Votação" width="1000"/> |
+| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/03_votacao.png?v=2" alt="Votação" width="1000"/> |
 |:----------------------------------------------------:|
 |                       Votação                        |
 
-| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/04_voto_registrado.png" alt="Voto registrado" width="1000"/> |
+| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/04_voto_registrado.png?v=2" alt="Voto registrado" width="1000"/> |
 |:----------------------------------------------------:|
 |        Jogador selecionado e histórico da sessão     |
 
-| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/05_resultado.png" alt="Resultado" width="1000"/> |
+| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/05_resultado.png?v=2" alt="Resultado" width="1000"/> |
 |:----------------------------------------------------:|
 |                      Resultado                       |
 
-| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/02_resultado_vazio.png" alt="Resultado sem votos" width="1000"/> |
+| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/02_resultado_vazio.png?v=2" alt="Resultado sem votos" width="1000"/> |
 |:----------------------------------------------------:|
 |                 Resultado sem votos                  |
 
-| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/06_votacao_tablet.png" alt="Votação em tela estreita" width="600"/> |
+| <img src="https://joaopauloaramuni.github.io/react-imgs/VotacaoCraqueGalo/imgs/06_votacao_tablet.png?v=2" alt="Votação em tela estreita" width="600"/> |
 |:----------------------------------------------------:|
 |           Votação em tela estreita (2 colunas)       |
 
