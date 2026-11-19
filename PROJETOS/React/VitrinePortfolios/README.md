@@ -88,11 +88,13 @@ Esta versão foi reescrita em React com JavaScript e ganhou a busca por nome, os
 | Gustavo Ryan Gomes Guedes | [gustavoryan.me](https://www.gustavoryan.me) | [gustavoryandev](https://github.com/gustavoryandev) | [Portfolio-Profissional-Interativo](https://github.com/gustavoryandev/Portfolio-Profissional-Interativo) |
 | João Mário | [joaomario.dev](https://joaomario.dev) | [joaomariofm](https://github.com/joaomariofm) | [portfolio-website](https://github.com/joaomariofm/portfolio-website) |
 | João Paulo Rodrigues | [jprodrigues.me](https://jprodrigues.me) | [joaopauloferreirarodrigues](https://github.com/joaopauloferreirarodrigues) | [jprodrigues.me](https://github.com/joaopauloferreirarodrigues/jprodrigues.me) |
+| João Pedro Dantas | [joaodantas.dev](https://joaodantas.dev) | [joaodantas-eng](https://github.com/joaodantas-eng) | [portfolio](https://github.com/joaodantas-eng/portfolio) |
 | Kelvin Mendes | [md101.dev](https://md101.dev) | [Md1o1](https://github.com/Md1o1) | [portfolio](https://github.com/Md1o1/portfolio) |
 | Keven Lino | [kevenlino.me](https://kevenlino.me) | [Tuzfi](https://github.com/Tuzfi) | [Portfolio](https://github.com/Tuzfi/Portfolio) |
 | Larissa Cravo | [l4r1ss4cr4v0.dev](https://l4r1ss4cr4v0.dev) | [L4r1ss4Cr4v0](https://github.com/L4r1ss4Cr4v0) | [Portifolio-Dev](https://github.com/L4r1ss4Cr4v0/Portifolio-Dev) |
 | Leonardo Martins | [leomartinsdev.me](https://leomartinsdev.me) | [leomartinsdev](https://github.com/leomartinsdev) | [leomartinsdev.github.io](https://github.com/leomartinsdev/leomartinsdev.github.io) |
 | Leonardo Pettersen | [leopettersen.dev](https://leopettersen.dev) | [leopettersen](https://github.com/leopettersen) | [portfolio](https://github.com/leopettersen/portfolio) |
+| Leticia Abreu | [leticias.dev](https://leticias.dev) | [xabreuleticia](https://github.com/xabreuleticia) | [portfolio-profissional](https://github.com/xabreuleticia/portfolio-profissional) |
 | Lucas Dias Melo | [lucasdiasm.dev](https://lucasdiasm.dev) | [lucasdiasmz](https://github.com/lucasdiasmz) | [lucas-portfolio](https://github.com/lucasdiasmz/lucas-portfolio) |
 | Lucas Gomes | [lukasgomes.dev](https://lukasgomes.dev) | [LukasGom3s](https://github.com/LukasGom3s) | [LukasGomesPortfolio](https://github.com/LukasGom3s/LukasGomesPortfolio) |
 | Lucas Mafia | [lucasmaf.ia.br](https://lucasmaf.ia.br) | [lucasomafia](https://github.com/lucasomafia) | [Meu-Portfolio](https://github.com/lucasomafia/Meu-Portfolio) |
@@ -103,6 +105,7 @@ Esta versão foi reescrita em React com JavaScript e ganhou a busca por nome, os
 | Pedro Felipe Bastos | [pedrobastos.dev](https://pedrobastos.dev) | [pedrobastosdev](https://github.com/pedrobastosdev) | [pedrobastosdev.github.io](https://github.com/pedrobastosdev/pedrobastosdev.github.io) |
 | Pedro Flausino | [flausino.dev](https://flausino.dev) | [PedroFlau](https://github.com/PedroFlau) | [pedroflausino-portifolio](https://github.com/PedroFlau/pedroflausino-portifolio) |
 | Ryan Ferreira | [ryanferreira.dev](https://ryanferreira.dev) | [ferreiraryan](https://github.com/ferreiraryan) | [portfolio](https://github.com/ferreiraryan/portfolio) |
+| Samuel Ferreira | [sferreira.dev](https://sferreira.dev) | [SamuelFerr0](https://github.com/SamuelFerr0) | [SamuelFerreira_Portifolio](https://github.com/SamuelFerr0/SamuelFerreira_Portifolio) |
 | Samuel Matos | [samuelmatos.dev](https://samuelmatos.dev) | [SamuelMatos78](https://github.com/SamuelMatos78) | [portfolio](https://github.com/SamuelMatos78/portfolio) |
 | Sophia Fernandes | [sophiafernandes.dev](https://sophiafernandes.dev) | [sophiafernandesc](https://github.com/sophiafernandesc) | [sophiafernandes-portfolio](https://github.com/sophiafernandesc/sophiafernandes-portfolio) |
 | Victor Cândido Leite | [victorcandido.dev](https://victorcandido.dev) | [thevictorcandido](https://github.com/thevictorcandido) | [portfolio-victor](https://github.com/thevictorcandido/portfolio-victor) |
