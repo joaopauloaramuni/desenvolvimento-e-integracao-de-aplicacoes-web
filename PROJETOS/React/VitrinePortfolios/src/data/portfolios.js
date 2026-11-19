@@ -54,6 +54,9 @@ const PORTFOLIOS = [
   { id: "gustavoryan", nome: "Gustavo Ryan Gomes Guedes", site: "https://www.gustavoryan.me", vercel: "https://gustavoryan.vercel.app", github: "gustavoryandev", repo: "Portfolio-Profissional-Interativo", embeddable: true },
   { id: "lucasdiasm", nome: "Lucas Dias Melo", site: "https://lucasdiasm.dev", vercel: "https://lucas-dias-dev.vercel.app", github: "lucasdiasmz", repo: "lucas-portfolio", embeddable: true },
   { id: "davirocha", nome: "Davi Campolina Rocha", site: "https://www.davirocha.dev", vercel: "https://diw-lab-1.vercel.app", github: "davicampolina", repo: "DIW-LAB1", embeddable: true },
+  { id: "leticias", nome: "Leticia Abreu", site: "https://leticias.dev", vercel: "https://leticiaabreu.vercel.app", github: "xabreuleticia", repo: "portfolio-profissional", embeddable: true },
+  { id: "sferreira", nome: "Samuel Ferreira", site: "https://sferreira.dev", vercel: "https://sferreira.vercel.app", github: "SamuelFerr0", repo: "SamuelFerreira_Portifolio", embeddable: true },
+  { id: "joaodantas", nome: "João Pedro Dantas", site: "https://joaodantas.dev", vercel: "https://joaodantas.vercel.app", github: "joaodantas-eng", repo: "portfolio", embeddable: true },
 ];
 
 export default PORTFOLIOS;
