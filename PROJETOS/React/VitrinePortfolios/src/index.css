@@ -1,0 +1,156 @@
+/* Cores do brasão da PUC Minas: azul do nome, dourado das chaves,
+   vermelho das fitas e verde do escudo. */
+:root {
+  --azul: #005380;
+  --azul-escuro: #003a5b;
+  --ouro: #d9ac1e;
+  --ouro-claro: #f4d36b;
+  --vermelho: #b8202b;
+  --verde: #1d6b3a;
+
+  --tinta: #13212d;
+  --texto-suave: #4f6171;
+  --papel: #eef2f6;
+  --papel-2: #e3e9ef;
+  --superficie: #ffffff;
+  --linha: #d3dce5;
+  --linha-forte: #b7c4d1;
+  --hachura: rgb(0 83 128 / 0.08);
+
+  --largura: 1240px;
+  --botao-texto: #ffffff;
+  --botao-hover: var(--azul-escuro);
+
+  color-scheme: light;
+  font-family: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 15px;
+  color: var(--tinta);
+  background: var(--papel);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tema escuro: escolhido no botão (data-theme="dark") ou, sem escolha salva,
+   seguindo o sistema. data-theme="light" força o claro mesmo com o sistema escuro. */
+:root[data-theme="dark"] {
+  --azul: #6cb8e6;
+  --ouro-claro: #f4d36b;
+  --verde: #59c084;
+  --tinta: #e6edf3;
+  --texto-suave: #9fb1c1;
+  --papel: #0c1823;
+  --papel-2: #13232f;
+  --superficie: #10202c;
+  --linha: #223646;
+  --linha-forte: #34495b;
+  --hachura: rgb(108 184 230 / 0.08);
+  color-scheme: dark;
+  --botao-texto: #04131d;
+  --botao-hover: #9ad0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --azul: #6cb8e6;
+    --ouro-claro: #f4d36b;
+    --verde: #59c084;
+    --tinta: #e6edf3;
+    --texto-suave: #9fb1c1;
+    --papel: #0c1823;
+    --papel-2: #13232f;
+    --superficie: #10202c;
+    --linha: #223646;
+    --linha-forte: #34495b;
+    --hachura: rgb(108 184 230 / 0.08);
+    color-scheme: dark;
+    --botao-texto: #04131d;
+    --botao-hover: #9ad0f0;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--papel);
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--ouro);
+  outline-offset: 2px;
+}
+
+.turma {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 1.75rem) 1.25rem 0;
+}
+
+.turma-titulo {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1.05rem;
+  border: 0;
+  border-radius: 7px;
+  background: var(--azul);
+  color: var(--botao-texto);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--botao-hover);
+}
+
+.botao-claro {
+  background: var(--papel-2);
+  color: var(--tinta);
+}
+
+.botao-claro:hover {
+  background: var(--linha);
+}
+
+.botao-ouro {
+  background: var(--ouro);
+  color: #1d1600;
+}
+
+.botao-ouro:hover {
+  background: var(--ouro-claro);
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
