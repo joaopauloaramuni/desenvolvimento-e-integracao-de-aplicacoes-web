@@ -45,7 +45,7 @@ const PORTFOLIOS = [
   { id: "leopettersen", nome: "Leonardo Pettersen", site: "https://leopettersen.dev", vercel: "https://leopettersen.vercel.app", github: "leopettersen", repo: "portfolio", embeddable: true },
   { id: "sophiafernandes", nome: "Sophia Fernandes", site: "https://sophiafernandes.dev", vercel: "https://sophiafernandes-portfolio-mxdhsjtzt-sophia-f050.vercel.app", github: "sophiafernandesc", repo: "sophiafernandes-portfolio", embeddable: true },
   { id: "md101", nome: "Kelvin Mendes", site: "https://md101.dev", vercel: "https://portfolio-byqrbhn2v-md1o1s-projects.vercel.app", github: "Md1o1", repo: "portfolio", embeddable: true },
-  { id: "joaomario", nome: "João Mário", site: "https://joaomario.dev", vercel: "", github: "joaomariofm", repo: "portfolio-website", embeddable: true },
+  { id: "joaomario", nome: "João Mário", site: "https://joaomario.dev", vercel: "", github: "joaom-abreu", repo: "portfolio", embeddable: true },
   { id: "jprodrigues", nome: "João Paulo Rodrigues", site: "https://jprodrigues.me", vercel: "https://jprodrigues-nwc8w1uva-joaopauloferreirarodrigues.vercel.app", github: "joaopauloferreirarodrigues", repo: "jprodrigues.me", embeddable: true },
   { id: "leomartinsdev", nome: "Leonardo Martins", site: "https://leomartinsdev.me", vercel: "", github: "leomartinsdev", repo: "leomartinsdev.github.io", embeddable: true },
   { id: "kevenlino", nome: "Keven Lino", site: "https://kevenlino.me", vercel: "https://portfolio-a0sg66qub-tz-eb47.vercel.app", github: "Tuzfi", repo: "Portfolio", embeddable: true },
