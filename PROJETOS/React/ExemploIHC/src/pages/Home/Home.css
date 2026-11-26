@@ -1,0 +1,237 @@
+/* ---------------- Hero ---------------- */
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-4) 0 var(--space-6);
+}
+
+.home-hero h1 {
+  font-size: var(--text-3xl);
+  letter-spacing: -0.01em;
+  max-width: 20ch;
+}
+
+.home-hero-sub {
+  margin-top: var(--space-3);
+  color: var(--muted);
+  font-size: var(--text-lg);
+  max-width: 46ch;
+}
+
+.home-hero-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.home-hero-acoes .btn {
+  min-height: 52px;
+  padding: 0 var(--space-5);
+}
+
+/* Passos da reserva: a sequência é real, por isso a numeração.
+   A linha entre os números aplica o princípio da continuidade (Gestalt). */
+
+.home-passos-caixa {
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+.home-passos-titulo {
+  font-size: var(--text-base);
+  color: var(--muted);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-3);
+}
+
+.home-passos {
+  list-style: none;
+  counter-reset: passo;
+}
+
+.home-passos li {
+  counter-increment: passo;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 var(--space-4) calc(1.75rem + var(--space-3));
+}
+
+.home-passos li:last-child {
+  padding-bottom: 0;
+}
+
+.home-passos li::before {
+  content: counter(passo);
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+
+  color: var(--on-brand);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  background: var(--brand);
+  border-radius: 50%;
+}
+
+.home-passos li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(0.875rem - 1px);
+  top: 1.75rem;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.home-passos strong {
+  line-height: 1.75rem;
+}
+
+.home-passos span {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+/* ---------------- Tarefas ---------------- */
+
+.home-secao h2 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+}
+
+.home-tarefas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.home-tarefa {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-content: start;
+  column-gap: var(--space-3);
+  row-gap: var(--space-1);
+  height: 100%;
+  padding: var(--space-4);
+
+  color: inherit;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.home-tarefa:hover {
+  border-color: var(--brand);
+}
+
+.home-tarefa:hover .home-tarefa-titulo {
+  text-decoration: underline;
+}
+
+.home-tarefa-icone {
+  grid-row: span 3;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--brand);
+}
+
+.home-tarefa-titulo {
+  font-weight: var(--weight-bold);
+  color: var(--brand);
+  text-underline-offset: 0.18em;
+}
+
+.home-tarefa-texto {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.home-tarefa-meta {
+  justify-self: start;
+  margin-top: var(--space-1);
+  padding: 0.1rem 0.6rem;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--warning);
+  background: var(--warning-bg);
+  border-radius: var(--radius-pill);
+}
+
+/* ---------------- Sobre o exemplo ---------------- */
+
+.home-exemplo {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  background: var(--brand-tint);
+  border-radius: var(--radius-md);
+}
+
+.home-exemplo h2 {
+  font-size: var(--text-lg);
+}
+
+.home-exemplo p {
+  margin-top: var(--space-2);
+}
+
+.home-exemplo-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-5);
+  margin-top: var(--space-2);
+}
+
+.home-exemplo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-target);
+  font-weight: var(--weight-semibold);
+}
+
+/* ---------------- Responsivo ---------------- */
+
+@media (max-width: 900px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .home-hero-sub {
+    font-size: var(--text-base);
+  }
+
+  .home-hero-acoes .btn {
+    width: 100%;
+  }
+
+  .home-tarefas {
+    grid-template-columns: 1fr;
+  }
+
+  .home-exemplo {
+    padding: var(--space-4);
+  }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <!-- Sem "maximum-scale" nem "user-scalable=no": o usuário precisa poder dar zoom (WCAG 1.4.4) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Projeto exemplo de IHC da PUC Minas: sistema de reserva de recursos audiovisuais com boas práticas de usabilidade, acessibilidade e design system." />
+    <meta name="theme-color" content="#005380" />
+    <title>Recursos Audiovisuais - PUC Minas</title>
+
+    <!-- Aplica tema e tamanho de fonte salvos ANTES de desenhar a página (evita piscar) -->
+    <script>
+      try {
+        const tema = localStorage.getItem("ihc-tema");
+        if (tema === "light" || tema === "dark") document.documentElement.dataset.theme = tema;
+        const fonte = localStorage.getItem("ihc-fonte");
+        if (fonte) document.documentElement.style.fontSize = fonte + "%";
+      } catch {}
+    </script>
+
+    <!-- Fonte Montserrat - Google Fonts (com fallback de fontes do sistema no CSS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <noscript>Este sistema precisa do JavaScript ativado para funcionar.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

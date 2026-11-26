@@ -1,0 +1,266 @@
+.reserva {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 48rem;
+}
+
+.reserva .resumo-erros:focus {
+  outline: none;
+}
+
+.reserva-etapa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.reserva-etapa-titulo {
+  font-size: var(--text-xl);
+}
+
+/* Botão com cara de link (ações secundárias dentro de texto) */
+.reserva-link-botao {
+  display: inline;
+  padding: 0;
+  color: var(--brand);
+  font-weight: var(--weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  background: none;
+  border: 0;
+}
+
+.alerta .reserva-link-botao {
+  margin-top: var(--space-1);
+  min-height: var(--touch-target);
+}
+
+/* ---------------- Etapa 1 ---------------- */
+
+.reserva-filtro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 20rem;
+}
+
+.reserva-opcoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  border: 0;
+  min-width: 0;
+}
+
+.reserva-opcao {
+  position: relative;
+  cursor: pointer;
+}
+
+.reserva-opcao input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+}
+
+.reserva-opcao-caixa {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 100%;
+  min-height: 4rem;
+  padding: var(--space-3);
+
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration) var(--ease), background-color var(--duration) var(--ease);
+}
+
+.reserva-opcao:hover .reserva-opcao-caixa {
+  border-color: var(--border-strong);
+}
+
+/* Selecionado: borda grossa + fundo + marca (não só cor) */
+.reserva-opcao input:checked + .reserva-opcao-caixa {
+  border-color: var(--brand);
+  background: var(--brand-tint);
+  box-shadow: inset 4px 0 0 var(--brand);
+}
+
+.reserva-opcao input:focus-visible + .reserva-opcao-caixa {
+  box-shadow: var(--focus-ring);
+}
+
+.reserva-opcao-icone {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--brand);
+}
+
+.reserva-opcao-nome {
+  display: block;
+  font-weight: var(--weight-semibold);
+}
+
+.reserva-opcao-meta {
+  display: block;
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.reserva-opcoes[aria-invalid="true"] .reserva-opcao-caixa {
+  border-color: var(--error);
+}
+
+/* ---------------- Etapa 2 ---------------- */
+
+.reserva-escolhido {
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.reserva-duracao {
+  color: var(--muted);
+}
+
+.reserva-duracao::first-letter {
+  text-transform: uppercase;
+}
+
+/* ---------------- Etapa 4 ---------------- */
+
+.reserva-revisao {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserva-revisao-bloco {
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--border);
+}
+
+.reserva-revisao-bloco:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.reserva-revisao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-1);
+}
+
+.reserva-revisao-topo h3 {
+  font-size: var(--text-base);
+  color: var(--muted);
+}
+
+.reserva-revisao-item {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: var(--space-3);
+  padding: var(--space-1) 0;
+}
+
+.reserva-revisao-item dt {
+  color: var(--muted);
+}
+
+.reserva-revisao-item dd {
+  font-weight: var(--weight-semibold);
+  overflow-wrap: anywhere;
+}
+
+/* ---------------- Navegação ---------------- */
+
+.reserva-navegacao {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.reserva-rascunho {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--muted);
+  font-size: var(--text-xs);
+}
+
+/* ---------------- Sucesso ---------------- */
+
+.reserva-sucesso {
+  max-width: 40rem;
+  padding: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--success-border);
+  border-top: 6px solid var(--success);
+  border-radius: var(--radius-md);
+}
+
+.reserva-sucesso-icone {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--success);
+  margin-bottom: var(--space-3);
+}
+
+.reserva-sucesso p {
+  margin-top: var(--space-2);
+}
+
+.reserva-protocolo {
+  font-size: var(--text-lg);
+  letter-spacing: 0.04em;
+}
+
+.reserva-sucesso-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* ---------------- Responsivo ---------------- */
+
+@media (max-width: 640px) {
+  .reserva-etapa {
+    padding: var(--space-3);
+  }
+
+  .reserva-opcoes {
+    grid-template-columns: 1fr;
+  }
+
+  .reserva-revisao-item {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* No celular, os botões de avançar ficam fixos perto do polegar */
+  .reserva-navegacao {
+    position: sticky;
+    bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0px));
+    z-index: 5;
+    margin-inline: calc(-1 * var(--space-3));
+    padding: var(--space-2) var(--space-3);
+    background: var(--background);
+    border-top: 1px solid var(--border);
+  }
+
+  .reserva-navegacao .btn {
+    flex: 1;
+  }
+
+  .reserva-sucesso-acoes .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,143 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  min-height: var(--touch-target);
+  padding: 0 var(--space-4);
+
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+
+  transition:
+    background-color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    color var(--duration) var(--ease);
+}
+
+.btn-sm {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-sm);
+}
+
+/* No celular, todo botão tem pelo menos 44px (alvo de toque) */
+@media (pointer: coarse) {
+  .btn-sm {
+    min-height: var(--touch-target);
+  }
+}
+
+.btn-bloco {
+  width: 100%;
+}
+
+.btn-icone {
+  flex-shrink: 0;
+  width: 1.15em;
+  height: 1.15em;
+}
+
+/* ---- Variantes ---- */
+
+.btn-destaque {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn-destaque:hover {
+  background: var(--accent-hover);
+}
+
+.btn-primario {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+
+.btn-primario:hover {
+  background: var(--brand-deep);
+}
+
+:root[data-theme="dark"] .btn-primario:hover {
+  background: var(--brand-mid);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn-primario:hover {
+    background: var(--brand-mid);
+  }
+}
+
+.btn-secundario {
+  background: var(--surface);
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn-secundario:hover {
+  background: var(--brand-tint);
+}
+
+.btn-fantasma {
+  background: transparent;
+  color: var(--brand);
+}
+
+.btn-fantasma:hover {
+  background: var(--brand-tint);
+}
+
+.btn-perigo {
+  background: var(--surface);
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.btn-perigo:hover {
+  background: var(--error-bg);
+}
+
+.btn-perigo-cheio {
+  background: var(--error);
+  color: #fff;
+  border-color: var(--error);
+}
+
+:root[data-theme="dark"] .btn-perigo-cheio {
+  color: #1b0806;
+}
+
+/* ---- Estados ---- */
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.btn[aria-busy="true"] {
+  cursor: progress;
+  opacity: 0.85;
+}
+
+.btn-spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-girar 700ms linear infinite;
+}
+
+@keyframes btn-girar {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,222 @@
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.campo-rotulo {
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+}
+
+.campo-obrigatorio {
+  color: var(--error);
+  font-weight: var(--weight-bold);
+}
+
+.campo-dica {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.campo-controle {
+  width: 100%;
+  min-height: var(--touch-target);
+  padding: var(--space-2) var(--space-3);
+
+  /* 16px: evita o zoom automático do iOS ao focar no campo */
+  font-size: max(16px, var(--text-base));
+
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+
+  transition: border-color var(--duration) var(--ease);
+}
+
+.campo-controle::placeholder {
+  color: var(--placeholder);
+}
+
+.campo-controle:hover {
+  border-color: var(--brand);
+}
+
+.campo-controle:focus-visible {
+  border-color: var(--brand);
+}
+
+.campo-controle:disabled {
+  background: var(--surface-2);
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.campo-area {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.campo-select {
+  appearance: none;
+  padding-right: var(--space-6);
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) 50%,
+    calc(100% - 14px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Erro: borda mais grossa + ícone + texto (não depende só da cor) */
+.campo-com-erro .campo-controle {
+  border-color: var(--error);
+  border-width: 2px;
+}
+
+.campo-rodape {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 1.25rem;
+}
+
+.campo-erro {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-1);
+  color: var(--error);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.campo-erro svg {
+  flex-shrink: 0;
+  margin-top: 0.2em;
+}
+
+.campo-contador {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.campo-contador-alerta {
+  color: var(--warning);
+  font-weight: var(--weight-semibold);
+}
+
+.campo-legenda {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+/* ==========================================================================
+   LAYOUT DE FORMULÁRIO (compartilhado por todas as telas com formulário)
+   - Uma coluna no celular; campos curtos lado a lado no desktop.
+   - fieldset + legend agrupam campos relacionados (Gestalt: região comum).
+   ========================================================================== */
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 48rem;
+}
+
+.formulario-grupo {
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.formulario-grupo > legend {
+  padding: 0 var(--space-2);
+  margin-left: calc(-1 * var(--space-2));
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+}
+
+.formulario-grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2) var(--space-4);
+}
+
+.formulario-grade-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.formulario-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (max-width: 720px) {
+  .formulario-grade,
+  .formulario-grade-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .formulario-grupo {
+    padding: var(--space-3);
+  }
+
+  .formulario-acoes .btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   CONTROLE SEGMENTADO = grupo de radios estilizado
+   (acessível por teclado com as setas, como todo radio)
+   ========================================================================== */
+
+.segmentado {
+  display: inline-flex;
+  padding: 3px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.segmentado-opcao {
+  position: relative;
+}
+
+.segmentado-opcao input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.segmentado-opcao span {
+  display: flex;
+  align-items: center;
+  min-height: calc(var(--touch-target) - 8px);
+  padding: 0 var(--space-3);
+
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  border-radius: calc(var(--radius-sm) - 2px);
+}
+
+.segmentado-opcao input:checked + span {
+  color: var(--on-brand);
+  background: var(--brand);
+}
+
+.segmentado-opcao input:focus-visible + span {
+  box-shadow: var(--focus-ring);
+}
+

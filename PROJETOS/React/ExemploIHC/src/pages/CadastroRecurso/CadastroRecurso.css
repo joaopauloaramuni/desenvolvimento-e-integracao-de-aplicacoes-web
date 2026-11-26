@@ -1,0 +1,6 @@
+/* O layout do formulário vem de components/Campo/Campo.css (.formulario*).
+   Aqui ficam só ajustes específicos desta tela. */
+
+.formulario .resumo-erros:focus {
+  outline: none;
+}

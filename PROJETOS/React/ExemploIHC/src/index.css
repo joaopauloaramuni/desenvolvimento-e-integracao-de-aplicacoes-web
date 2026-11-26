@@ -1,0 +1,375 @@
+/* ==========================================================================
+   ExemploIHC - Estilos globais e TOKENS do Design System
+   --------------------------------------------------------------------------
+   Este arquivo é o "Style Guide em código" (Aula 16):
+   toda cor, fonte, espaçamento e raio usado no projeto nasce aqui.
+   Os componentes NUNCA usam valores soltos (ex.: #005380), só variáveis.
+   A página /guia-de-estilo mostra estes tokens visualmente.
+   ========================================================================== */
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   TOKENS - TEMA CLARO (padrão)
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---- Cores da marca PUC Minas (30% da interface) ---- */
+  --brand: #005380;
+  --brand-deep: #00334f;
+  --brand-mid: #0a6ea6;
+  --brand-soft: #4fa8d8;
+  --brand-tint: #e6f0f6;
+  --on-brand: #ffffff;
+
+  /* Faixa do cabeçalho: azul PUC fixo (não clareia no tema escuro) */
+  --chrome: #005380;
+  --chrome-deep: #00334f;
+  --on-chrome: #ffffff;
+
+  /* ---- Destaque (10%): só para a ação principal de cada tela ---- */
+  --accent: #f2a900;
+  --accent-hover: #d99700;
+  --on-accent: #1b1b1b;
+
+  /* ---- Neutras (60%): fundo, superfícies e texto ---- */
+  --background: #f5f7f9;
+  --surface: #ffffff;
+  --surface-2: #eef2f5;
+  --foreground: #14202b;
+  --muted: #4b5b6b;
+  --border: #d3dbe3;
+  --border-strong: #8796a5;
+  --placeholder: #6b7a89;
+
+  /* ---- Cores semânticas (convenção: verde = sucesso, vermelho = erro...) ---- */
+  --success: #1e7a3c;
+  --success-bg: #e8f5ec;
+  --success-border: #a8d5b6;
+
+  --error: #b42318;
+  --error-bg: #fdecea;
+  --error-border: #f3b4ae;
+
+  --warning: #7a5000;
+  --warning-bg: #fff4d6;
+  --warning-border: #f0cf7a;
+
+  --info: #005380;
+  --info-bg: #e6f0f6;
+  --info-border: #a9cbe0;
+
+  /* ---- Foco visível (WCAG 2.4.7): anel duplo funciona em qualquer fundo ---- */
+  --focus-ring: 0 0 0 3px var(--surface), 0 0 0 6px var(--brand-mid);
+
+  /* ---- Tipografia (Aula 12) ----
+     Uma família sem serifa para toda a UI + fallback de fontes do sistema.
+     Escala modular 1.25 (Major Third) em rem, base 16px. */
+  --font-family:
+    "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --text-xs: 0.8rem;    /* 12.8px - legendas */
+  --text-sm: 0.875rem;  /* 14px - textos de apoio */
+  --text-base: 1rem;    /* 16px - corpo (mínimo recomendado) */
+  --text-lg: 1.25rem;   /* 20px - H3 */
+  --text-xl: 1.563rem;  /* 25px - H2 */
+  --text-2xl: 1.953rem; /* 31px - H1 */
+  --text-3xl: 2.441rem; /* 39px - título de destaque */
+
+  --leading-tight: 1.2;   /* títulos */
+  --leading-normal: 1.5;  /* corpo: WCAG 1.4.12 pede >= 1.5 */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --measure: 70ch; /* ~75 caracteres por linha no desktop */
+
+  /* ---- Espaçamento - grid de 8 pontos ---- */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;  /* 8px */
+  --space-3: 1rem;    /* 16px */
+  --space-4: 1.5rem;  /* 24px */
+  --space-5: 2rem;    /* 32px */
+  --space-6: 3rem;    /* 48px */
+  --space-7: 4rem;    /* 64px */
+
+  /* ---- Formas ---- */
+  --radius-sm: 6px;   /* controles: botões, campos */
+  --radius-md: 12px;  /* cartões e painéis */
+  --radius-pill: 999px;
+
+  --shadow-1: 0 1px 2px rgba(0, 51, 79, 0.08);
+  --shadow-2: 0 2px 4px rgba(0, 51, 79, 0.06), 0 12px 28px -8px rgba(0, 51, 79, 0.18);
+
+  /* ---- Alvos de toque (Aula 18 / WCAG 2.5.8) ---- */
+  --touch-target: 44px;
+
+  /* ---- Movimento ---- */
+  --duration: 160ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  --header-height: 64px;
+  --mobile-nav-height: 64px;
+  --content-width: 72rem;
+}
+
+/* ==========================================================================
+   TOKENS - TEMA ESCURO
+   Escolhido pelo usuário (data-theme="dark") ou pelo sistema operacional.
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --brand: #4fa8d8;
+    --brand-deep: #0b2433;
+    --brand-mid: #7cc0e6;
+    --brand-tint: #12303f;
+    --on-brand: #06131b;
+    --chrome: #0b2433;
+    --chrome-deep: #071924;
+
+    --background: #0e1820;
+    --surface: #15232e;
+    --surface-2: #1c2d3a;
+    --foreground: #e7eef4;
+    --muted: #a9b8c6;
+    --border: #2d4050;
+    --border-strong: #6d8497;
+    --placeholder: #8a9cad;
+
+    --success: #6fd394;
+    --success-bg: #12301f;
+    --success-border: #2f6b45;
+    --error: #ff9b91;
+    --error-bg: #3a1714;
+    --error-border: #7a2e27;
+    --warning: #f5c95a;
+    --warning-bg: #33280c;
+    --warning-border: #6e5518;
+    --info: #7cc0e6;
+    --info-bg: #12303f;
+    --info-border: #2b5a75;
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 2px 4px rgba(0, 0, 0, 0.3), 0 12px 28px -8px rgba(0, 0, 0, 0.6);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --brand: #4fa8d8;
+  --brand-deep: #0b2433;
+  --brand-mid: #7cc0e6;
+  --brand-tint: #12303f;
+  --on-brand: #06131b;
+  --chrome: #0b2433;
+  --chrome-deep: #071924;
+
+  --background: #0e1820;
+  --surface: #15232e;
+  --surface-2: #1c2d3a;
+  --foreground: #e7eef4;
+  --muted: #a9b8c6;
+  --border: #2d4050;
+  --border-strong: #6d8497;
+  --placeholder: #8a9cad;
+
+  --success: #6fd394;
+  --success-bg: #12301f;
+  --success-border: #2f6b45;
+  --error: #ff9b91;
+  --error-bg: #3a1714;
+  --error-border: #7a2e27;
+  --warning: #f5c95a;
+  --warning-bg: #33280c;
+  --warning-border: #6e5518;
+  --info: #7cc0e6;
+  --info-bg: #12303f;
+  --info-border: #2b5a75;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 2px 4px rgba(0, 0, 0, 0.3), 0 12px 28px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+html {
+  /* 100% = respeita o tamanho de fonte que o usuário configurou no navegador.
+     O controle A- / A+ do cabeçalho altera este valor. */
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-height) + var(--space-3));
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+
+  color: var(--foreground);
+  background: var(--background);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hierarquia tipográfica (h1 > h2 > h3), sempre em ordem no HTML */
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+
+h2 {
+  font-size: var(--text-xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+}
+
+p {
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+/* Links: sublinhado = convenção de link (Aula 12). Não depende só da cor. */
+
+a {
+  color: var(--brand);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+code {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.05em 0.3em;
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   FOCO VISÍVEL
+   Só aparece na navegação por teclado (:focus-visible), nunca é removido.
+   ========================================================================== */
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+/* Títulos recebem foco programático a cada troca de página (leitor de tela),
+   mas não precisam mostrar o anel */
+[tabindex="-1"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   UTILITÁRIOS
+   ========================================================================== */
+
+/* Esconde visualmente, mas mantém para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.stack > * + * {
+  margin-top: var(--space-3);
+}
+
+/* ==========================================================================
+   MOVIMENTO REDUZIDO (WCAG 2.3.3)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   IMPRESSÃO (tela de Detalhes tem o comando "Imprimir")
+   ========================================================================== */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}

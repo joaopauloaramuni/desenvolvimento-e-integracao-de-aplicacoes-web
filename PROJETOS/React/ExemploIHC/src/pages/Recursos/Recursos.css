@@ -1,0 +1,169 @@
+/* ---------------- Filtros ---------------- */
+
+.recursos-filtros {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1.4fr) auto minmax(12rem, 1fr);
+  gap: var(--space-3) var(--space-4);
+  align-items: end;
+
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.recursos-rotulo {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: var(--weight-semibold);
+}
+
+.recursos-busca-campo {
+  position: relative;
+}
+
+.recursos-busca-icone {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.recursos-busca-campo .campo-controle {
+  padding-left: 2.5rem;
+}
+
+/* Controle segmentado = grupo de radios (acessível por teclado com as setas) */
+
+.recursos-segmentado {
+  border: 0;
+  min-width: 0;
+}
+
+/* ---------------- Status ---------------- */
+
+.recursos-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: var(--touch-target);
+  margin: var(--space-3) 0;
+  font-size: var(--text-sm);
+}
+
+/* ---------------- Grade de cartões ---------------- */
+
+.recursos-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.recurso {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 100%;
+  padding: var(--space-4);
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.recurso-topo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.recurso-icone {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--brand);
+  background: var(--brand-tint);
+  border-radius: var(--radius-sm);
+}
+
+.recurso-icone svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.recurso-categoria {
+  font-weight: var(--weight-regular);
+}
+
+.recurso-nome {
+  font-size: var(--text-lg);
+}
+
+/* Proximidade (Gestalt): rótulo colado ao valor, grupos separados */
+.recurso-dados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.recurso-dados dt {
+  color: var(--muted);
+}
+
+.recurso-dados dd {
+  font-weight: var(--weight-semibold);
+}
+
+.recurso-obs {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.recurso-acao {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ---------------- Responsivo ---------------- */
+
+@media (max-width: 900px) {
+  .recursos-filtros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .recursos-busca {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .recursos-filtros {
+    grid-template-columns: 1fr;
+    padding: var(--space-3);
+  }
+
+  .segmentado {
+    display: flex;
+  }
+
+  .segmentado-opcao {
+    flex: 1;
+  }
+
+  .segmentado-opcao span {
+    justify-content: center;
+  }
+
+  .recurso-acao {
+    align-self: stretch;
+  }
+}

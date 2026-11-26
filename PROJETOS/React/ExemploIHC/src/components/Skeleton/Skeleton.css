@@ -1,0 +1,38 @@
+.skeleton-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--space-3);
+}
+
+.skeleton-cartao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.skeleton-bloco {
+  height: 0.9rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--border) 50%, var(--surface-2) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-brilho 1.4s ease-in-out infinite;
+}
+
+.skeleton-titulo {
+  height: 1.3rem;
+  width: 60%;
+  margin-bottom: var(--space-2);
+}
+
+@keyframes skeleton-brilho {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

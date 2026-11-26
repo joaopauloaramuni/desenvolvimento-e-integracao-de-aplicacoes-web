@@ -1,0 +1,183 @@
+.reservas-filtro {
+  border: 0;
+  margin-bottom: var(--space-4);
+}
+
+.reservas-contador {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  margin-left: var(--space-2);
+  padding: 0 0.35rem;
+
+  font-size: var(--text-xs);
+  color: var(--foreground);
+  background: var(--surface);
+  border-radius: var(--radius-pill);
+}
+
+/* ---------------- Tabela ---------------- */
+
+.tabela-rolagem {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.tabela th,
+.tabela td {
+  padding: var(--space-3);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.tabela thead th {
+  color: var(--muted);
+  font-weight: var(--weight-semibold);
+  background: var(--surface-2);
+  white-space: nowrap;
+}
+
+.tabela tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.tabela tbody tr:hover {
+  background: var(--brand-tint);
+}
+
+.tabela tbody th {
+  font-weight: var(--weight-semibold);
+}
+
+.tabela-sub {
+  display: block;
+  color: var(--muted);
+  font-weight: var(--weight-regular);
+}
+
+.tabela-motivo {
+  max-width: 22rem;
+}
+
+.tabela-acoes {
+  white-space: nowrap;
+}
+
+.tabela-acoes .btn + .btn {
+  margin-left: var(--space-2);
+}
+
+/* ---------------- Celular: cada linha vira um cartão ---------------- */
+
+@media (max-width: 860px) {
+  .tabela-rolagem {
+    background: transparent;
+    border: 0;
+    overflow: visible;
+  }
+
+  .tabela thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .tabela,
+  .tabela tbody,
+  .tabela tr,
+  .tabela th,
+  .tabela td {
+    display: block;
+  }
+
+  .tabela tr {
+    margin-bottom: var(--space-3);
+    padding: var(--space-3);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  .tabela tbody tr:hover {
+    background: var(--surface);
+  }
+
+  .tabela th,
+  .tabela td,
+  .tabela tbody tr:last-child > * {
+    padding: var(--space-1) 0;
+    border: 0;
+  }
+
+  .tabela tbody th {
+    font-size: var(--text-base);
+  }
+
+  .tabela td[data-rotulo]::before {
+    content: attr(data-rotulo);
+    display: block;
+    color: var(--muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+  }
+
+  .tabela-motivo {
+    max-width: none;
+  }
+
+  .tabela-acoes {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+    white-space: normal;
+  }
+
+  .tabela-acoes .btn + .btn {
+    margin-left: 0;
+  }
+
+  .tabela-acoes .btn {
+    flex: 1;
+  }
+}
+
+/* Filtro no celular: 3 colunas iguais, contador abaixo do rótulo */
+@media (max-width: 560px) {
+  .reservas-filtro .segmentado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  .reservas-filtro .segmentado-opcao span {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding: var(--space-1);
+    font-size: var(--text-xs);
+  }
+
+  .reservas-contador {
+    margin-left: 0;
+  }
+}
+
+/* Nome do aluno não quebra em várias linhas no desktop */
+@media (min-width: 861px) {
+  .tabela tbody th {
+    min-width: 10rem;
+  }
+}

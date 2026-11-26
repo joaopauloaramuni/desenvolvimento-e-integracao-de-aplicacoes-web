@@ -1,0 +1,32 @@
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  font-size: var(--text-sm);
+}
+
+.breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  padding: var(--space-1) 0;
+}
+
+.breadcrumb a:hover {
+  color: var(--brand);
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--foreground);
+  font-weight: var(--weight-semibold);
+}
+
+.breadcrumb-seta {
+  color: var(--border-strong);
+}

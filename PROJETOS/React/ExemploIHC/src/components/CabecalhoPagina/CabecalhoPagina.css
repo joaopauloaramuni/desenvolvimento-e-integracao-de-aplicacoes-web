@@ -1,0 +1,39 @@
+.cabecalho-pagina {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.cabecalho-pagina-linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.cabecalho-pagina-descricao {
+  margin-top: var(--space-2);
+  color: var(--muted);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-regular);
+  line-height: 1.45;
+}
+
+.cabecalho-pagina-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .cabecalho-pagina-descricao {
+    font-size: var(--text-base);
+  }
+
+  .cabecalho-pagina-acoes,
+  .cabecalho-pagina-acoes .btn {
+    width: 100%;
+  }
+}

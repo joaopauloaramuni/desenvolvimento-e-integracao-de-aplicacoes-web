@@ -1,0 +1,13 @@
+.resumo-erros ul {
+  margin-top: var(--space-2);
+  padding-left: var(--space-4);
+}
+
+.resumo-erros li + li {
+  margin-top: var(--space-1);
+}
+
+.resumo-erros a {
+  color: var(--error);
+  font-weight: var(--weight-medium);
+}
